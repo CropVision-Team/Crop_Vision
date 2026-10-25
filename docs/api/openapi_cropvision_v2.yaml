@@ -1,0 +1,2823 @@
+openapi: 3.1.0
+info:
+  title: CropVision Enterprise Agronomy & Diagnostic Cloud API
+  version: 2.4.0
+  description: |
+    Comprehensive OpenAPI 3.1 specification for the CropVision platform.
+    Orchestrates real-time neural edge inference, satellite remote sensing,
+    APMC mandi agricultural commodity price aggregation, and precision agronomy.
+  contact:
+    name: CropVision Agronomic Systems Team
+    email: ripansamuix08@users.noreply.github.com
+    url: https://github.com/CropVision-Team/CropVision
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: https://api.cropvision.ai/v2
+    description: Production Global Edge Cluster
+  - url: https://staging-api.cropvision.ai/v2
+    description: Staging Validation Cluster
+paths:
+  /diagnoses/scan-leaf:
+    post:
+      tags: [Inference]
+      summary: Upload Leaf Image for Multi-Model Disease Diagnosis
+      operationId: inference_post__diagnoses_scan_leaf
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Upload Leaf Image for Multi-Model Disease Diagnosis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InferenceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /diagnoses/{diagnosis_id}:
+    get:
+      tags: [Inference]
+      summary: Retrieve Detailed Diagnosis Record and Grad-CAM Map
+      operationId: inference_get__diagnoses_diagnosis_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Retrieve Detailed Diagnosis Record and Grad-CAM Map
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InferenceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /diagnoses/{diagnosis_id}/prescriptions:
+    get:
+      tags: [Agronomy]
+      summary: Generate Tailored Chemical & Organic Prescriptions
+      operationId: agronomy_get__diagnoses_diagnosis_id_prescriptions
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Generate Tailored Chemical & Organic Prescriptions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AgronomyResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /diagnoses/{diagnosis_id}/feedback:
+    post:
+      tags: [Quality]
+      summary: Submit Agronomist Ground-Truth Diagnostic Feedback
+      operationId: quality_post__diagnoses_diagnosis_id_feedback
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Submit Agronomist Ground-Truth Diagnostic Feedback
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QualityResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /farmers/register:
+    post:
+      tags: [Farmers]
+      summary: Register New Farmer Profile with National ID and GPS
+      operationId: farmers_post__farmers_register
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Register New Farmer Profile with National ID and GPS
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmersResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /farmers/{farmer_id}:
+    get:
+      tags: [Farmers]
+      summary: Retrieve Farmer Profile, Crops, and Parcels
+      operationId: farmers_get__farmers_farmer_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Retrieve Farmer Profile, Crops, and Parcels
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmersResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /farmers/{farmer_id}/parcels:
+    post:
+      tags: [Parcels]
+      summary: Register Georeferenced Farm Parcel Boundary Polygon
+      operationId: parcels_post__farmers_farmer_id_parcels
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Register Georeferenced Farm Parcel Boundary Polygon
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParcelsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /farmers/{farmer_id}/parcels/{parcel_id}:
+    get:
+      tags: [Parcels]
+      summary: Retrieve Parcel PostGIS Polygon & Soil Profile
+      operationId: parcels_get__farmers_farmer_id_parcels_parcel_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Retrieve Parcel PostGIS Polygon & Soil Profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParcelsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /weather/microclimate/{parcel_id}:
+    get:
+      tags: [Weather]
+      summary: Retrieve Hourly Meteorological Risk & Mills Infection Hours
+      operationId: weather_get__weather_microclimate_parcel_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Retrieve Hourly Meteorological Risk & Mills Infection Hours
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /weather/spray-advisory:
+    get:
+      tags: [Weather]
+      summary: Evaluate Real-Time Spraying Window Safety by Coordinates
+      operationId: weather_get__weather_spray_advisory
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Evaluate Real-Time Spraying Window Safety by Coordinates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /mandi/rates/latest:
+    get:
+      tags: [Market]
+      summary: Query Real-Time APMC Mandi Modal Commodity Auction Rates
+      operationId: market_get__mandi_rates_latest
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Query Real-Time APMC Mandi Modal Commodity Auction Rates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /mandi/rates/arbitrage:
+    get:
+      tags: [Market]
+      summary: Compute Regional Price Spreads and Transport Profitability
+      operationId: market_get__mandi_rates_arbitrage
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Compute Regional Price Spreads and Transport Profitability
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /mandi/forecast/7day:
+    get:
+      tags: [Market]
+      summary: Predict 7-Day Commodity Price Trajectory
+      operationId: market_get__mandi_forecast_7day
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Predict 7-Day Commodity Price Trajectory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarketResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /sensors/iot/telemetry:
+    post:
+      tags: [IoT]
+      summary: Ingest LoRaWAN / MQTT Soil Probe Telemetry Packets
+      operationId: iot_post__sensors_iot_telemetry
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Ingest LoRaWAN / MQTT Soil Probe Telemetry Packets
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IoTResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /sensors/iot/devices/{device_id}:
+    get:
+      tags: [IoT]
+      summary: Retrieve Real-Time VWC, EC, and NPK Sensor Status
+      operationId: iot_get__sensors_iot_devices_device_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Retrieve Real-Time VWC, EC, and NPK Sensor Status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IoTResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /satellite/indices/{parcel_id}:
+    get:
+      tags: [Satellite]
+      summary: Extract Sentinel-2 NDVI, NDRE, EVI Time-Series
+      operationId: satellite_get__satellite_indices_parcel_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Extract Sentinel-2 NDVI, NDRE, EVI Time-Series
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SatelliteResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /satellite/anomalies/{parcel_id}:
+    get:
+      tags: [Satellite]
+      summary: Delineate Sub-Field Vegetation Stress Polygons
+      operationId: satellite_get__satellite_anomalies_parcel_id
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Delineate Sub-Field Vegetation Stress Polygons
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SatelliteResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /community/discussions:
+    get:
+      tags: [Community]
+      summary: List Farmer Community Queries Filtered by Crop & Region
+      operationId: community_get__community_discussions
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of List Farmer Community Queries Filtered by Crop & Region
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommunityResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /community/discussions:
+    post:
+      tags: [Community]
+      summary: Publish New Crop Disease Observation to Farmer Feed
+      operationId: community_post__community_discussions
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Publish New Crop Disease Observation to Farmer Feed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommunityResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /community/discussions/{discussion_id}/responses:
+    post:
+      tags: [Community]
+      summary: Post Clinical Response with Certified Agronomist Stamp
+      operationId: community_post__community_discussions_discussion_id_responses
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Post Clinical Response with Certified Agronomist Stamp
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommunityResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /offline/sync/manifest:
+    post:
+      tags: [Offline]
+      summary: Exchange Cryptographic Merkle Hash Tree for Rural Delta Sync
+      operationId: offline_post__offline_sync_manifest
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Exchange Cryptographic Merkle Hash Tree for Rural Delta Sync
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfflineResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /offline/sync/push:
+    post:
+      tags: [Offline]
+      summary: Push Batched Offline Diagnoses and Local Telemetry Deltas
+      operationId: offline_post__offline_sync_push
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Push Batched Offline Diagnoses and Local Telemetry Deltas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfflineResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /pesticides/compliance/audit:
+    post:
+      tags: [Compliance]
+      summary: Audit Farmer Chemical Spray Log against FRAC and MRL Limits
+      operationId: compliance_post__pesticides_compliance_audit
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Audit Farmer Chemical Spray Log against FRAC and MRL Limits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComplianceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /pesticides/catalog:
+    get:
+      tags: [Compliance]
+      summary: Query Searchable Registry of Registered Fungicides and Active Ingredients
+      operationId: compliance_get__pesticides_catalog
+      parameters:
+        - name: X-CropVision-Client-Version
+          in: header
+          required: false
+          schema:
+            type: string
+            default: '2.4.0'
+      responses:
+        '200':
+          description: Successful execution of Query Searchable Registry of Registered Fungicides and Active Ingredients
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComplianceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  schemas:
+    InferenceResponse:
+      type: object
+      description: Standard data model representation for InferenceResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of InferenceResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of InferenceResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of InferenceResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of InferenceResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of InferenceResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of InferenceResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of InferenceResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of InferenceResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of InferenceResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of InferenceResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of InferenceResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of InferenceResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of InferenceResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of InferenceResponse schema
+              example: sample_value
+    AgronomyResponse:
+      type: object
+      description: Standard data model representation for AgronomyResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of AgronomyResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of AgronomyResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of AgronomyResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of AgronomyResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of AgronomyResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of AgronomyResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of AgronomyResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of AgronomyResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of AgronomyResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of AgronomyResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of AgronomyResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of AgronomyResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of AgronomyResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of AgronomyResponse schema
+              example: sample_value
+    QualityResponse:
+      type: object
+      description: Standard data model representation for QualityResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of QualityResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of QualityResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of QualityResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of QualityResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of QualityResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of QualityResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of QualityResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of QualityResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of QualityResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of QualityResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of QualityResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of QualityResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of QualityResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of QualityResponse schema
+              example: sample_value
+    FarmersResponse:
+      type: object
+      description: Standard data model representation for FarmersResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of FarmersResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of FarmersResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of FarmersResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of FarmersResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of FarmersResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of FarmersResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of FarmersResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of FarmersResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of FarmersResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of FarmersResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of FarmersResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of FarmersResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of FarmersResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of FarmersResponse schema
+              example: sample_value
+    ParcelsResponse:
+      type: object
+      description: Standard data model representation for ParcelsResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of ParcelsResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of ParcelsResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of ParcelsResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of ParcelsResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of ParcelsResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of ParcelsResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of ParcelsResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of ParcelsResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of ParcelsResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of ParcelsResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of ParcelsResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of ParcelsResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of ParcelsResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of ParcelsResponse schema
+              example: sample_value
+    WeatherResponse:
+      type: object
+      description: Standard data model representation for WeatherResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of WeatherResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of WeatherResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of WeatherResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of WeatherResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of WeatherResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of WeatherResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of WeatherResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of WeatherResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of WeatherResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of WeatherResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of WeatherResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of WeatherResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of WeatherResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of WeatherResponse schema
+              example: sample_value
+    MarketResponse:
+      type: object
+      description: Standard data model representation for MarketResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of MarketResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of MarketResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of MarketResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of MarketResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of MarketResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of MarketResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of MarketResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of MarketResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of MarketResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of MarketResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of MarketResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of MarketResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of MarketResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of MarketResponse schema
+              example: sample_value
+    IoTResponse:
+      type: object
+      description: Standard data model representation for IoTResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of IoTResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of IoTResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of IoTResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of IoTResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of IoTResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of IoTResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of IoTResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of IoTResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of IoTResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of IoTResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of IoTResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of IoTResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of IoTResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of IoTResponse schema
+              example: sample_value
+    SatelliteResponse:
+      type: object
+      description: Standard data model representation for SatelliteResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of SatelliteResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of SatelliteResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of SatelliteResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of SatelliteResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of SatelliteResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of SatelliteResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of SatelliteResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of SatelliteResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of SatelliteResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of SatelliteResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of SatelliteResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of SatelliteResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of SatelliteResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of SatelliteResponse schema
+              example: sample_value
+    CommunityResponse:
+      type: object
+      description: Standard data model representation for CommunityResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of CommunityResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of CommunityResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of CommunityResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of CommunityResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of CommunityResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of CommunityResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of CommunityResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of CommunityResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of CommunityResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of CommunityResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of CommunityResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of CommunityResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of CommunityResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of CommunityResponse schema
+              example: sample_value
+    OfflineResponse:
+      type: object
+      description: Standard data model representation for OfflineResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of OfflineResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of OfflineResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of OfflineResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of OfflineResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of OfflineResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of OfflineResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of OfflineResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of OfflineResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of OfflineResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of OfflineResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of OfflineResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of OfflineResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of OfflineResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of OfflineResponse schema
+              example: sample_value
+    ComplianceResponse:
+      type: object
+      description: Standard data model representation for ComplianceResponse
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of ComplianceResponse schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of ComplianceResponse schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of ComplianceResponse schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of ComplianceResponse schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of ComplianceResponse schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of ComplianceResponse schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of ComplianceResponse schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of ComplianceResponse schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of ComplianceResponse schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of ComplianceResponse schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of ComplianceResponse schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of ComplianceResponse schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of ComplianceResponse schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of ComplianceResponse schema
+              example: sample_value
+    LeafDiagnosisRecord:
+      type: object
+      description: Standard data model representation for LeafDiagnosisRecord
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of LeafDiagnosisRecord schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of LeafDiagnosisRecord schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of LeafDiagnosisRecord schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of LeafDiagnosisRecord schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of LeafDiagnosisRecord schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of LeafDiagnosisRecord schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of LeafDiagnosisRecord schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of LeafDiagnosisRecord schema
+              example: sample_value
+    GradCAMHeatmapData:
+      type: object
+      description: Standard data model representation for GradCAMHeatmapData
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of GradCAMHeatmapData schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of GradCAMHeatmapData schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of GradCAMHeatmapData schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of GradCAMHeatmapData schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of GradCAMHeatmapData schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of GradCAMHeatmapData schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of GradCAMHeatmapData schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of GradCAMHeatmapData schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of GradCAMHeatmapData schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of GradCAMHeatmapData schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of GradCAMHeatmapData schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of GradCAMHeatmapData schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of GradCAMHeatmapData schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of GradCAMHeatmapData schema
+              example: sample_value
+    ChemicalPrescription:
+      type: object
+      description: Standard data model representation for ChemicalPrescription
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of ChemicalPrescription schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of ChemicalPrescription schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of ChemicalPrescription schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of ChemicalPrescription schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of ChemicalPrescription schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of ChemicalPrescription schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of ChemicalPrescription schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of ChemicalPrescription schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of ChemicalPrescription schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of ChemicalPrescription schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of ChemicalPrescription schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of ChemicalPrescription schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of ChemicalPrescription schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of ChemicalPrescription schema
+              example: sample_value
+    BiologicalPrescription:
+      type: object
+      description: Standard data model representation for BiologicalPrescription
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of BiologicalPrescription schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of BiologicalPrescription schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of BiologicalPrescription schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of BiologicalPrescription schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of BiologicalPrescription schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of BiologicalPrescription schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of BiologicalPrescription schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of BiologicalPrescription schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of BiologicalPrescription schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of BiologicalPrescription schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of BiologicalPrescription schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of BiologicalPrescription schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of BiologicalPrescription schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of BiologicalPrescription schema
+              example: sample_value
+    FarmerProfile:
+      type: object
+      description: Standard data model representation for FarmerProfile
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of FarmerProfile schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of FarmerProfile schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of FarmerProfile schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of FarmerProfile schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of FarmerProfile schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of FarmerProfile schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of FarmerProfile schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of FarmerProfile schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of FarmerProfile schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of FarmerProfile schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of FarmerProfile schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of FarmerProfile schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of FarmerProfile schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of FarmerProfile schema
+              example: sample_value
+    FarmParcelGeometry:
+      type: object
+      description: Standard data model representation for FarmParcelGeometry
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of FarmParcelGeometry schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of FarmParcelGeometry schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of FarmParcelGeometry schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of FarmParcelGeometry schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of FarmParcelGeometry schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of FarmParcelGeometry schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of FarmParcelGeometry schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of FarmParcelGeometry schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of FarmParcelGeometry schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of FarmParcelGeometry schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of FarmParcelGeometry schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of FarmParcelGeometry schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of FarmParcelGeometry schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of FarmParcelGeometry schema
+              example: sample_value
+    SoilProfileData:
+      type: object
+      description: Standard data model representation for SoilProfileData
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of SoilProfileData schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of SoilProfileData schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of SoilProfileData schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of SoilProfileData schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of SoilProfileData schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of SoilProfileData schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of SoilProfileData schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of SoilProfileData schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of SoilProfileData schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of SoilProfileData schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of SoilProfileData schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of SoilProfileData schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of SoilProfileData schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of SoilProfileData schema
+              example: sample_value
+    HourlyWeatherRisk:
+      type: object
+      description: Standard data model representation for HourlyWeatherRisk
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of HourlyWeatherRisk schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of HourlyWeatherRisk schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of HourlyWeatherRisk schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of HourlyWeatherRisk schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of HourlyWeatherRisk schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of HourlyWeatherRisk schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of HourlyWeatherRisk schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of HourlyWeatherRisk schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of HourlyWeatherRisk schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of HourlyWeatherRisk schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of HourlyWeatherRisk schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of HourlyWeatherRisk schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of HourlyWeatherRisk schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of HourlyWeatherRisk schema
+              example: sample_value
+    MillsInfectionIndex:
+      type: object
+      description: Standard data model representation for MillsInfectionIndex
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of MillsInfectionIndex schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of MillsInfectionIndex schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of MillsInfectionIndex schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of MillsInfectionIndex schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of MillsInfectionIndex schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of MillsInfectionIndex schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of MillsInfectionIndex schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of MillsInfectionIndex schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of MillsInfectionIndex schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of MillsInfectionIndex schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of MillsInfectionIndex schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of MillsInfectionIndex schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of MillsInfectionIndex schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of MillsInfectionIndex schema
+              example: sample_value
+    APMCMandiRate:
+      type: object
+      description: Standard data model representation for APMCMandiRate
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of APMCMandiRate schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of APMCMandiRate schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of APMCMandiRate schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of APMCMandiRate schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of APMCMandiRate schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of APMCMandiRate schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of APMCMandiRate schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of APMCMandiRate schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of APMCMandiRate schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of APMCMandiRate schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of APMCMandiRate schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of APMCMandiRate schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of APMCMandiRate schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of APMCMandiRate schema
+              example: sample_value
+    ArbitrageOpportunity:
+      type: object
+      description: Standard data model representation for ArbitrageOpportunity
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of ArbitrageOpportunity schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of ArbitrageOpportunity schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of ArbitrageOpportunity schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of ArbitrageOpportunity schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of ArbitrageOpportunity schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of ArbitrageOpportunity schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of ArbitrageOpportunity schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of ArbitrageOpportunity schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of ArbitrageOpportunity schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of ArbitrageOpportunity schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of ArbitrageOpportunity schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of ArbitrageOpportunity schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of ArbitrageOpportunity schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of ArbitrageOpportunity schema
+              example: sample_value
+    IoTSensorReading:
+      type: object
+      description: Standard data model representation for IoTSensorReading
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of IoTSensorReading schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of IoTSensorReading schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of IoTSensorReading schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of IoTSensorReading schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of IoTSensorReading schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of IoTSensorReading schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of IoTSensorReading schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of IoTSensorReading schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of IoTSensorReading schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of IoTSensorReading schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of IoTSensorReading schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of IoTSensorReading schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of IoTSensorReading schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of IoTSensorReading schema
+              example: sample_value
+    NPKLevels:
+      type: object
+      description: Standard data model representation for NPKLevels
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of NPKLevels schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of NPKLevels schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of NPKLevels schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of NPKLevels schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of NPKLevels schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of NPKLevels schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of NPKLevels schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of NPKLevels schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of NPKLevels schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of NPKLevels schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of NPKLevels schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of NPKLevels schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of NPKLevels schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of NPKLevels schema
+              example: sample_value
+    SatelliteNDVITimeseries:
+      type: object
+      description: Standard data model representation for SatelliteNDVITimeseries
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of SatelliteNDVITimeseries schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of SatelliteNDVITimeseries schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of SatelliteNDVITimeseries schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of SatelliteNDVITimeseries schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of SatelliteNDVITimeseries schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of SatelliteNDVITimeseries schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of SatelliteNDVITimeseries schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of SatelliteNDVITimeseries schema
+              example: sample_value
+    VegetationAnomalyPolygon:
+      type: object
+      description: Standard data model representation for VegetationAnomalyPolygon
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of VegetationAnomalyPolygon schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of VegetationAnomalyPolygon schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of VegetationAnomalyPolygon schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of VegetationAnomalyPolygon schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of VegetationAnomalyPolygon schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of VegetationAnomalyPolygon schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of VegetationAnomalyPolygon schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of VegetationAnomalyPolygon schema
+              example: sample_value
+    CommunityDiscussionPost:
+      type: object
+      description: Standard data model representation for CommunityDiscussionPost
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of CommunityDiscussionPost schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of CommunityDiscussionPost schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of CommunityDiscussionPost schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of CommunityDiscussionPost schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of CommunityDiscussionPost schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of CommunityDiscussionPost schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of CommunityDiscussionPost schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of CommunityDiscussionPost schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of CommunityDiscussionPost schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of CommunityDiscussionPost schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of CommunityDiscussionPost schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of CommunityDiscussionPost schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of CommunityDiscussionPost schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of CommunityDiscussionPost schema
+              example: sample_value
+    AgronomistEndorsement:
+      type: object
+      description: Standard data model representation for AgronomistEndorsement
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of AgronomistEndorsement schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of AgronomistEndorsement schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of AgronomistEndorsement schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of AgronomistEndorsement schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of AgronomistEndorsement schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of AgronomistEndorsement schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of AgronomistEndorsement schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of AgronomistEndorsement schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of AgronomistEndorsement schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of AgronomistEndorsement schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of AgronomistEndorsement schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of AgronomistEndorsement schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of AgronomistEndorsement schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of AgronomistEndorsement schema
+              example: sample_value
+    DeltaSyncManifest:
+      type: object
+      description: Standard data model representation for DeltaSyncManifest
+      properties:
+        status:
+          type: string
+          example: 'SUCCESS'
+        timestamp:
+          type: string
+          format: date-time
+        latency_ms:
+          type: number
+          example: 42.5
+        data:
+          type: object
+          properties:
+            field_01:
+              type: number
+              description: Property field 1 of DeltaSyncManifest schema
+              example: 123.45
+            field_02:
+              type: string
+              description: Property field 2 of DeltaSyncManifest schema
+              example: sample_value
+            field_03:
+              type: number
+              description: Property field 3 of DeltaSyncManifest schema
+              example: 123.45
+            field_04:
+              type: string
+              description: Property field 4 of DeltaSyncManifest schema
+              example: sample_value
+            field_05:
+              type: number
+              description: Property field 5 of DeltaSyncManifest schema
+              example: 123.45
+            field_06:
+              type: string
+              description: Property field 6 of DeltaSyncManifest schema
+              example: sample_value
+            field_07:
+              type: number
+              description: Property field 7 of DeltaSyncManifest schema
+              example: 123.45
+            field_08:
+              type: string
+              description: Property field 8 of DeltaSyncManifest schema
+              example: sample_value
+            field_09:
+              type: number
+              description: Property field 9 of DeltaSyncManifest schema
+              example: 123.45
+            field_10:
+              type: string
+              description: Property field 10 of DeltaSyncManifest schema
+              example: sample_value
+            field_11:
+              type: number
+              description: Property field 11 of DeltaSyncManifest schema
+              example: 123.45
+            field_12:
+              type: string
+              description: Property field 12 of DeltaSyncManifest schema
+              example: sample_value
+            field_13:
+              type: number
+              description: Property field 13 of DeltaSyncManifest schema
+              example: 123.45
+            field_14:
+              type: string
+              description: Property field 14 of DeltaSyncManifest schema
+              example: sample_value
+  responses:
+    BadRequestError:
+      description: Invalid parameters or schema validation failed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_code:
+                type: string
+                example: 'ERR_400'
+              message:
+                type: string
+                example: 'Invalid parameters or schema validation failed'
+    UnauthorizedError:
+      description: Missing or invalid Supabase JWT authentication bearer
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_code:
+                type: string
+                example: 'ERR_401'
+              message:
+                type: string
+                example: 'Missing or invalid Supabase JWT authentication bearer'
+    InternalServerError:
+      description: Internal cloud orchestrator error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error_code:
+                type: string
+                example: 'ERR_500'
+              message:
+                type: string
+                example: 'Internal cloud orchestrator error'
