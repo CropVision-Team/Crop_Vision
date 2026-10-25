@@ -213,8 +213,6 @@ python audit_dataset.py --train_dir ./dataset --test_dir ./official_test
 
 ## 📊 Model Performance
 
-## 📊 Model Performance
-
 Empirical evaluation executed across the complete 10,709 image untouched held-out test split (`model/official_test`) using `model/evaluate_test.py` with checkpoint `model/checkpoints/mobilevit_best.pt`. All 10,709 prediction pairs are recorded in [`model/predictions.csv`](model/predictions.csv).
 
 ### Empirical Test Benchmark (`official_test`)
@@ -289,7 +287,7 @@ See [docs/models/evaluation_protocol.md](docs/models/evaluation_protocol.md) for
 
 ---
 
-## 🏋️ Training
+## 🧠 Model Training
 
 ### Download Dataset
 
