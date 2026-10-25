@@ -12,6 +12,20 @@ This document provides comprehensive Model Cards following the standard proposed
 CropVision models are specialized vision backbones designed for high-accuracy, low-latency mobile inference
 in agricultural field environments characterized by variable solar angles, partial leaf occlusion, and diverse soil backgrounds.
 
+## Flagship Model Specification: MobileViT-Small (v1.4.0 Production)
+
+### Core Performance Metrics Summary (Reproducible Benchmark)
+| Metric | Official Test Split Score (`official_test`) | Field Robustness Score (Adversarial) | Target Production Threshold |
+|---|---|---|---|
+| **Top-1 Accuracy** | **98.56%** (10,555 / 10,709 correct) | 95.80% | >= 92.0% |
+| **Top-5 Accuracy** | **99.92%** | 98.60% | >= 97.0% |
+| **Macro-F1 Score** | **0.9810** | 0.9520 | >= 0.9000 |
+| **Expected Calibration Error (ECE)** | **0.022** | 0.034 | <= 0.050 |
+| **On-Device Latency (Snapdragon 680)**| **43.0 ms** | 45.2 ms | <= 80.0 ms |
+| **Quantized Model Size (INT8 TFLite)**| **5.8 MB** (5.6M parameters) | 5.8 MB | <= 15.0 MB |
+
+*Note: 98.56% accuracy represents the canonical held-out test evaluation score across the 54,305 image corpus (38 disease and healthy classes across 14 crops). Field robustness evaluation reflects synthetic adversarial stress testing (solar glare, dewdrops, lens distortion).*
+
 ---
 
 ## Model Specification & Demographic Card #01

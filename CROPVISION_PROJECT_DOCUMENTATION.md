@@ -103,7 +103,7 @@ flowchart TD
     DB <-. "Periodic Sync / Telemetry (WiFi / 4G)" .-> UI8
 ```
 *Fig. 1. Flowchart and framework for crop leaf disease detection, verification, severity grading, and agronomic advisory in CropVision.*  
-*(High-Resolution 300-DPI Publication Asset: [docs/research_figures/system_framework_flowchart.png](file:///c:/Users/RIPAN%20SAMUI/Downloads/CropVision-main/docs/research_figures/system_framework_flowchart.png))*
+*(High-Resolution 300-DPI Publication Asset: [docs/research_figures/system_framework_flowchart.png](docs/research_figures/system_framework_flowchart.png))*
 
 ### 3.1 Dataset collection and annotation
 The experimental corpus was curated from the PlantVillage dataset combined with field-collected extensions. The dataset comprises **54,305 high-resolution leaf photographs** spanning **14 economically vital crop species** categorized into **38 distinct pathological and healthy classes**. The detailed distribution of images across all 14 crops and 38 classes is presented in **Table 2**.
@@ -350,8 +350,40 @@ Unlike prior literature that evaluates only a single crop (e.g., potato), **Tabl
 
 #### Publication Figures: All 14 Confusion Matrices & Learning Curves
 All 28 high-resolution 300-DPI visual assets for research submission are saved in `docs/research_figures/`:
-- **Confusion Matrices**: [docs/research_figures/confusion_matrix_potato.png](file:///c:/Users/RIPAN%20SAMUI/Downloads/CropVision-main/docs/research_figures/confusion_matrix_potato.png), `confusion_matrix_tomato.png`, `confusion_matrix_corn.png`, `confusion_matrix_apple.png`, `confusion_matrix_grape.png`, `confusion_matrix_pepper_bell.png`, `confusion_matrix_peach.png`, `confusion_matrix_orange.png`, `confusion_matrix_soybean.png`, `confusion_matrix_squash.png`, `confusion_matrix_strawberry.png`, `confusion_matrix_cherry.png`, `confusion_matrix_blueberry.png`, `confusion_matrix_raspberry.png`.
-- **Training & Validation Curves**: [docs/research_figures/learning_curve_potato.png](file:///c:/Users/RIPAN%20SAMUI/Downloads/CropVision-main/docs/research_figures/learning_curve_potato.png), `learning_curve_tomato.png`, `learning_curve_corn.png`, `learning_curve_apple.png`, `learning_curve_grape.png`, `learning_curve_pepper_bell.png`, `learning_curve_peach.png`, `learning_curve_orange.png`, `learning_curve_soybean.png`, `learning_curve_squash.png`, `learning_curve_strawberry.png`, `learning_curve_cherry.png`, `learning_curve_blueberry.png`, `learning_curve_raspberry.png`.
+- **Overall Benchmark Figures**:
+  - Full 38-Class Confusion Matrix: [docs/research_figures/overall_confusion_matrix.png](docs/research_figures/overall_confusion_matrix.png) (also available as [confusion_matrix_overall.png](docs/research_figures/confusion_matrix_overall.png))
+  - Full Training & Validation Learning Curves: [docs/research_figures/overall_learning_curves.png](docs/research_figures/overall_learning_curves.png)
+  - System Architecture Flowchart: [docs/research_figures/system_framework_flowchart.png](docs/research_figures/system_framework_flowchart.png)
+- **Per-Crop Confusion Matrices**:
+  - Potato: [docs/research_figures/confusion_matrix_potato.png](docs/research_figures/confusion_matrix_potato.png)
+  - Tomato: [docs/research_figures/confusion_matrix_tomato.png](docs/research_figures/confusion_matrix_tomato.png)
+  - Corn: [docs/research_figures/confusion_matrix_corn.png](docs/research_figures/confusion_matrix_corn.png)
+  - Apple: [docs/research_figures/confusion_matrix_apple.png](docs/research_figures/confusion_matrix_apple.png)
+  - Grape: [docs/research_figures/confusion_matrix_grape.png](docs/research_figures/confusion_matrix_grape.png)
+  - Pepper Bell: [docs/research_figures/confusion_matrix_pepper_bell.png](docs/research_figures/confusion_matrix_pepper_bell.png)
+  - Peach: [docs/research_figures/confusion_matrix_peach.png](docs/research_figures/confusion_matrix_peach.png)
+  - Orange: [docs/research_figures/confusion_matrix_orange.png](docs/research_figures/confusion_matrix_orange.png)
+  - Soybean: [docs/research_figures/confusion_matrix_soybean.png](docs/research_figures/confusion_matrix_soybean.png)
+  - Squash: [docs/research_figures/confusion_matrix_squash.png](docs/research_figures/confusion_matrix_squash.png)
+  - Strawberry: [docs/research_figures/confusion_matrix_strawberry.png](docs/research_figures/confusion_matrix_strawberry.png)
+  - Cherry: [docs/research_figures/confusion_matrix_cherry.png](docs/research_figures/confusion_matrix_cherry.png)
+  - Blueberry: [docs/research_figures/confusion_matrix_blueberry.png](docs/research_figures/confusion_matrix_blueberry.png)
+  - Raspberry: [docs/research_figures/confusion_matrix_raspberry.png](docs/research_figures/confusion_matrix_raspberry.png)
+- **Per-Crop Training & Validation Curves**:
+  - Potato: [docs/research_figures/learning_curve_potato.png](docs/research_figures/learning_curve_potato.png)
+  - Tomato: [docs/research_figures/learning_curve_tomato.png](docs/research_figures/learning_curve_tomato.png)
+  - Corn: [docs/research_figures/learning_curve_corn.png](docs/research_figures/learning_curve_corn.png)
+  - Apple: [docs/research_figures/learning_curve_apple.png](docs/research_figures/learning_curve_apple.png)
+  - Grape: [docs/research_figures/learning_curve_grape.png](docs/research_figures/learning_curve_grape.png)
+  - Pepper Bell: [docs/research_figures/learning_curve_pepper_bell.png](docs/research_figures/learning_curve_pepper_bell.png)
+  - Peach: [docs/research_figures/learning_curve_peach.png](docs/research_figures/learning_curve_peach.png)
+  - Orange: [docs/research_figures/learning_curve_orange.png](docs/research_figures/learning_curve_orange.png)
+  - Soybean: [docs/research_figures/learning_curve_soybean.png](docs/research_figures/learning_curve_soybean.png)
+  - Squash: [docs/research_figures/learning_curve_squash.png](docs/research_figures/learning_curve_squash.png)
+  - Strawberry: [docs/research_figures/learning_curve_strawberry.png](docs/research_figures/learning_curve_strawberry.png)
+  - Cherry: [docs/research_figures/learning_curve_cherry.png](docs/research_figures/learning_curve_cherry.png)
+  - Blueberry: [docs/research_figures/learning_curve_blueberry.png](docs/research_figures/learning_curve_blueberry.png)
+  - Raspberry: [docs/research_figures/learning_curve_raspberry.png](docs/research_figures/learning_curve_raspberry.png)
 
 ### 4.2 Backend API and database setup for user records
 The cloud services tier is built with **FastAPI** (Python 3.11) and **Supabase (PostgreSQL 15)**:

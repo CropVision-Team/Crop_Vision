@@ -147,8 +147,8 @@ CropVision/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/CropVision-Team/CropVision.git
-cd CropVision
+git clone https://github.com/CropVision-Team/Crop_Vision.git
+cd Crop_Vision
 ```
 
 ### 2. Python / ML Pipeline Setup

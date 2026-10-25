@@ -37,7 +37,7 @@ This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.
    ```
 3. **Add the upstream** remote:
    ```bash
-   git remote add upstream https://github.com/CropVision-Team/CropVision.git
+   git remote add upstream https://github.com/CropVision-Team/Crop_Vision.git
    ```
 4. Create a **feature branch** from `main`:
    ```bash
@@ -292,6 +292,6 @@ All contributors are recognized in [CHANGELOG.md](CHANGELOG.md). We value every 
 
 ## Questions?
 
-If you have questions about contributing, open a [Discussion](https://github.com/CropVision-Team/CropVision/discussions) or reach out to the maintainers.
+If you have questions about contributing, open a [Discussion](https://github.com/CropVision-Team/Crop_Vision/discussions) or reach out to the maintainers.
 
 Thank you for helping make agriculture smarter and more accessible! 🌾
