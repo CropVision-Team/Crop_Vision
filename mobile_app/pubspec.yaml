@@ -1,0 +1,60 @@
+name: cropvision
+description: CropVision - AI-powered crop disease detection with image verification and stage-based treatment recommendation.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # Backend
+  supabase_flutter: ^2.5.6
+
+  # Image capture / upload
+  image_picker: ^1.0.7
+
+  # State management
+  provider: ^6.1.2
+
+  # On-device inference: deferred until a trained model exists and a
+  # package is chosen against real pub.dev docs - see
+  # lib/services/inference_service.dart for why.
+
+  # Pixel-level image processing for Image Verification + Severity Estimation
+  image: ^4.2.0
+
+  # Calendar / reminders
+  table_calendar: ^3.1.2
+
+  # Remembering whether onboarding has been seen
+  shared_preferences: ^2.5.5
+  # flutter_local_notifications removed for now - reminders are stored
+  # in Supabase and shown in-app (calendar_screen.dart), but no actual
+  # push notification is scheduled yet. Add this package back (and its
+  # required native setup: Android notification channel, iOS
+  # permissions) only when you implement real reminder notifications.
+
+  # Direct AI Assistant API calls
+  http: ^1.6.0
+
+  # UI
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  # No assets declared yet - assets/models/ and assets/images/ don't
+  # exist in this scaffold. Flutter fails the build if pubspec.yaml
+  # references a path that isn't there. Add entries back here once:
+  #   - a trained + exported model file exists (assets/models/*.pt or .tflite)
+  #   - you add app icons/images (assets/images/*)
+  # Then create the actual folders/files before running `flutter run`.
