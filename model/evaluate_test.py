@@ -87,6 +87,7 @@ def main():
     n_cls = len(class_names)
     per_total, per_ok, per_pred = [0] * n_cls, [0] * n_cls, [0] * n_cls
     confusions, wrong = Counter(), []
+    all_predictions = []
     correct = 0
     cross_crop = 0
     with torch.no_grad():
@@ -101,7 +102,9 @@ def main():
             for yi, pi, ci, ii in zip(y.tolist(), pred.cpu().tolist(), conf.cpu().tolist(), idx.tolist()):
                 per_total[yi] += 1
                 per_pred[pi] += 1
-                if yi == pi:
+                is_corr = (yi == pi)
+                all_predictions.append((str(ds.items[ii][0]), class_names[yi], class_names[pi], round(ci, 4), is_corr))
+                if is_corr:
                     per_ok[yi] += 1
                     correct += 1
                 else:
@@ -144,11 +147,17 @@ def main():
     for (t, p), n in confusions.most_common(15):
         print(f"  {n:>4}  {t}  ->  {p}")
 
+    with open("predictions.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["file", "true_class", "predicted_class", "confidence", "is_correct"])
+        w.writerows(all_predictions)
+    print(f"\nSaved {len(all_predictions)} prediction pairs to predictions.csv.")
+
     with open("misclassified.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["file", "true_class", "predicted_class", "confidence"])
         w.writerows(sorted(wrong, key=lambda r: -r[3]))
-    print(f"\nSaved {len(wrong)} mistakes to misclassified.csv (most confident mistakes first).")
+    print(f"Saved {len(wrong)} mistakes to misclassified.csv (most confident mistakes first).")
 
     idx = {c: i for i, c in enumerate(class_names)}
     cm = [[0] * n_cls for _ in range(n_cls)]

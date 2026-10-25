@@ -12,7 +12,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-**54,305 images · 14 crops · 38 classes · 98.56% accuracy · 5.8 MB model · 43ms inference**
+**54,305 images · 14 crops · 38 classes · 87.85% measured test accuracy (9,408/10,709) · 5.8 MB model · 43ms inference**
 
 [📖 Documentation](#documentation) · [🚀 Quick Start](#quick-start) · [📊 Results](#model-performance) · [🤝 Contributing](CONTRIBUTING.md) · [📋 Changelog](CHANGELOG.md)
 
@@ -213,33 +213,40 @@ python audit_dataset.py --train_dir ./dataset --test_dir ./official_test
 
 ## 📊 Model Performance
 
-### Benchmarked Architectures
+## 📊 Model Performance
 
-| Model | Test Accuracy | Macro-F1 | ECE | Top-5 Acc | Params | Size (INT8) |
-|-------|:------------:|:--------:|:---:|:---------:|:------:|:-----------:|
-| **MobileViT-Small** ⭐ | **98.56%** | **0.9810** | 0.022 | 99.92% | 5.6M | **5.8 MB** |
-| DE-HVT | 98.38% | 0.9798 | 0.025 | 99.88% | 6.1M | 6.2 MB |
-| XCiT-Nano-12 | 97.95% | 0.9765 | 0.028 | 99.85% | 3.1M | 3.4 MB |
-| DeiT-Tiny/16 | 97.74% | 0.9742 | 0.031 | 99.81% | 5.7M | 5.9 MB |
+Empirical evaluation executed across the complete 10,709 image untouched held-out test split (`model/official_test`) using `model/evaluate_test.py` with checkpoint `model/checkpoints/mobilevit_best.pt`. All 10,709 prediction pairs are recorded in [`model/predictions.csv`](model/predictions.csv).
 
-### Per-Crop Test Accuracy (MobileViT-Small)
+### Empirical Test Benchmark (`official_test`)
 
-| Crop | Accuracy | Classes |
-|------|:--------:|:-------:|
-| Blueberry | 99.69% | 1 |
-| Soybean | 99.69% | 1 |
-| Pepper Bell | 99.55% | 2 |
-| Squash | 99.47% | 1 |
-| Orange | 99.39% | 1 |
-| Raspberry | 99.38% | 1 |
-| Potato | 99.26% | 3 |
-| Cherry | 99.12% | 2 |
-| Strawberry | 98.93% | 2 |
-| Apple | 98.85% | 4 |
-| Peach | 98.53% | 2 |
-| Grape | 98.68% | 4 |
-| Tomato | 98.24% | 10 |
-| Corn (Maize) | 98.11% | 4 |
+| Metric | Measured Score | Evaluation Details |
+|--------|:-------------:|-------------------|
+| **Held-Out Test Accuracy** ⭐ | **87.85%** | **9,408 of 10,709 correct** across all 38 pathological classes |
+| **Macro-F1 Score** | **86.65%** | Unweighted mean F1 score across 38 classes |
+| **Cross-Crop Confusions** | **63.0%** | 819 of 1,301 mistakes crossed botanical genus boundaries |
+| **Inference Latency** | **43.0 ms** | Snapdragon 680 mobile CPU |
+| **Quantized Model Footprint** | **5.8 MB** | INT8 TFLite representation (5.6M parameters) |
+
+*Key Agronomic Insight*: 63.0% of errors are cross-crop confusions (e.g. Orange Citrus Greening confused with Blueberry healthy or Apple healthy), highlighting the critical role of CropVision's hierarchical dual-head architecture (`train_cropvision.py`) and pre-capture leaf detector.
+
+### Per-Crop Measured Accuracy (`model/predictions.csv`)
+
+| Crop | Measured Accuracy | Correct / Total | Pathological Classes |
+|------|:-----------------:|:---------------:|:--------------------:|
+| **Blueberry** | **99.4%** | 322 / 324 | 1 |
+| **Squash** | **98.9%** | 374 / 378 | 1 |
+| **Grape** | **98.9%** | 748 / 756 | 4 |
+| **Peach** | **97.9%** | 600 / 613 | 2 |
+| **Strawberry** | **97.9%** | 274 / 280 | 2 |
+| **Pepper Bell** | **96.0%** | 431 / 449 | 2 |
+| **Soybean** | **95.9%** | 933 / 973 | 1 |
+| **Potato** | **91.9%** | 375 / 408 | 3 |
+| **Apple** | **87.9%** | 537 / 611 | 4 |
+| **Corn (Maize)** | **86.4%** | 686 / 794 | 4 |
+| **Cherry** | **84.5%** | 289 / 342 | 2 |
+| **Tomato** | **83.6%** | 3,044 / 3,639 | 10 |
+| **Raspberry** | **74.7%** | 121 / 162 | 1 |
+| **Orange** | **68.8%** | 674 / 980 | 1 |
 
 ### Severity Grading (G0–G3)
 
