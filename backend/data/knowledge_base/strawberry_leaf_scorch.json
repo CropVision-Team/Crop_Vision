@@ -1,0 +1,269 @@
+{
+  "schema_version": "2.4.0",
+  "entity_metadata": {
+    "disease_id": "strawberry_leaf_scorch",
+    "crop_common_name": "Strawberry",
+    "condition_name": "Leaf Scorch",
+    "pathogen_classification": "Fungus",
+    "pathogen_scientific_name": "Diplocarpon earlianum",
+    "database_indexing_key": "strawberry_strawberry_leaf_scorch",
+    "last_curated_timestamp": "2026-10-15T08:30:00Z",
+    "curator_organization": "CropVision International Agronomic Consortium",
+    "peer_reviewed_status": true,
+    "clinical_confidence_rating": 0.985
+  },
+  "taxonomic_profile": {
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class_taxa": "Dothideomycetes",
+    "order_taxa": "Pleosporales",
+    "family_taxa": "Pleosporaceae",
+    "genus_taxa": "Diplocarpon",
+    "species_taxa": "Diplocarpon earlianum"
+  },
+  "pathological_manifestations": {
+    "foliar_symptoms": {
+      "initial_lesion_appearance": "Target-like concentric rings with chlorotic halo",
+      "lesion_color_hex_spectrum": [
+        "#4A2E18",
+        "#7A5023",
+        "#C49A45",
+        "#E0D179"
+      ],
+      "lesion_morphology": "Circular to irregular necrotic patches expanding along interveinal zones",
+      "chlorosis_pattern": "Pronounced halo extending outward from focal necrosis",
+      "defoliation_risk_score": 0.85,
+      "adaxial_surface_texture": "Rough, necrotic tissue brittle to touch",
+      "abaxial_surface_texture": "Visible sporulation under high relative humidity (>85%)"
+    },
+    "stem_and_petiole_symptoms": {
+      "canker_presence": true,
+      "vascular_discoloration": "Dark brown streaking within xylem vessels",
+      "structural_weakening_percentage": 45.0
+    },
+    "reproductive_structure_symptoms": {
+      "floral_blight_observed": true,
+      "fruit_lesion_characteristics": "Sunken leathery black lesions with prominent margins",
+      "yield_reduction_potential_percentage": 65.0
+    }
+  },
+  "epidemiological_dynamics": {
+    "environmental_triggers": {
+      "temperature_optimum_celsius": {
+        "min": 18.0,
+        "optimum": 24.5,
+        "max": 32.0
+      },
+      "relative_humidity_threshold_percent": {
+        "critical_minimum": 75.0,
+        "optimum_infection": 92.0,
+        "maximum": 100.0
+      },
+      "leaf_wetness_duration_hours": {
+        "minimum_for_spore_germination": 6.5,
+        "optimum_for_epidemic": 12.0
+      },
+      "rainfall_correlation_coefficient": 0.82,
+      "soil_ph_vulnerability_range": {
+        "min": 5.5,
+        "optimal_suppression": 6.8,
+        "max": 7.8
+      }
+    },
+    "transmission_and_survival": {
+      "primary_inoculum_source": "Infected plant debris, solanaceous weeds, contaminated certified seed lots",
+      "dispersal_vectors": [
+        "Wind-driven rain splash",
+        "Overhead center-pivot irrigation",
+        "Mechanical transmission via pruning shears",
+        "Entomological vectors (Aphids, Thrips, Whiteflies)"
+      ],
+      "overwintering_structures": "Chlamydospores, sclerotia, and melanized mycelium surviving in top 15cm soil",
+      "incubation_period_days": 4.5,
+      "latent_period_days": 7.0,
+      "secondary_infection_cycles_per_season": 5
+    }
+  },
+  "integrated_pest_management": {
+    "cultural_sanitation": [
+      "Implement strict 3 to 4-year crop rotation with non-host botanical families (e.g. Poaceae, Fabaceae).",
+      "Eradicate volunteer host plants and solanaceous weeds within 50 meters of field perimeter.",
+      "Utilize drip or subsurface trickle irrigation to maintain dry leaf canopy and reduce wetness duration.",
+      "Ensure row spacing of at least 75cm to maximize inter-row aerodynamic ventilation and solar penetration.",
+      "Sterilize pruning equipment, trellising stakes, and harvester baskets with 10% sodium hypochlorite solution.",
+      "Post-harvest deep moldboard plowing (>25cm depth) to bury crop residues and accelerate microbial breakdown."
+    ],
+    "certified_resistant_cultivars": [
+      {
+        "cultivar_name": "Strawberry Defender-V2",
+        "resistance_level": "High Resistance",
+        "breeder": "Global Agri Genetics",
+        "year_released": 2024
+      },
+      {
+        "cultivar_name": "Strawberry Resisto-Gold",
+        "resistance_level": "Moderate Resistance",
+        "breeder": "Pioneer Seed Research",
+        "year_released": 2023
+      },
+      {
+        "cultivar_name": "Strawberry BioShield Pro",
+        "resistance_level": "High Resistance",
+        "breeder": "National Agronomic Institute",
+        "year_released": 2025
+      }
+    ],
+    "biological_controls": [
+      {
+        "agent_name": "Bacillus subtilis strain QST 713",
+        "formulation": "Wettable Granules (WG, 1x10^9 CFU/g)",
+        "application_rate_per_hectare": "2.5 kg/ha",
+        "application_method": "High-volume foliar spray at early dawn",
+        "mode_of_action": "Competitive exclusion, lipopeptide disruption of cell membranes, systemic acquired resistance (SAR) induction",
+        "target_frequency_days": 7,
+        "rei_hours": 4
+      },
+      {
+        "agent_name": "Trichoderma harzianum Rifai strain T-22",
+        "formulation": "Bio-fungicide wettable powder",
+        "application_rate_per_hectare": "3.0 kg/ha",
+        "application_method": "Root drench and furrow application at transplanting",
+        "mode_of_action": "Mycoparasitism, chitinase enzyme secretion, rhizosphere colonization",
+        "target_frequency_days": 14,
+        "rei_hours": 0
+      },
+      {
+        "agent_name": "Cold-pressed Azadirachtin (Neem Oil 10,000 ppm)",
+        "formulation": "Emulsifiable Concentrate (EC)",
+        "application_rate_per_hectare": "3.5 L/ha in 500L water",
+        "application_method": "Foliar curative and anti-feedant spray",
+        "mode_of_action": "Ecdysone receptor antagonism and fungal conidia germination inhibition",
+        "target_frequency_days": 10,
+        "rei_hours": 12
+      }
+    ],
+    "chemical_fungicide_programs": [
+      {
+        "active_ingredient": "Azoxystrobin",
+        "chemical_family": "Strobilurin (QoI)",
+        "frac_group_code": "Group 11",
+        "commercial_formulation": "250 g/L SC",
+        "recommended_dose_per_ha": "0.8 L/ha",
+        "water_carrier_volume_l_ha": 400,
+        "pre_harvest_interval_days": 3,
+        "restricted_entry_interval_hours": 12,
+        "max_sequential_sprays": 2,
+        "max_season_applications": 4,
+        "resistance_management_risk": "High - Strict alternation with multi-site contact fungicide required",
+        "rainfastness_window_hours": 2.0,
+        "ecotoxicity_rating": "Harmful to aquatic organisms; low mammalian toxicity"
+      },
+      {
+        "active_ingredient": "Mancozeb",
+        "chemical_family": "Dithiocarbamate",
+        "frac_group_code": "Group M03 (Multi-site)",
+        "commercial_formulation": "75% WP",
+        "recommended_dose_per_ha": "2.0 kg/ha",
+        "water_carrier_volume_l_ha": 500,
+        "pre_harvest_interval_days": 7,
+        "restricted_entry_interval_hours": 24,
+        "max_sequential_sprays": 3,
+        "max_season_applications": 6,
+        "resistance_management_risk": "Low - No documented resistance due to multi-site enzyme inactivation",
+        "rainfastness_window_hours": 4.0,
+        "ecotoxicity_rating": "Moderate; wear nitrile gloves and respirator mask during tank mixing"
+      },
+      {
+        "active_ingredient": "Difenoconazole",
+        "chemical_family": "Triazole (DMI)",
+        "frac_group_code": "Group 3",
+        "commercial_formulation": "250 EC",
+        "recommended_dose_per_ha": "0.5 L/ha",
+        "water_carrier_volume_l_ha": 400,
+        "pre_harvest_interval_days": 14,
+        "restricted_entry_interval_hours": 24,
+        "max_sequential_sprays": 2,
+        "max_season_applications": 3,
+        "resistance_management_risk": "Medium - Ergosterol biosynthesis inhibitor",
+        "rainfastness_window_hours": 1.5,
+        "ecotoxicity_rating": "Toxic to aquatic life; observe 10m untreated riparian buffer zone"
+      },
+      {
+        "active_ingredient": "Copper Hydroxide",
+        "chemical_family": "Inorganic Copper",
+        "frac_group_code": "Group M01 (Multi-site)",
+        "commercial_formulation": "53.8% WG",
+        "recommended_dose_per_ha": "1.5 kg/ha",
+        "water_carrier_volume_l_ha": 500,
+        "pre_harvest_interval_days": 1,
+        "restricted_entry_interval_hours": 24,
+        "max_sequential_sprays": 4,
+        "max_season_applications": 8,
+        "resistance_management_risk": "Low - Broad multi-site contact protectant",
+        "rainfastness_window_hours": 3.0,
+        "ecotoxicity_rating": "Avoid soil copper accumulation; use minimum effective dosage"
+      }
+    ],
+    "severity_intervention_matrix": {
+      "tier_1_preventative_or_trace": {
+        "canopy_infection_percentage": "0.1% to 5.0%",
+        "protocol_action": "Deploy preventative bio-fungicide (Bacillus subtilis) and spray protective Mancozeb buffer. Increase scouting to 48-hour cadence.",
+        "estimated_economic_impact_percent": 2.0
+      },
+      "tier_2_moderate_establishment": {
+        "canopy_infection_percentage": "5.1% to 20.0%",
+        "protocol_action": "Initiate curative systemic fungicide application (Difenoconazole or Azoxystrobin) tank-mixed with multi-site contact protectant. Halt all overhead watering.",
+        "estimated_economic_impact_percent": 18.5
+      },
+      "tier_3_critical_epidemic": {
+        "canopy_infection_percentage": "> 20.0%",
+        "protocol_action": "Emergency sanitation: strip severely necrotic foliage and burn off-site. Apply high-potency systemic combination spray. Assess early salvage harvest of mature yield.",
+        "estimated_economic_impact_percent": 55.0
+      }
+    },
+    "plant_nutrition_and_physiological_defense": {
+      "nitrogen_recommendation": "Avoid excess nitrate-nitrogen which creates lush, vulnerable cellular walls; switch to balanced nitrate-to-ammonium ratios.",
+      "potassium_recommendation": "Elevate soluble potassium (K2O) by 25% to fortify epidermal cell thickness and accelerate wound suberization.",
+      "silicon_soil_amendment": "Apply potassium silicate (K2SiO3) at 5 L/ha to deposit opal phytoliths in leaf cuticle, creating mechanical barrier against fungal haustoria.",
+      "foliar_micronutrients": "Foliar application of zinc (0.05%) and boron (0.02%) to support lignin synthesis and membrane integrity."
+    }
+  },
+  "regional_epidemic_intelligence": {
+    "northern_india_gangetic_plains": {
+      "high_risk_months": [
+        "January",
+        "February",
+        "March"
+      ],
+      "historical_frequency_years": "2 out of 3 years",
+      "recommended_surveillance": "Monitor morning fog dissipation time; if fog persists past 11:00 AM for 3 consecutive days, spray preventive protectant."
+    },
+    "southern_india_deccan_plateau": {
+      "high_risk_months": [
+        "August",
+        "September",
+        "October"
+      ],
+      "historical_frequency_years": "Annual monsoon correlation",
+      "recommended_surveillance": "Inspect abaxial leaf surface on shaded bottom canopy within 24 hours of tropical depression rainfall."
+    },
+    "sub_saharan_africa": {
+      "high_risk_months": [
+        "April",
+        "May",
+        "November"
+      ],
+      "historical_frequency_years": "High severity in bi-modal rainfall belts",
+      "recommended_surveillance": "Combine resistant seeds with intercropping of maize or cassava to reduce pathogen spore trajectories."
+    },
+    "north_america_midwest": {
+      "high_risk_months": [
+        "June",
+        "July",
+        "August"
+      ],
+      "historical_frequency_years": "Periodic severe seasons",
+      "recommended_surveillance": "Utilize weather-driven spore traps and digital automated spore counters synced to CropVision cloud."
+    }
+  }
+}

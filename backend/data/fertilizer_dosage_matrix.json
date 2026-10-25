@@ -1,0 +1,4252 @@
+[
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Tomato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Potato",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Corn",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Wheat",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Rice",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Cotton",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Sugarcane",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Soybean",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Apple",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Sandy Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Clay Loam",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Black Cotton Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Alluvial Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Basal / Sowing",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Vegetative Growth",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Floral Initiation",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Fruit / Grain Development",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  },
+  {
+    "crop_name": "Grape",
+    "soil_type": "Red Laterite Soil",
+    "phenological_stage": "Maturity",
+    "target_yield_per_hectare_tonnes": 45.0,
+    "nitrogen_n_kg_ha": 40.0,
+    "phosphorus_p2o5_kg_ha": 25.0,
+    "potassium_k2o_kg_ha": 50.0,
+    "calcium_ca_kg_ha": 15.0,
+    "magnesium_mg_kg_ha": 8.0,
+    "micronutrient_foliar_spray": {
+      "zinc_sulfate_pct": 0.05,
+      "borax_pct": 0.02,
+      "ferrous_sulfate_pct": 0.04
+    },
+    "recommended_application_method": "Fertigation via drip system in split weekly doses"
+  }
+]

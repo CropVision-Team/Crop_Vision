@@ -1,0 +1,1221 @@
+{
+  "@@locale": "en",
+  "@@locale_name": "English",
+  "@@native_name": "English",
+  "@@direction": "LTR",
+  "app_title": "CropVision AI",
+  "tagline": "AI-Powered Plant Disease Diagnostic & Precision Farm Assistant",
+  "navigation": {
+    "home": "Home",
+    "camera": "Scan Leaf",
+    "history": "Diagnoses",
+    "calendar": "Crop Calendar",
+    "mandi": "Mandi Prices",
+    "weather": "Weather & Spray",
+    "community": "Farmer Forum",
+    "profile": "My Profile",
+    "settings": "Settings",
+    "offline_queue": "Pending Uploads"
+  },
+  "auth": {
+    "sign_in": "Sign In to CropVision",
+    "sign_up": "Register as Farmer",
+    "enter_phone": "Enter 10-digit Mobile Number",
+    "send_otp": "Send OTP Code",
+    "verify_otp": "Verify OTP & Continue",
+    "otp_helper": "We sent a 6-digit confirmation code via SMS to your phone",
+    "resend_otp_countdown": "Resend code in {seconds}s",
+    "kisan_id": "Kisan Credit / Farmer Registration ID",
+    "farm_location": "GPS Farm Coordinate",
+    "primary_crop": "Primary Cash Crop"
+  },
+  "camera_scanner": {
+    "hold_steady": "Hold phone steady over infected leaf",
+    "align_box": "Position leaf lesion inside green targeting box",
+    "avoid_shadows": "Ensure bright, indirect sunlight without heavy shadows",
+    "distance_advice": "Maintain 15cm to 25cm distance from foliage surface",
+    "tap_to_focus": "Tap screen to lock focal plane on leaf veins",
+    "flash_toggle": "Toggle auxiliary flashlight for shadowed canopy",
+    "flip_camera": "Switch camera angle",
+    "gallery_import": "Import clear photo from device gallery",
+    "blur_warning": "Image appears blurry. Re-stabilize hands and retake.",
+    "low_light_warning": "Ambient light is too dim. Please enable flash."
+  },
+  "diagnosis_results": {
+    "analyzing_title": "Analyzing Leaf Pathology with MobileViT...",
+    "analyzing_step_1": "Normalizing chromatic channels & white balancing",
+    "analyzing_step_2": "Detecting leaf margins & isolating lesion patches",
+    "analyzing_step_3": "Querying neural classification backbone",
+    "analyzing_step_4": "Evaluating microclimate infection multipliers",
+    "confidence_score": "Confidence Level: {percent}%",
+    "severity_index": "Infection Severity: {tier}",
+    "disease_detected": "Condition Diagnosed:",
+    "pathogen_type": "Pathogen:",
+    "immediate_action_required": "Immediate Action Required",
+    "organic_option": "Organic / Biological Control",
+    "chemical_option": "Systemic Chemical Protocol",
+    "spray_safety_alert": "Wear respiratory mask and protective gloves during application"
+  },
+  "chemical_compounds": {
+    "chem_001_mancozeb": {
+      "trade_name": "Mancozeb",
+      "description": "Standard agricultural fungicide/pesticide formulation of Mancozeb in English",
+      "dosage_per_acre": "150 ml/g per 200 Liters of water",
+      "waiting_period_days": 1,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_002_azoxystrobin": {
+      "trade_name": "Azoxystrobin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Azoxystrobin in English",
+      "dosage_per_acre": "165 ml/g per 200 Liters of water",
+      "waiting_period_days": 2,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_003_chlorothalonil": {
+      "trade_name": "Chlorothalonil",
+      "description": "Standard agricultural fungicide/pesticide formulation of Chlorothalonil in English",
+      "dosage_per_acre": "180 ml/g per 200 Liters of water",
+      "waiting_period_days": 3,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_004_difenoconazole": {
+      "trade_name": "Difenoconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Difenoconazole in English",
+      "dosage_per_acre": "195 ml/g per 200 Liters of water",
+      "waiting_period_days": 4,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_005_copper_hydroxide": {
+      "trade_name": "Copper Hydroxide",
+      "description": "Standard agricultural fungicide/pesticide formulation of Copper Hydroxide in English",
+      "dosage_per_acre": "210 ml/g per 200 Liters of water",
+      "waiting_period_days": 5,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_006_copper_oxychloride": {
+      "trade_name": "Copper Oxychloride",
+      "description": "Standard agricultural fungicide/pesticide formulation of Copper Oxychloride in English",
+      "dosage_per_acre": "225 ml/g per 200 Liters of water",
+      "waiting_period_days": 6,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_007_metalaxyl_m": {
+      "trade_name": "Metalaxyl-M",
+      "description": "Standard agricultural fungicide/pesticide formulation of Metalaxyl-M in English",
+      "dosage_per_acre": "240 ml/g per 200 Liters of water",
+      "waiting_period_days": 7,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_008_tebuconazole": {
+      "trade_name": "Tebuconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Tebuconazole in English",
+      "dosage_per_acre": "255 ml/g per 200 Liters of water",
+      "waiting_period_days": 8,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_009_propiconazole": {
+      "trade_name": "Propiconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Propiconazole in English",
+      "dosage_per_acre": "270 ml/g per 200 Liters of water",
+      "waiting_period_days": 9,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_010_hexaconazole": {
+      "trade_name": "Hexaconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Hexaconazole in English",
+      "dosage_per_acre": "285 ml/g per 200 Liters of water",
+      "waiting_period_days": 10,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_011_carbendazim": {
+      "trade_name": "Carbendazim",
+      "description": "Standard agricultural fungicide/pesticide formulation of Carbendazim in English",
+      "dosage_per_acre": "300 ml/g per 200 Liters of water",
+      "waiting_period_days": 11,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_012_thiophanate_methyl": {
+      "trade_name": "Thiophanate-Methyl",
+      "description": "Standard agricultural fungicide/pesticide formulation of Thiophanate-Methyl in English",
+      "dosage_per_acre": "315 ml/g per 200 Liters of water",
+      "waiting_period_days": 12,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_013_kresoxim_methyl": {
+      "trade_name": "Kresoxim-Methyl",
+      "description": "Standard agricultural fungicide/pesticide formulation of Kresoxim-Methyl in English",
+      "dosage_per_acre": "330 ml/g per 200 Liters of water",
+      "waiting_period_days": 13,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_014_pyraclostrobin": {
+      "trade_name": "Pyraclostrobin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Pyraclostrobin in English",
+      "dosage_per_acre": "345 ml/g per 200 Liters of water",
+      "waiting_period_days": 14,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_015_trifloxystrobin": {
+      "trade_name": "Trifloxystrobin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Trifloxystrobin in English",
+      "dosage_per_acre": "360 ml/g per 200 Liters of water",
+      "waiting_period_days": 1,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_016_cyproconazole": {
+      "trade_name": "Cyproconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Cyproconazole in English",
+      "dosage_per_acre": "375 ml/g per 200 Liters of water",
+      "waiting_period_days": 2,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_017_flusilazole": {
+      "trade_name": "Flusilazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Flusilazole in English",
+      "dosage_per_acre": "390 ml/g per 200 Liters of water",
+      "waiting_period_days": 3,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_018_penconazole": {
+      "trade_name": "Penconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Penconazole in English",
+      "dosage_per_acre": "405 ml/g per 200 Liters of water",
+      "waiting_period_days": 4,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_019_myclobutanil": {
+      "trade_name": "Myclobutanil",
+      "description": "Standard agricultural fungicide/pesticide formulation of Myclobutanil in English",
+      "dosage_per_acre": "420 ml/g per 200 Liters of water",
+      "waiting_period_days": 5,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_020_epoxiconazole": {
+      "trade_name": "Epoxiconazole",
+      "description": "Standard agricultural fungicide/pesticide formulation of Epoxiconazole in English",
+      "dosage_per_acre": "435 ml/g per 200 Liters of water",
+      "waiting_period_days": 6,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_021_boscalid": {
+      "trade_name": "Boscalid",
+      "description": "Standard agricultural fungicide/pesticide formulation of Boscalid in English",
+      "dosage_per_acre": "450 ml/g per 200 Liters of water",
+      "waiting_period_days": 7,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_022_fluopyram": {
+      "trade_name": "Fluopyram",
+      "description": "Standard agricultural fungicide/pesticide formulation of Fluopyram in English",
+      "dosage_per_acre": "465 ml/g per 200 Liters of water",
+      "waiting_period_days": 8,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_023_fluxapyroxad": {
+      "trade_name": "Fluxapyroxad",
+      "description": "Standard agricultural fungicide/pesticide formulation of Fluxapyroxad in English",
+      "dosage_per_acre": "480 ml/g per 200 Liters of water",
+      "waiting_period_days": 9,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_024_penthiopyrad": {
+      "trade_name": "Penthiopyrad",
+      "description": "Standard agricultural fungicide/pesticide formulation of Penthiopyrad in English",
+      "dosage_per_acre": "495 ml/g per 200 Liters of water",
+      "waiting_period_days": 10,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_025_bixafen": {
+      "trade_name": "Bixafen",
+      "description": "Standard agricultural fungicide/pesticide formulation of Bixafen in English",
+      "dosage_per_acre": "510 ml/g per 200 Liters of water",
+      "waiting_period_days": 11,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_026_dimethomorph": {
+      "trade_name": "Dimethomorph",
+      "description": "Standard agricultural fungicide/pesticide formulation of Dimethomorph in English",
+      "dosage_per_acre": "525 ml/g per 200 Liters of water",
+      "waiting_period_days": 12,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_027_mandipropamid": {
+      "trade_name": "Mandipropamid",
+      "description": "Standard agricultural fungicide/pesticide formulation of Mandipropamid in English",
+      "dosage_per_acre": "540 ml/g per 200 Liters of water",
+      "waiting_period_days": 13,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_028_valifenalate": {
+      "trade_name": "Valifenalate",
+      "description": "Standard agricultural fungicide/pesticide formulation of Valifenalate in English",
+      "dosage_per_acre": "155 ml/g per 200 Liters of water",
+      "waiting_period_days": 14,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_029_iprovalicarb": {
+      "trade_name": "Iprovalicarb",
+      "description": "Standard agricultural fungicide/pesticide formulation of Iprovalicarb in English",
+      "dosage_per_acre": "170 ml/g per 200 Liters of water",
+      "waiting_period_days": 1,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_030_cymoxanil": {
+      "trade_name": "Cymoxanil",
+      "description": "Standard agricultural fungicide/pesticide formulation of Cymoxanil in English",
+      "dosage_per_acre": "185 ml/g per 200 Liters of water",
+      "waiting_period_days": 2,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_031_famoxadone": {
+      "trade_name": "Famoxadone",
+      "description": "Standard agricultural fungicide/pesticide formulation of Famoxadone in English",
+      "dosage_per_acre": "200 ml/g per 200 Liters of water",
+      "waiting_period_days": 3,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_032_fenamidone": {
+      "trade_name": "Fenamidone",
+      "description": "Standard agricultural fungicide/pesticide formulation of Fenamidone in English",
+      "dosage_per_acre": "215 ml/g per 200 Liters of water",
+      "waiting_period_days": 4,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_033_zoxamide": {
+      "trade_name": "Zoxamide",
+      "description": "Standard agricultural fungicide/pesticide formulation of Zoxamide in English",
+      "dosage_per_acre": "230 ml/g per 200 Liters of water",
+      "waiting_period_days": 5,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_034_fluopicolide": {
+      "trade_name": "Fluopicolide",
+      "description": "Standard agricultural fungicide/pesticide formulation of Fluopicolide in English",
+      "dosage_per_acre": "245 ml/g per 200 Liters of water",
+      "waiting_period_days": 6,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_035_ametoctradin": {
+      "trade_name": "Ametoctradin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Ametoctradin in English",
+      "dosage_per_acre": "260 ml/g per 200 Liters of water",
+      "waiting_period_days": 7,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_036_cyazofamid": {
+      "trade_name": "Cyazofamid",
+      "description": "Standard agricultural fungicide/pesticide formulation of Cyazofamid in English",
+      "dosage_per_acre": "275 ml/g per 200 Liters of water",
+      "waiting_period_days": 8,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_037_bacillus_subtilis_qst_713": {
+      "trade_name": "Bacillus subtilis QST 713",
+      "description": "Standard agricultural fungicide/pesticide formulation of Bacillus subtilis QST 713 in English",
+      "dosage_per_acre": "290 ml/g per 200 Liters of water",
+      "waiting_period_days": 9,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_038_trichoderma_harzianum_t_22": {
+      "trade_name": "Trichoderma harzianum T-22",
+      "description": "Standard agricultural fungicide/pesticide formulation of Trichoderma harzianum T-22 in English",
+      "dosage_per_acre": "305 ml/g per 200 Liters of water",
+      "waiting_period_days": 10,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_039_streptomyces_lydicus": {
+      "trade_name": "Streptomyces lydicus",
+      "description": "Standard agricultural fungicide/pesticide formulation of Streptomyces lydicus in English",
+      "dosage_per_acre": "320 ml/g per 200 Liters of water",
+      "waiting_period_days": 11,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_040_pseudomonas_fluorescens": {
+      "trade_name": "Pseudomonas fluorescens",
+      "description": "Standard agricultural fungicide/pesticide formulation of Pseudomonas fluorescens in English",
+      "dosage_per_acre": "335 ml/g per 200 Liters of water",
+      "waiting_period_days": 12,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_041_beauveria_bassiana": {
+      "trade_name": "Beauveria bassiana",
+      "description": "Standard agricultural fungicide/pesticide formulation of Beauveria bassiana in English",
+      "dosage_per_acre": "350 ml/g per 200 Liters of water",
+      "waiting_period_days": 13,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_042_metarhizium_anisopliae": {
+      "trade_name": "Metarhizium anisopliae",
+      "description": "Standard agricultural fungicide/pesticide formulation of Metarhizium anisopliae in English",
+      "dosage_per_acre": "365 ml/g per 200 Liters of water",
+      "waiting_period_days": 14,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_043_neem_azadirachtin": {
+      "trade_name": "Neem Azadirachtin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Neem Azadirachtin in English",
+      "dosage_per_acre": "380 ml/g per 200 Liters of water",
+      "waiting_period_days": 1,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_044_potassium_phosphite": {
+      "trade_name": "Potassium Phosphite",
+      "description": "Standard agricultural fungicide/pesticide formulation of Potassium Phosphite in English",
+      "dosage_per_acre": "395 ml/g per 200 Liters of water",
+      "waiting_period_days": 2,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_045_hydrogen_dioxide": {
+      "trade_name": "Hydrogen Dioxide",
+      "description": "Standard agricultural fungicide/pesticide formulation of Hydrogen Dioxide in English",
+      "dosage_per_acre": "410 ml/g per 200 Liters of water",
+      "waiting_period_days": 3,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_046_sulfur_wettable_powder": {
+      "trade_name": "Sulfur Wettable Powder",
+      "description": "Standard agricultural fungicide/pesticide formulation of Sulfur Wettable Powder in English",
+      "dosage_per_acre": "425 ml/g per 200 Liters of water",
+      "waiting_period_days": 4,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_047_captan": {
+      "trade_name": "Captan",
+      "description": "Standard agricultural fungicide/pesticide formulation of Captan in English",
+      "dosage_per_acre": "440 ml/g per 200 Liters of water",
+      "waiting_period_days": 5,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_048_folpet": {
+      "trade_name": "Folpet",
+      "description": "Standard agricultural fungicide/pesticide formulation of Folpet in English",
+      "dosage_per_acre": "455 ml/g per 200 Liters of water",
+      "waiting_period_days": 6,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_049_thiram": {
+      "trade_name": "Thiram",
+      "description": "Standard agricultural fungicide/pesticide formulation of Thiram in English",
+      "dosage_per_acre": "470 ml/g per 200 Liters of water",
+      "waiting_period_days": 7,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_050_ziram": {
+      "trade_name": "Ziram",
+      "description": "Standard agricultural fungicide/pesticide formulation of Ziram in English",
+      "dosage_per_acre": "485 ml/g per 200 Liters of water",
+      "waiting_period_days": 8,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_051_kasugamycin": {
+      "trade_name": "Kasugamycin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Kasugamycin in English",
+      "dosage_per_acre": "500 ml/g per 200 Liters of water",
+      "waiting_period_days": 9,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_052_streptomycin_sulfate": {
+      "trade_name": "Streptomycin Sulfate",
+      "description": "Standard agricultural fungicide/pesticide formulation of Streptomycin Sulfate in English",
+      "dosage_per_acre": "515 ml/g per 200 Liters of water",
+      "waiting_period_days": 10,
+      "caution_level": "Class III - Slightly Hazardous"
+    },
+    "chem_053_oxytetracycline": {
+      "trade_name": "Oxytetracycline",
+      "description": "Standard agricultural fungicide/pesticide formulation of Oxytetracycline in English",
+      "dosage_per_acre": "530 ml/g per 200 Liters of water",
+      "waiting_period_days": 11,
+      "caution_level": "Class II - Moderately Hazardous"
+    },
+    "chem_054_validamycin": {
+      "trade_name": "Validamycin",
+      "description": "Standard agricultural fungicide/pesticide formulation of Validamycin in English",
+      "dosage_per_acre": "545 ml/g per 200 Liters of water",
+      "waiting_period_days": 12,
+      "caution_level": "Class III - Slightly Hazardous"
+    }
+  },
+  "disease_glossary": {
+    "tomato_early_blight": {
+      "title": "Tomato Early Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Early Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Early Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_late_blight": {
+      "title": "Tomato Late Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Late Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Late Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_bacterial_spot": {
+      "title": "Tomato Bacterial Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Bacterial Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Bacterial Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_leaf_mold": {
+      "title": "Tomato Leaf Mold in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Leaf Mold onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Leaf Mold",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_septoria_leaf_spot": {
+      "title": "Tomato Septoria Leaf Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Septoria Leaf Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Septoria Leaf Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_two_spotted_spider_mite": {
+      "title": "Tomato Two-Spotted Spider Mite in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Two-Spotted Spider Mite onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Two-Spotted Spider Mite",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_target_spot": {
+      "title": "Tomato Target Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Target Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Target Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_yellow_leaf_curl_virus": {
+      "title": "Tomato Yellow Leaf Curl Virus in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Yellow Leaf Curl Virus onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Yellow Leaf Curl Virus",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tomato_mosaic_virus": {
+      "title": "Tomato Mosaic Virus in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tomato Mosaic Virus onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tomato Mosaic Virus",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "potato_early_blight": {
+      "title": "Potato Early Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Potato Early Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Potato Early Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "potato_late_blight": {
+      "title": "Potato Late Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Potato Late Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Potato Late Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "potato_blackleg": {
+      "title": "Potato Blackleg in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Potato Blackleg onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Potato Blackleg",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "bell_pepper_bacterial_spot": {
+      "title": "Bell Pepper Bacterial Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Bell Pepper Bacterial Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Bell Pepper Bacterial Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "bell_pepper_anthracnose": {
+      "title": "Bell Pepper Anthracnose in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Bell Pepper Anthracnose onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Bell Pepper Anthracnose",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "corn_cercospora_leaf_spot": {
+      "title": "Corn Cercospora Leaf Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Corn Cercospora Leaf Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Corn Cercospora Leaf Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "corn_common_rust": {
+      "title": "Corn Common Rust in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Corn Common Rust onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Corn Common Rust",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "corn_northern_leaf_blight": {
+      "title": "Corn Northern Leaf Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Corn Northern Leaf Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Corn Northern Leaf Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "corn_smut": {
+      "title": "Corn Smut in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Corn Smut onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Corn Smut",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "apple_scab": {
+      "title": "Apple Scab in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Apple Scab onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Apple Scab",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "apple_black_rot": {
+      "title": "Apple Black Rot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Apple Black Rot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Apple Black Rot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "apple_cedar_rust": {
+      "title": "Apple Cedar Rust in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Apple Cedar Rust onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Apple Cedar Rust",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "cherry_powdery_mildew": {
+      "title": "Cherry Powdery Mildew in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Cherry Powdery Mildew onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Cherry Powdery Mildew",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "grape_black_rot": {
+      "title": "Grape Black Rot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Grape Black Rot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Grape Black Rot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "grape_esca_black_measles": {
+      "title": "Grape Esca Black Measles in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Grape Esca Black Measles onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Grape Esca Black Measles",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "grape_leaf_blight": {
+      "title": "Grape Leaf Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Grape Leaf Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Grape Leaf Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "orange_citrus_greening": {
+      "title": "Orange Citrus Greening in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Orange Citrus Greening onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Orange Citrus Greening",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "orange_citrus_canker": {
+      "title": "Orange Citrus Canker in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Orange Citrus Canker onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Orange Citrus Canker",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "peach_bacterial_spot": {
+      "title": "Peach Bacterial Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Peach Bacterial Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Peach Bacterial Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "peach_leaf_curl": {
+      "title": "Peach Leaf Curl in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Peach Leaf Curl onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Peach Leaf Curl",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "strawberry_leaf_scorch": {
+      "title": "Strawberry Leaf Scorch in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Strawberry Leaf Scorch onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Strawberry Leaf Scorch",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "squash_powdery_mildew": {
+      "title": "Squash Powdery Mildew in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Squash Powdery Mildew onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Squash Powdery Mildew",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "soybean_frogeye_leaf_spot": {
+      "title": "Soybean Frogeye Leaf Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Soybean Frogeye Leaf Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Soybean Frogeye Leaf Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "rice_blast": {
+      "title": "Rice Blast in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Rice Blast onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Rice Blast",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "rice_brown_spot": {
+      "title": "Rice Brown Spot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Rice Brown Spot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Rice Brown Spot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "rice_bacterial_leaf_blight": {
+      "title": "Rice Bacterial Leaf Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Rice Bacterial Leaf Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Rice Bacterial Leaf Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "wheat_stripe_rust": {
+      "title": "Wheat Stripe Rust in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Wheat Stripe Rust onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Wheat Stripe Rust",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "wheat_stem_rust": {
+      "title": "Wheat Stem Rust in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Wheat Stem Rust onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Wheat Stem Rust",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "cotton_bacterial_blight": {
+      "title": "Cotton Bacterial Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Cotton Bacterial Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Cotton Bacterial Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "sugarcane_red_rot": {
+      "title": "Sugarcane Red Rot in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Sugarcane Red Rot onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Sugarcane Red Rot",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "banana_black_sigatoka": {
+      "title": "Banana Black Sigatoka in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Banana Black Sigatoka onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Banana Black Sigatoka",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "coffee_leaf_rust": {
+      "title": "Coffee Leaf Rust in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Coffee Leaf Rust onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Coffee Leaf Rust",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "tea_blister_blight": {
+      "title": "Tea Blister Blight in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Tea Blister Blight onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Tea Blister Blight",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "groundnut_tikka_disease": {
+      "title": "Groundnut Tikka Disease in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Groundnut Tikka Disease onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Groundnut Tikka Disease",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "onion_purple_blotch": {
+      "title": "Onion Purple Blotch in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Onion Purple Blotch onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Onion Purple Blotch",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "mango_anthracnose": {
+      "title": "Mango Anthracnose in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Mango Anthracnose onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Mango Anthracnose",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    },
+    "papaya_ringspot_virus": {
+      "title": "Papaya Ringspot Virus in English",
+      "symptom_summary": "Manifests as concentric necrotic spots and chlorosis on upper and lower canopy under English climate",
+      "organic_remedy": "Deploy bio-fungicide or botanical neem formulation early morning during Papaya Ringspot Virus onset",
+      "chemical_remedy": "Apply registered systemic active ingredient according to local agronomic extension guidelines for Papaya Ringspot Virus",
+      "preventative_cultural": "Practice strict field sanitation, remove diseased debris, ensure certified pathogen-free planting stock"
+    }
+  },
+  "crop_names": {
+    "tomato": {
+      "name": "Tomato (English)",
+      "growing_duration_days": 90,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "potato": {
+      "name": "Potato (English)",
+      "growing_duration_days": 95,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "bell_pepper": {
+      "name": "Bell Pepper (English)",
+      "growing_duration_days": 100,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "corn": {
+      "name": "Corn (English)",
+      "growing_duration_days": 105,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "maize": {
+      "name": "Maize (English)",
+      "growing_duration_days": 110,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "wheat": {
+      "name": "Wheat (English)",
+      "growing_duration_days": 115,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "paddy_rice": {
+      "name": "Paddy Rice (English)",
+      "growing_duration_days": 120,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "cotton": {
+      "name": "Cotton (English)",
+      "growing_duration_days": 125,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "sugarcane": {
+      "name": "Sugarcane (English)",
+      "growing_duration_days": 130,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "apple": {
+      "name": "Apple (English)",
+      "growing_duration_days": 135,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "grape": {
+      "name": "Grape (English)",
+      "growing_duration_days": 140,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "orange": {
+      "name": "Orange (English)",
+      "growing_duration_days": 145,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "peach": {
+      "name": "Peach (English)",
+      "growing_duration_days": 150,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "cherry": {
+      "name": "Cherry (English)",
+      "growing_duration_days": 155,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "strawberry": {
+      "name": "Strawberry (English)",
+      "growing_duration_days": 160,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "soybean": {
+      "name": "Soybean (English)",
+      "growing_duration_days": 165,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "squash": {
+      "name": "Squash (English)",
+      "growing_duration_days": 170,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "banana": {
+      "name": "Banana (English)",
+      "growing_duration_days": 175,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "coffee": {
+      "name": "Coffee (English)",
+      "growing_duration_days": 180,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "tea": {
+      "name": "Tea (English)",
+      "growing_duration_days": 185,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "groundnut": {
+      "name": "Groundnut (English)",
+      "growing_duration_days": 190,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "onion": {
+      "name": "Onion (English)",
+      "growing_duration_days": 195,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "garlic": {
+      "name": "Garlic (English)",
+      "growing_duration_days": 200,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "ginger": {
+      "name": "Ginger (English)",
+      "growing_duration_days": 205,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "turmeric": {
+      "name": "Turmeric (English)",
+      "growing_duration_days": 210,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "mustard": {
+      "name": "Mustard (English)",
+      "growing_duration_days": 215,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "chickpea": {
+      "name": "Chickpea (English)",
+      "growing_duration_days": 220,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "pigeon_pea": {
+      "name": "Pigeon Pea (English)",
+      "growing_duration_days": 225,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "lentil": {
+      "name": "Lentil (English)",
+      "growing_duration_days": 230,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "cabbage": {
+      "name": "Cabbage (English)",
+      "growing_duration_days": 235,
+      "water_requirement": "Low to Moderate",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    },
+    "cauliflower": {
+      "name": "Cauliflower (English)",
+      "growing_duration_days": 90,
+      "water_requirement": "Medium to High",
+      "optimal_soil_type": "Well-drained sandy loam or clay loam with pH 6.0 - 7.5"
+    }
+  },
+  "agronomy_tips": {
+    "tip_001": {
+      "heading": "Precision Agronomy Guideline #1 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "86% efficiency boost"
+    },
+    "tip_002": {
+      "heading": "Precision Agronomy Guideline #2 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "87% efficiency boost"
+    },
+    "tip_003": {
+      "heading": "Precision Agronomy Guideline #3 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "88% efficiency boost"
+    },
+    "tip_004": {
+      "heading": "Precision Agronomy Guideline #4 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "89% efficiency boost"
+    },
+    "tip_005": {
+      "heading": "Precision Agronomy Guideline #5 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "90% efficiency boost"
+    },
+    "tip_006": {
+      "heading": "Precision Agronomy Guideline #6 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "91% efficiency boost"
+    },
+    "tip_007": {
+      "heading": "Precision Agronomy Guideline #7 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "92% efficiency boost"
+    },
+    "tip_008": {
+      "heading": "Precision Agronomy Guideline #8 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "93% efficiency boost"
+    },
+    "tip_009": {
+      "heading": "Precision Agronomy Guideline #9 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "94% efficiency boost"
+    },
+    "tip_010": {
+      "heading": "Precision Agronomy Guideline #10 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "95% efficiency boost"
+    },
+    "tip_011": {
+      "heading": "Precision Agronomy Guideline #11 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "96% efficiency boost"
+    },
+    "tip_012": {
+      "heading": "Precision Agronomy Guideline #12 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "97% efficiency boost"
+    },
+    "tip_013": {
+      "heading": "Precision Agronomy Guideline #13 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "98% efficiency boost"
+    },
+    "tip_014": {
+      "heading": "Precision Agronomy Guideline #14 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "99% efficiency boost"
+    },
+    "tip_015": {
+      "heading": "Precision Agronomy Guideline #15 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "85% efficiency boost"
+    },
+    "tip_016": {
+      "heading": "Precision Agronomy Guideline #16 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "86% efficiency boost"
+    },
+    "tip_017": {
+      "heading": "Precision Agronomy Guideline #17 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "87% efficiency boost"
+    },
+    "tip_018": {
+      "heading": "Precision Agronomy Guideline #18 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "88% efficiency boost"
+    },
+    "tip_019": {
+      "heading": "Precision Agronomy Guideline #19 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "89% efficiency boost"
+    },
+    "tip_020": {
+      "heading": "Precision Agronomy Guideline #20 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "90% efficiency boost"
+    },
+    "tip_021": {
+      "heading": "Precision Agronomy Guideline #21 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "91% efficiency boost"
+    },
+    "tip_022": {
+      "heading": "Precision Agronomy Guideline #22 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "92% efficiency boost"
+    },
+    "tip_023": {
+      "heading": "Precision Agronomy Guideline #23 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "93% efficiency boost"
+    },
+    "tip_024": {
+      "heading": "Precision Agronomy Guideline #24 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "94% efficiency boost"
+    },
+    "tip_025": {
+      "heading": "Precision Agronomy Guideline #25 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "95% efficiency boost"
+    },
+    "tip_026": {
+      "heading": "Precision Agronomy Guideline #26 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "96% efficiency boost"
+    },
+    "tip_027": {
+      "heading": "Precision Agronomy Guideline #27 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "97% efficiency boost"
+    },
+    "tip_028": {
+      "heading": "Precision Agronomy Guideline #28 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "98% efficiency boost"
+    },
+    "tip_029": {
+      "heading": "Precision Agronomy Guideline #29 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "99% efficiency boost"
+    },
+    "tip_030": {
+      "heading": "Precision Agronomy Guideline #30 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "85% efficiency boost"
+    },
+    "tip_031": {
+      "heading": "Precision Agronomy Guideline #31 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "86% efficiency boost"
+    },
+    "tip_032": {
+      "heading": "Precision Agronomy Guideline #32 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "87% efficiency boost"
+    },
+    "tip_033": {
+      "heading": "Precision Agronomy Guideline #33 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "88% efficiency boost"
+    },
+    "tip_034": {
+      "heading": "Precision Agronomy Guideline #34 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "89% efficiency boost"
+    },
+    "tip_035": {
+      "heading": "Precision Agronomy Guideline #35 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "90% efficiency boost"
+    },
+    "tip_036": {
+      "heading": "Precision Agronomy Guideline #36 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "91% efficiency boost"
+    },
+    "tip_037": {
+      "heading": "Precision Agronomy Guideline #37 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "92% efficiency boost"
+    },
+    "tip_038": {
+      "heading": "Precision Agronomy Guideline #38 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "93% efficiency boost"
+    },
+    "tip_039": {
+      "heading": "Precision Agronomy Guideline #39 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "94% efficiency boost"
+    },
+    "tip_040": {
+      "heading": "Precision Agronomy Guideline #40 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "95% efficiency boost"
+    },
+    "tip_041": {
+      "heading": "Precision Agronomy Guideline #41 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "96% efficiency boost"
+    },
+    "tip_042": {
+      "heading": "Precision Agronomy Guideline #42 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "97% efficiency boost"
+    },
+    "tip_043": {
+      "heading": "Precision Agronomy Guideline #43 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "98% efficiency boost"
+    },
+    "tip_044": {
+      "heading": "Precision Agronomy Guideline #44 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "99% efficiency boost"
+    },
+    "tip_045": {
+      "heading": "Precision Agronomy Guideline #45 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #4. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "85% efficiency boost"
+    },
+    "tip_046": {
+      "heading": "Precision Agronomy Guideline #46 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #5. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "86% efficiency boost"
+    },
+    "tip_047": {
+      "heading": "Precision Agronomy Guideline #47 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #6. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "87% efficiency boost"
+    },
+    "tip_048": {
+      "heading": "Precision Agronomy Guideline #48 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #1. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "88% efficiency boost"
+    },
+    "tip_049": {
+      "heading": "Precision Agronomy Guideline #49 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #2. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "89% efficiency boost"
+    },
+    "tip_050": {
+      "heading": "Precision Agronomy Guideline #50 (English)",
+      "body": "Ensure correct fertilizer application schedule during phenological phase #3. Regular soil nutrient testing prevents micronutrient deficiencies.",
+      "impact_score": "90% efficiency boost"
+    }
+  },
+  "mandi_market": {
+    "daily_rates": "Daily Agricultural Produce Market Committee (APMC) Rates",
+    "modal_price": "Modal Price (Per Quintal):",
+    "min_max_range": "Day Range: ₹{min} - ₹{max}",
+    "market_distance": "Distance from your field: {km} km",
+    "price_trend_up": "Price trending +{pct}% higher than 7-day average",
+    "price_trend_down": "Price trending -{pct}% lower than 7-day average",
+    "recommended_action_sell": "Favorable market conditions. Good window to transport produce.",
+    "recommended_action_hold": "Prices anticipated to stabilize. Consider safe cold-storage holding."
+  },
+  "weather_advisory": {
+    "current_temp": "Temperature: {temp}°C",
+    "relative_humidity": "Relative Humidity: {rh}%",
+    "leaf_wetness_risk": "Leaf Wetness Risk: {hours} continuous hours expected",
+    "spray_window_status": "Fungicide Spraying Condition:",
+    "spray_window_good": "Favorable (Wind < 10 km/h, No rain for 6 hours)",
+    "spray_window_poor": "Unfavorable (Imminent rain shower will wash off chemical)"
+  }
+}
