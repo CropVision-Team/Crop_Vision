@@ -42,7 +42,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     color: AppColors.canopy,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.person, color: Colors.white, size: 30),
+                  child:
+                      const Icon(Icons.person, color: Colors.white, size: 30),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -154,7 +155,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               onPressed: () async {
                 await service.signOut();
                 if (context.mounted) {
-                  Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/login', (route) => false);
                 }
               },
               style: OutlinedButton.styleFrom(
@@ -186,7 +188,10 @@ class _SettingsSectionLabel extends StatelessWidget {
           fontSize: 11.5,
           fontWeight: FontWeight.w700,
           letterSpacing: 0.6,
-          color: Theme.of(context).colorScheme.onSurfaceVariant.withValues(alpha: 0.7),
+          color: Theme.of(context)
+              .colorScheme
+              .onSurfaceVariant
+              .withValues(alpha: 0.7),
         ),
       ),
     );
@@ -201,7 +206,9 @@ class _SettingsDivider extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Divider(
       height: 1,
-      color: isDark ? AppColors.darkSurfaceElevated : AppColors.lightSurfaceElevated,
+      color: isDark
+          ? AppColors.darkSurfaceElevated
+          : AppColors.lightSurfaceElevated,
     );
   }
 }

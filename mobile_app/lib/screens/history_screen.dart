@@ -11,7 +11,8 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final service = context.read<SupabaseService>();
-    final cardBg = Theme.of(context).cardTheme.color ?? Theme.of(context).colorScheme.surface;
+    final cardBg = Theme.of(context).cardTheme.color ??
+        Theme.of(context).colorScheme.surface;
     final textColor = Theme.of(context).colorScheme.onSurface;
     final mutedTextColor = Theme.of(context).colorScheme.onSurfaceVariant;
 
@@ -33,9 +34,11 @@ class HistoryScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.history, size: 56, color: mutedTextColor.withValues(alpha: 0.4)),
+                  Icon(Icons.history,
+                      size: 56, color: mutedTextColor.withValues(alpha: 0.4)),
                   const SizedBox(height: 12),
-                  Text('No diagnoses yet', style: TextStyle(color: mutedTextColor)),
+                  Text('No diagnoses yet',
+                      style: TextStyle(color: mutedTextColor)),
                 ],
               ),
             );
@@ -63,7 +66,8 @@ class HistoryScreen extends StatelessWidget {
                   color: Colors.transparent,
                   child: InkWell(
                     borderRadius: BorderRadius.circular(16),
-                    onTap: () => Navigator.pushNamed(context, '/result', arguments: d),
+                    onTap: () =>
+                        Navigator.pushNamed(context, '/result', arguments: d),
                     child: Row(
                       children: [
                         // Severity color accent bar
@@ -113,21 +117,27 @@ class HistoryScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   d.predictedDisease ?? 'Unverified image',
-                                  style: TextStyle(fontWeight: FontWeight.w600, color: textColor),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      color: textColor),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                                 const SizedBox(height: 4),
                                 Row(
                                   children: [
                                     Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8, vertical: 2),
                                       decoration: BoxDecoration(
                                         color: color.withValues(alpha: 0.12),
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                       child: Text(
                                         d.severityStage?.code ?? '-',
-                                        style: TextStyle(color: color, fontSize: 11, fontWeight: FontWeight.w700),
+                                        style: TextStyle(
+                                            color: color,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700),
                                       ),
                                     ),
                                     const SizedBox(width: 8),
@@ -135,7 +145,8 @@ class HistoryScreen extends StatelessWidget {
                                       d.createdAt != null
                                           ? '${d.createdAt!.day}/${d.createdAt!.month}/${d.createdAt!.year}'
                                           : '',
-                                      style: TextStyle(fontSize: 12, color: mutedTextColor),
+                                      style: TextStyle(
+                                          fontSize: 12, color: mutedTextColor),
                                     ),
                                   ],
                                 ),
@@ -148,7 +159,9 @@ class HistoryScreen extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 16),
                             child: Text(
                               '${(d.confidence! * 100).toStringAsFixed(0)}%',
-                              style: TextStyle(fontWeight: FontWeight.w600, color: mutedTextColor),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: mutedTextColor),
                             ),
                           ),
                       ],

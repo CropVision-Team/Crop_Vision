@@ -6,9 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,12 +34,12 @@ class TreatmentCardWidgetSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class TreatmentCardWidget with ChangeNotifier {
@@ -50,16 +47,19 @@ class TreatmentCardWidget with ChangeNotifier {
   factory TreatmentCardWidget() => _instance;
   TreatmentCardWidget._internal();
 
-  TreatmentCardWidgetStateEnum _currentState = TreatmentCardWidgetStateEnum.uninitialized;
+  TreatmentCardWidgetStateEnum _currentState =
+      TreatmentCardWidgetStateEnum.uninitialized;
   TreatmentCardWidgetStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = TreatmentCardWidgetStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +69,8 @@ class TreatmentCardWidget with ChangeNotifier {
   }
 
   /// Updates required grams/milliliters based on user acreage slider
-  Future<Map<String, dynamic>> recalculateRequiredProductVolume(double acreage, double dosePerAcre) async {
+  Future<Map<String, dynamic>> recalculateRequiredProductVolume(
+      double acreage, double dosePerAcre) async {
     _setState(TreatmentCardWidgetStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +86,7 @@ class TreatmentCardWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(TreatmentCardWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(TreatmentCardWidgetStateEnum.errorRecovering);
@@ -110,7 +111,7 @@ class TreatmentCardWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(TreatmentCardWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(TreatmentCardWidgetStateEnum.errorRecovering);
@@ -119,7 +120,8 @@ class TreatmentCardWidget with ChangeNotifier {
   }
 
   /// Displays countdown days until safe harvest date with colored badge
-  Future<Map<String, dynamic>> renderPreHarvestIntervalBadge(int phiDays) async {
+  Future<Map<String, dynamic>> renderPreHarvestIntervalBadge(
+      int phiDays) async {
     _setState(TreatmentCardWidgetStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +137,7 @@ class TreatmentCardWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(TreatmentCardWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(TreatmentCardWidgetStateEnum.errorRecovering);
@@ -144,7 +146,8 @@ class TreatmentCardWidget with ChangeNotifier {
   }
 
   /// Adds notification alarm to phone calendar for second spray round
-  Future<Map<String, dynamic>> scheduleSprayCalendarReminder(DateTime sprayDate) async {
+  Future<Map<String, dynamic>> scheduleSprayCalendarReminder(
+      DateTime sprayDate) async {
     _setState(TreatmentCardWidgetStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -160,7 +163,7 @@ class TreatmentCardWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(TreatmentCardWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(TreatmentCardWidgetStateEnum.errorRecovering);

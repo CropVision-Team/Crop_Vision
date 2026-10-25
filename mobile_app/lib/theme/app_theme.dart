@@ -15,16 +15,19 @@ class AppColors {
   // Dark Theme Palette
   static const darkBg = Color(0xFF10181A); // near-black deep teal
   static const darkSurface = Color(0xFF1C2A2C); // card/surface on dark bg
-  static const darkSurfaceElevated = Color(0xFF243638); // slightly lighter, for elevated elements
+  static const darkSurfaceElevated =
+      Color(0xFF243638); // slightly lighter, for elevated elements
   static const neon = Color(0xFF8CFF3B); // bright lime-green accent
   static const neonDim = Color(0xFF5FCC1F); // slightly deeper, for gradients
   static const ink = Color(0xFFEAF2EC); // near-white text on dark backgrounds
-  static const inkMuted = Color(0xFFA9BDB6); // secondary text on dark backgrounds
+  static const inkMuted =
+      Color(0xFFA9BDB6); // secondary text on dark backgrounds
 
   // Light Theme Palette
   static const lightBg = Color(0xFFF2F6F3); // fresh, clean soft pale green-gray
   static const lightSurface = Color(0xFFFFFFFF); // crisp white cards
-  static const lightSurfaceElevated = Color(0xFFE5EDE7); // subtle elevated surfaces
+  static const lightSurfaceElevated =
+      Color(0xFFE5EDE7); // subtle elevated surfaces
   static const lightInk = Color(0xFF13221C); // dark slate teal text
   static const lightInkMuted = Color(0xFF5A7067); // muted secondary text
   static const lightAccent = Color(0xFF237A3B); // vibrant leaf green accent
@@ -89,9 +92,12 @@ class AppTheme {
 
   static ThemeData _buildTheme(ThemeData base, {required bool isDark}) {
     final textColor = isDark ? AppColors.ink : AppColors.lightInk;
-    final mutedTextColor = isDark ? AppColors.inkMuted : AppColors.lightInkMuted;
-    final surfaceColor = isDark ? AppColors.darkSurface : AppColors.lightSurface;
-    final elevatedColor = isDark ? AppColors.darkSurfaceElevated : AppColors.lightSurfaceElevated;
+    final mutedTextColor =
+        isDark ? AppColors.inkMuted : AppColors.lightInkMuted;
+    final surfaceColor =
+        isDark ? AppColors.darkSurface : AppColors.lightSurface;
+    final elevatedColor =
+        isDark ? AppColors.darkSurfaceElevated : AppColors.lightSurfaceElevated;
     final primaryAccent = isDark ? AppColors.neon : AppColors.lightAccent;
 
     return base.copyWith(
@@ -153,7 +159,8 @@ class AppTheme {
           backgroundColor: primaryAccent,
           foregroundColor: isDark ? AppColors.darkBg : Colors.white,
           padding: const EdgeInsets.symmetric(vertical: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           textStyle: bodyFont(fontSize: 16, fontWeight: FontWeight.w700),
         ),
       ),

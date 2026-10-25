@@ -33,13 +33,26 @@ class CrystalPanel extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: dark
-                  ? [Colors.white.withValues(alpha: 0.10), const Color(0xFF1C2A2C).withValues(alpha: 0.78)]
-                  : [Colors.white.withValues(alpha: 0.92), const Color(0xFFE5EDE7).withValues(alpha: 0.75)],
+                  ? [
+                      Colors.white.withValues(alpha: 0.10),
+                      const Color(0xFF1C2A2C).withValues(alpha: 0.78)
+                    ]
+                  : [
+                      Colors.white.withValues(alpha: 0.92),
+                      const Color(0xFFE5EDE7).withValues(alpha: 0.75)
+                    ],
             ),
-            border: Border.all(color: Colors.white.withValues(alpha: dark ? 0.20 : 0.78)),
+            border: Border.all(
+                color: Colors.white.withValues(alpha: dark ? 0.20 : 0.78)),
             boxShadow: [
-              BoxShadow(color: accent.withValues(alpha: dark ? 0.15 : 0.08), blurRadius: 28, offset: const Offset(0, 14)),
-              BoxShadow(color: Colors.black.withValues(alpha: dark ? 0.24 : 0.06), blurRadius: 24, offset: const Offset(0, 12)),
+              BoxShadow(
+                  color: accent.withValues(alpha: dark ? 0.15 : 0.08),
+                  blurRadius: 28,
+                  offset: const Offset(0, 14)),
+              BoxShadow(
+                  color: Colors.black.withValues(alpha: dark ? 0.24 : 0.06),
+                  blurRadius: 24,
+                  offset: const Offset(0, 12)),
             ],
           ),
           child: child,

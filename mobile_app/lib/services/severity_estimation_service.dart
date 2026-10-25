@@ -95,11 +95,13 @@ class SeverityEstimationService {
   /// push that way). Matches Python's two-range disease mask.
   static bool _isDiseasedPixel(double h, double s, double v) {
     final inLowRange = h >= 0 && h <= 60 && s >= 0.12 && v >= 0.06 && v <= 0.8;
-    final inWrapRange = h >= 340 && h <= 360 && s >= 0.12 && v >= 0.06 && v <= 0.8;
+    final inWrapRange =
+        h >= 340 && h <= 360 && s >= 0.12 && v >= 0.06 && v <= 0.8;
     return inLowRange || inWrapRange;
   }
 
-  static String _percentToStage(double pct, Map<String, (double, double)> thresholds) {
+  static String _percentToStage(
+      double pct, Map<String, (double, double)> thresholds) {
     for (final entry in thresholds.entries) {
       final (low, high) = entry.value;
       if (pct >= low && pct < high) return entry.key;
@@ -123,8 +125,8 @@ class SeverityEstimationService {
     for (int y = 0; y < analysisImage.height; y++) {
       for (int x = 0; x < analysisImage.width; x++) {
         final px = analysisImage.getPixel(x, y);
-        final (h, s, v) = _rgbToHsv(
-            px.r.toDouble(), px.g.toDouble(), px.b.toDouble(), px.maxChannelValue.toDouble());
+        final (h, s, v) = _rgbToHsv(px.r.toDouble(), px.g.toDouble(),
+            px.b.toDouble(), px.maxChannelValue.toDouble());
 
         final healthy = _isHealthyPixel(h, s, v);
         final diseased = _isDiseasedPixel(h, s, v);
@@ -139,7 +141,8 @@ class SeverityEstimationService {
     if (leafPixels == 0) {
       // Safety fallback - Image Verification should already have
       // caught a no-leaf image before this runs.
-      return SeverityResult(severityPercent: 0.0, stage: 'G0', label: 'Healthy');
+      return SeverityResult(
+          severityPercent: 0.0, stage: 'G0', label: 'Healthy');
     }
 
     final pct = (diseasedPixels / leafPixels) * 100;

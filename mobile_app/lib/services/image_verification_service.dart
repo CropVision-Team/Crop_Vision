@@ -196,7 +196,8 @@ class ImageVerificationService {
     if (brightness > maxBrightness) {
       return VerificationResult(
         isValid: false,
-        rejectionReason: 'Image is overexposed. Please avoid direct glare/flash.',
+        rejectionReason:
+            'Image is overexposed. Please avoid direct glare/flash.',
         brightness: brightness,
       );
     }
@@ -218,8 +219,8 @@ class ImageVerificationService {
     for (int y = 0; y < analysisImage.height; y++) {
       for (int x = 0; x < analysisImage.width; x++) {
         final px = analysisImage.getPixel(x, y);
-        final (h, s, v) = _rgbToHsv(
-            px.r.toDouble(), px.g.toDouble(), px.b.toDouble(), px.maxChannelValue.toDouble());
+        final (h, s, v) = _rgbToHsv(px.r.toDouble(), px.g.toDouble(),
+            px.b.toDouble(), px.maxChannelValue.toDouble());
         if (_isPlantPixel(h, s, v)) plantPixels++;
         totalPixels++;
       }

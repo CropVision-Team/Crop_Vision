@@ -77,7 +77,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
     for (final url in candidateUrls) {
       try {
         final request = http.MultipartRequest('POST', Uri.parse(url))
-          ..files.add(http.MultipartFile.fromBytes('image', bytes, filename: 'leaf.jpg'));
+          ..files.add(http.MultipartFile.fromBytes('image', bytes,
+              filename: 'leaf.jpg'));
 
         final streamedResponse =
             await request.send().timeout(const Duration(seconds: 10));
@@ -98,8 +99,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
       }
     }
 
-    throw Exception(
-        'Cannot reach ML Inference Server.\n\n'
+    throw Exception('Cannot reach ML Inference Server.\n\n'
         '• If phone is connected via USB: Run "adb reverse tcp:8000 tcp:8000" on PC.\n'
         '• If on Wi-Fi: Ensure phone & PC are on the same network.\n'
         '• Ensure "python model/inference_server.py" is running on PC.\n'
@@ -122,12 +122,14 @@ class _CaptureScreenState extends State<CaptureScreen> {
 
       if (!verification.isValid) {
         final rejectedDiagnosis = Diagnosis(
-          imageUrl: '', // not uploaded - rejected before upload to save bandwidth
+          imageUrl:
+              '', // not uploaded - rejected before upload to save bandwidth
           isValidLeaf: false,
           rejectionReason: verification.rejectionReason,
         );
         if (!mounted) return;
-        Navigator.pushReplacementNamed(context, '/result', arguments: rejectedDiagnosis);
+        Navigator.pushReplacementNamed(context, '/result',
+            arguments: rejectedDiagnosis);
         return;
       }
 
@@ -152,7 +154,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
           confidence: confidence,
         );
         if (!mounted) return;
-        Navigator.pushReplacementNamed(context, '/result', arguments: unknownCropDiagnosis);
+        Navigator.pushReplacementNamed(context, '/result',
+            arguments: unknownCropDiagnosis);
         return;
       }
 
@@ -211,41 +214,46 @@ class _CaptureScreenState extends State<CaptureScreen> {
                 accent: AppColors.canopy,
                 child: SizedBox(
                   width: double.infinity,
-                child: _selectedImageBytes == null
-                    ? Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                color: AppColors.canopy.withValues(alpha: 0.08),
-                                shape: BoxShape.circle,
+                  child: _selectedImageBytes == null
+                      ? Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(20),
+                                decoration: BoxDecoration(
+                                  color:
+                                      AppColors.canopy.withValues(alpha: 0.08),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(Icons.image_search,
+                                    size: 48,
+                                    color: AppColors.canopy
+                                        .withValues(alpha: 0.6)),
                               ),
-                              child: Icon(Icons.image_search,
-                                  size: 48, color: AppColors.canopy.withValues(alpha: 0.6)),
-                            ),
-                            const SizedBox(height: 16),
-                            Text(
-                              'No leaf photo yet',
-                              style: TextStyle(
-                                  color: AppColors.ink.withValues(alpha: 0.5),
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              'Take a photo or choose one below',
-                              style: TextStyle(
-                                  color: AppColors.ink.withValues(alpha: 0.35),
-                                  fontSize: 13),
-                            ),
-                          ],
+                              const SizedBox(height: 16),
+                              Text(
+                                'No leaf photo yet',
+                                style: TextStyle(
+                                    color: AppColors.ink.withValues(alpha: 0.5),
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                'Take a photo or choose one below',
+                                style: TextStyle(
+                                    color:
+                                        AppColors.ink.withValues(alpha: 0.35),
+                                    fontSize: 13),
+                              ),
+                            ],
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.memory(_selectedImageBytes!,
+                              fit: BoxFit.cover),
                         ),
-                      )
-                    : ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.memory(_selectedImageBytes!, fit: BoxFit.cover),
-                      ),
                 ),
               ),
             ),
@@ -257,7 +265,9 @@ class _CaptureScreenState extends State<CaptureScreen> {
                     icon: Icons.camera_alt,
                     label: 'Camera',
                     color: AppColors.canopy,
-                    onTap: _processing ? null : () => _pickImage(ImageSource.camera),
+                    onTap: _processing
+                        ? null
+                        : () => _pickImage(ImageSource.camera),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -266,7 +276,9 @@ class _CaptureScreenState extends State<CaptureScreen> {
                     icon: Icons.photo_library,
                     label: 'Upload',
                     color: AppColors.rust,
-                    onTap: _processing ? null : () => _pickImage(ImageSource.gallery),
+                    onTap: _processing
+                        ? null
+                        : () => _pickImage(ImageSource.gallery),
                   ),
                 ),
               ],
@@ -282,7 +294,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
                       child: CircularProgressIndicator(strokeWidth: 2)),
                   const SizedBox(width: 8),
                   Text(_statusMessage!,
-                      style: TextStyle(color: AppColors.ink.withValues(alpha: 0.6))),
+                      style: TextStyle(
+                          color: AppColors.ink.withValues(alpha: 0.6))),
                 ],
               ),
               const SizedBox(height: 8),
@@ -306,8 +319,9 @@ class _CaptureScreenState extends State<CaptureScreen> {
                     shadowColor: Colors.transparent,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
-                  onPressed:
-                      (_selectedImageBytes == null || _processing) ? null : _submit,
+                  onPressed: (_selectedImageBytes == null || _processing)
+                      ? null
+                      : _submit,
                   child: _processing
                       ? const SizedBox(
                           height: 20,
@@ -342,7 +356,9 @@ class _CaptureActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final disabled = onTap == null;
     return Material(
-      color: disabled ? AppColors.darkSurfaceElevated : color.withValues(alpha: 0.12),
+      color: disabled
+          ? AppColors.darkSurfaceElevated
+          : color.withValues(alpha: 0.12),
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         onTap: onTap,

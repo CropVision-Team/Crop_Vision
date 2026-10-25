@@ -6,9 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,29 +34,33 @@ class OfflineDatabaseServiceSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class OfflineDatabaseService with ChangeNotifier {
-  static final OfflineDatabaseService _instance = OfflineDatabaseService._internal();
+  static final OfflineDatabaseService _instance =
+      OfflineDatabaseService._internal();
   factory OfflineDatabaseService() => _instance;
   OfflineDatabaseService._internal();
 
-  OfflineDatabaseServiceStateEnum _currentState = OfflineDatabaseServiceStateEnum.uninitialized;
+  OfflineDatabaseServiceStateEnum _currentState =
+      OfflineDatabaseServiceStateEnum.uninitialized;
   OfflineDatabaseServiceStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = OfflineDatabaseServiceStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +70,12 @@ class OfflineDatabaseService with ChangeNotifier {
   }
 
   /// Caches diagnosis result with image file path and top predictions
-  Future<Map<String, dynamic>> insertDiagnosticRecord(String diagnosisId, String cropType, String diseaseId, double confidence, String imageLocalPath) async {
+  Future<Map<String, dynamic>> insertDiagnosticRecord(
+      String diagnosisId,
+      String cropType,
+      String diseaseId,
+      double confidence,
+      String imageLocalPath) async {
     _setState(OfflineDatabaseServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +91,7 @@ class OfflineDatabaseService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(OfflineDatabaseServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(OfflineDatabaseServiceStateEnum.errorRecovering);
@@ -110,7 +116,7 @@ class OfflineDatabaseService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(OfflineDatabaseServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(OfflineDatabaseServiceStateEnum.errorRecovering);
@@ -119,7 +125,8 @@ class OfflineDatabaseService with ChangeNotifier {
   }
 
   /// Updates sync status and server UUID after successful transmission
-  Future<Map<String, dynamic>> markRecordAsSynchronized(String localId, String cloudId) async {
+  Future<Map<String, dynamic>> markRecordAsSynchronized(
+      String localId, String cloudId) async {
     _setState(OfflineDatabaseServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +142,7 @@ class OfflineDatabaseService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(OfflineDatabaseServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(OfflineDatabaseServiceStateEnum.errorRecovering);
@@ -144,7 +151,8 @@ class OfflineDatabaseService with ChangeNotifier {
   }
 
   /// Cleans images and records older than 60 days to free phone storage
-  Future<Map<String, dynamic>> purgeExpiredDiagnosticLogs(int retentionDays) async {
+  Future<Map<String, dynamic>> purgeExpiredDiagnosticLogs(
+      int retentionDays) async {
     _setState(OfflineDatabaseServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -160,7 +168,7 @@ class OfflineDatabaseService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(OfflineDatabaseServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(OfflineDatabaseServiceStateEnum.errorRecovering);

@@ -45,20 +45,27 @@ class HomeScreen extends StatelessWidget {
                             color: iconColor,
                             iconSize: 22,
                             padding: const EdgeInsets.all(8),
-                            constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
+                            constraints: const BoxConstraints(
+                                minWidth: 40, minHeight: 40),
                             tooltip: 'Settings',
-                            onPressed: () => Navigator.pushNamed(context, '/settings'),
+                            onPressed: () =>
+                                Navigator.pushNamed(context, '/settings'),
                           ),
                           // 2. Middle Icon: Light / Dark Mode Toggle Icon (Brightness / Sun / Moon)
                           IconButton(
                             icon: Icon(
-                              isDark ? Icons.wb_sunny_outlined : Icons.dark_mode_outlined,
+                              isDark
+                                  ? Icons.wb_sunny_outlined
+                                  : Icons.dark_mode_outlined,
                             ),
                             color: iconColor,
                             iconSize: 22,
                             padding: const EdgeInsets.all(8),
-                            constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
-                            tooltip: isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode',
+                            constraints: const BoxConstraints(
+                                minWidth: 40, minHeight: 40),
+                            tooltip: isDark
+                                ? 'Switch to Light Mode'
+                                : 'Switch to Dark Mode',
                             onPressed: () => themeProvider.toggleTheme(),
                           ),
                           // 3. Logout icon
@@ -67,12 +74,14 @@ class HomeScreen extends StatelessWidget {
                             color: iconColor,
                             iconSize: 22,
                             padding: const EdgeInsets.all(8),
-                            constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
+                            constraints: const BoxConstraints(
+                                minWidth: 40, minHeight: 40),
                             tooltip: 'Log out',
                             onPressed: () async {
                               await service.signOut();
                               if (context.mounted) {
-                                Navigator.pushReplacementNamed(context, '/login');
+                                Navigator.pushReplacementNamed(
+                                    context, '/login');
                               }
                             },
                           ),
@@ -87,7 +96,8 @@ class HomeScreen extends StatelessWidget {
                 child: FutureBuilder<DashboardStats>(
                   future: service.fetchDashboardStats(),
                   builder: (context, snapshot) {
-                    return _HealthOverviewCard(stats: snapshot.data, loading: !snapshot.hasData);
+                    return _HealthOverviewCard(
+                        stats: snapshot.data, loading: !snapshot.hasData);
                   },
                 ),
               ),
@@ -96,7 +106,8 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Quick actions', style: Theme.of(context).textTheme.titleMedium),
+                    Text('Quick actions',
+                        style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 14),
                     _HeroActionCard(
                       icon: Icons.camera_alt,
@@ -113,7 +124,8 @@ class HomeScreen extends StatelessWidget {
                             icon: Icons.history,
                             label: 'History',
                             color: AppColors.rust,
-                            onTap: () => Navigator.pushNamed(context, '/history'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/history'),
                           ),
                         ),
                         const SizedBox(width: 12),
@@ -122,7 +134,8 @@ class HomeScreen extends StatelessWidget {
                             icon: Icons.calendar_month,
                             label: 'Calendar',
                             color: AppColors.chlorotic,
-                            onTap: () => Navigator.pushNamed(context, '/calendar'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/calendar'),
                           ),
                         ),
                         const SizedBox(width: 12),
@@ -131,7 +144,8 @@ class HomeScreen extends StatelessWidget {
                             icon: Icons.smart_toy,
                             label: 'Assistant',
                             color: isDark ? AppColors.neon : AppColors.canopy,
-                            onTap: () => Navigator.pushNamed(context, '/assistant'),
+                            onTap: () =>
+                                Navigator.pushNamed(context, '/assistant'),
                           ),
                         ),
                       ],
@@ -171,7 +185,10 @@ class _HealthOverviewCard extends StatelessWidget {
             children: [
               Text(
                 loading ? '—' : '$total',
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: 36),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall
+                    ?.copyWith(fontSize: 36),
               ),
               const SizedBox(width: 8),
               Padding(
@@ -193,7 +210,9 @@ class _HealthOverviewCard extends StatelessWidget {
               height: 12,
               child: loading
                   ? Container(
-                      color: isDark ? AppColors.darkSurfaceElevated : AppColors.lightSurfaceElevated,
+                      color: isDark
+                          ? AppColors.darkSurfaceElevated
+                          : AppColors.lightSurfaceElevated,
                     )
                   : Row(
                       children: [
@@ -204,13 +223,17 @@ class _HealthOverviewCard extends StatelessWidget {
                           ),
                         if (needsAttention > 0)
                           Expanded(
-                            flex: ((1 - healthyFraction) * 100).round().clamp(1, 100),
+                            flex: ((1 - healthyFraction) * 100)
+                                .round()
+                                .clamp(1, 100),
                             child: Container(color: AppColors.rust),
                           ),
                         if (total == 0)
                           Expanded(
                             child: Container(
-                              color: isDark ? AppColors.darkSurfaceElevated : AppColors.lightSurfaceElevated,
+                              color: isDark
+                                  ? AppColors.darkSurfaceElevated
+                                  : AppColors.lightSurfaceElevated,
                             ),
                           ),
                       ],
@@ -222,7 +245,9 @@ class _HealthOverviewCard extends StatelessWidget {
             children: [
               _LegendDot(color: AppColors.canopy, label: '$healthy healthy'),
               const SizedBox(width: 20),
-              _LegendDot(color: AppColors.rust, label: '$needsAttention needs attention'),
+              _LegendDot(
+                  color: AppColors.rust,
+                  label: '$needsAttention needs attention'),
             ],
           ),
         ],
@@ -298,7 +323,8 @@ class _HeroActionCard extends StatelessWidget {
           Positioned(
             right: -20,
             bottom: -20,
-            child: Icon(icon, size: 140, color: Colors.white.withValues(alpha: 0.08)),
+            child: Icon(icon,
+                size: 140, color: Colors.white.withValues(alpha: 0.08)),
           ),
           Material(
             color: Colors.transparent,
@@ -340,7 +366,8 @@ class _HeroActionCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Icon(Icons.arrow_forward_ios, color: Colors.white70, size: 16),
+                    const Icon(Icons.arrow_forward_ios,
+                        color: Colors.white70, size: 16),
                   ],
                 ),
               ),
@@ -367,7 +394,8 @@ class _SmallActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cardBg = Theme.of(context).cardTheme.color ?? Theme.of(context).colorScheme.surface;
+    final cardBg = Theme.of(context).cardTheme.color ??
+        Theme.of(context).colorScheme.surface;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
@@ -375,7 +403,9 @@ class _SmallActionCard extends StatelessWidget {
         color: cardBg,
         borderRadius: BorderRadius.circular(18),
         border: Border.all(
-          color: isDark ? color.withValues(alpha: 0.25) : color.withValues(alpha: 0.2),
+          color: isDark
+              ? color.withValues(alpha: 0.25)
+              : color.withValues(alpha: 0.2),
         ),
         boxShadow: isDark
             ? null

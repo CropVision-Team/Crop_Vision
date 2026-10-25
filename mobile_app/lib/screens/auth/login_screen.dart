@@ -39,8 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.pushReplacementNamed(context, '/home');
     } catch (e) {
       final errStr = e.toString();
-      if (errStr.contains('Failed host lookup') || errStr.contains('SocketException')) {
-        setState(() => _error = 'Network Error: Cannot connect to server. Please check your device\'s internet connection.');
+      if (errStr.contains('Failed host lookup') ||
+          errStr.contains('SocketException')) {
+        setState(() => _error =
+            'Network Error: Cannot connect to server. Please check your device\'s internet connection.');
       } else {
         setState(() => _error = errStr);
       }
@@ -136,31 +138,32 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.white.withValues(alpha: 0.15),
                           shape: BoxShape.circle,
                           border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.4), width: 1.5),
+                              color: Colors.white.withValues(alpha: 0.4),
+                              width: 1.5),
                         ),
-                        child: const Icon(Icons.eco, size: 44, color: Colors.white),
+                        child: const Icon(Icons.eco,
+                            size: 44, color: Colors.white),
                       ),
                       const SizedBox(height: 20),
                       Text(
                         'Welcome Back',
                         textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                    color: Colors.black.withValues(alpha: 0.25),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                        style:
+                            Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                                color: Colors.black.withValues(alpha: 0.25),
+                                blurRadius: 8),
+                          ],
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         'Log in to check on your crops',
                         textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium
-                            ?.copyWith(color: Colors.white.withValues(alpha: 0.85)),
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Colors.white.withValues(alpha: 0.85)),
                       ),
                       const SizedBox(height: 28),
                       // Glassmorphic frosted card
@@ -186,9 +189,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                     label: 'Email',
                                     icon: Icons.email_outlined,
                                     keyboardType: TextInputType.emailAddress,
-                                    validator: (v) => (v == null || !v.contains('@'))
-                                        ? 'Enter a valid email'
-                                        : null,
+                                    validator: (v) =>
+                                        (v == null || !v.contains('@'))
+                                            ? 'Enter a valid email'
+                                            : null,
                                   ),
                                   const SizedBox(height: 14),
                                   _GlassTextField(
@@ -203,12 +207,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                             : Icons.visibility_off_outlined,
                                         color: Colors.white70,
                                       ),
-                                      onPressed: () => setState(
-                                          () => _obscurePassword = !_obscurePassword),
+                                      onPressed: () => setState(() =>
+                                          _obscurePassword = !_obscurePassword),
                                     ),
-                                    validator: (v) => (v == null || v.length < 6)
-                                        ? 'Minimum 6 characters'
-                                        : null,
+                                    validator: (v) =>
+                                        (v == null || v.length < 6)
+                                            ? 'Minimum 6 characters'
+                                            : null,
                                     onFieldSubmitted: (_) => _login(),
                                   ),
                                   if (_error != null) ...[
@@ -216,7 +221,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     Container(
                                       padding: const EdgeInsets.all(10),
                                       decoration: BoxDecoration(
-                                        color: Colors.red.withValues(alpha: 0.2),
+                                        color:
+                                            Colors.red.withValues(alpha: 0.2),
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Text(
@@ -261,11 +267,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                     children: [
                                       Expanded(
                                           child: Divider(
-                                              color:
-                                                  Colors.white.withValues(alpha: 0.4))),
+                                              color: Colors.white
+                                                  .withValues(alpha: 0.4))),
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.symmetric(horizontal: 10),
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 10),
                                         child: Text('or',
                                             style: TextStyle(
                                                 color: Colors.white
@@ -273,29 +279,31 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                       Expanded(
                                           child: Divider(
-                                              color:
-                                                  Colors.white.withValues(alpha: 0.4))),
+                                              color: Colors.white
+                                                  .withValues(alpha: 0.4))),
                                     ],
                                   ),
                                   const SizedBox(height: 14),
                                   OutlinedButton.icon(
-                                    onPressed:
-                                        _googleLoading ? null : _loginWithGoogle,
+                                    onPressed: _googleLoading
+                                        ? null
+                                        : _loginWithGoogle,
                                     style: OutlinedButton.styleFrom(
                                       backgroundColor:
                                           Colors.white.withValues(alpha: 0.9),
                                       foregroundColor: Colors.black87,
                                       side: BorderSide(
-                                          color: Colors.white.withValues(alpha: 0.6)),
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 14),
+                                          color: Colors.white
+                                              .withValues(alpha: 0.6)),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 14),
                                     ),
                                     icon: _googleLoading
                                         ? const SizedBox(
                                             height: 16,
                                             width: 16,
-                                            child:
-                                                CircularProgressIndicator(strokeWidth: 2))
+                                            child: CircularProgressIndicator(
+                                                strokeWidth: 2))
                                         : const _GoogleGlyph(),
                                     label: const Text('Continue with Google'),
                                   ),
@@ -307,16 +315,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                       backgroundColor: Colors.black,
                                       foregroundColor: Colors.white,
                                       side: BorderSide(
-                                          color: Colors.white.withValues(alpha: 0.6)),
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 14),
+                                          color: Colors.white
+                                              .withValues(alpha: 0.6)),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 14),
                                     ),
                                     icon: _appleLoading
                                         ? const SizedBox(
                                             height: 16,
                                             width: 16,
                                             child: CircularProgressIndicator(
-                                                strokeWidth: 2, color: Colors.white))
+                                                strokeWidth: 2,
+                                                color: Colors.white))
                                         : const Icon(Icons.apple, size: 20),
                                     label: const Text('Continue with Apple'),
                                   ),
@@ -330,11 +340,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextButton(
                         onPressed: () => Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => const SignupScreen()),
+                          MaterialPageRoute(
+                              builder: (_) => const SignupScreen()),
                         ),
                         child: Text(
                           "Don't have an account? Sign Up",
-                          style: TextStyle(color: Colors.white.withValues(alpha: 0.95)),
+                          style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.95)),
                         ),
                       ),
                     ],

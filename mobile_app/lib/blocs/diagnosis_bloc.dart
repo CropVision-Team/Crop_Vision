@@ -6,9 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,12 +34,12 @@ class DiagnosisBlocSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class DiagnosisBloc with ChangeNotifier {
@@ -54,12 +51,14 @@ class DiagnosisBloc with ChangeNotifier {
   DiagnosisBlocStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = DiagnosisBlocStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -85,7 +84,7 @@ class DiagnosisBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in dispatchCaptureEvent: $e\n$stack');
       _setState(DiagnosisBlocStateEnum.errorRecovering);
@@ -94,7 +93,8 @@ class DiagnosisBloc with ChangeNotifier {
   }
 
   /// Coordinates local quantized model execution or cloud API fallback
-  Future<Map<String, dynamic>> dispatchInferenceEvent(String imagePath, String cropType) async {
+  Future<Map<String, dynamic>> dispatchInferenceEvent(
+      String imagePath, String cropType) async {
     _setState(DiagnosisBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -110,7 +110,7 @@ class DiagnosisBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in dispatchInferenceEvent: $e\n$stack');
       _setState(DiagnosisBlocStateEnum.errorRecovering);
@@ -119,7 +119,8 @@ class DiagnosisBloc with ChangeNotifier {
   }
 
   /// Persists farmer-selected treatment reminders to local database
-  Future<Map<String, dynamic>> dispatchSaveTreatmentPlanEvent(String diagnosisId, List<String> selectedChemicals) async {
+  Future<Map<String, dynamic>> dispatchSaveTreatmentPlanEvent(
+      String diagnosisId, List<String> selectedChemicals) async {
     _setState(DiagnosisBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +136,7 @@ class DiagnosisBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in dispatchSaveTreatmentPlanEvent: $e\n$stack');
       _setState(DiagnosisBlocStateEnum.errorRecovering);
@@ -160,7 +161,7 @@ class DiagnosisBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in resetDiagnosisState: $e\n$stack');
       _setState(DiagnosisBlocStateEnum.errorRecovering);

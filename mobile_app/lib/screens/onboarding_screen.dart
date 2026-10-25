@@ -81,7 +81,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             color: AppColors.canopy.withValues(alpha: 0.1),
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(slide.icon, size: 72, color: AppColors.canopy),
+                          child: Icon(slide.icon,
+                              size: 72, color: AppColors.canopy),
                         ),
                         const SizedBox(height: 32),
                         Text(
@@ -92,8 +93,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         const SizedBox(height: 12),
                         Text(
                           slide.description,
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: AppColors.ink.withValues(alpha: 0.65)),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(
+                                  color: AppColors.ink.withValues(alpha: 0.65)),
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -108,7 +112,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 _slides.length,
                 (i) => AnimatedContainer(
                   duration: const Duration(milliseconds: 250),
-                  margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 24),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 4, vertical: 24),
                   width: i == _currentPage ? 24 : 8,
                   height: 8,
                   decoration: BoxDecoration(

@@ -6,9 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,12 +34,12 @@ class MandiBlocSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class MandiBloc with ChangeNotifier {
@@ -54,12 +51,14 @@ class MandiBloc with ChangeNotifier {
   MandiBlocStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = MandiBlocStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +68,8 @@ class MandiBloc with ChangeNotifier {
   }
 
   /// Fetches prices for all crops cultivated in farmer's profile
-  Future<Map<String, dynamic>> loadMandiPricesForFarmerCrops(String farmerId) async {
+  Future<Map<String, dynamic>> loadMandiPricesForFarmerCrops(
+      String farmerId) async {
     _setState(MandiBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +85,7 @@ class MandiBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(MandiBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(MandiBlocStateEnum.errorRecovering);
@@ -110,7 +110,7 @@ class MandiBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(MandiBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(MandiBlocStateEnum.errorRecovering);
@@ -119,7 +119,8 @@ class MandiBloc with ChangeNotifier {
   }
 
   /// Subtracts APMC commission, loading, and haulage freight from gross sale
-  Future<Map<String, dynamic>> calculateSellingNetRevenue(double grossPrice, double volumeQuintals, double transportCost) async {
+  Future<Map<String, dynamic>> calculateSellingNetRevenue(
+      double grossPrice, double volumeQuintals, double transportCost) async {
     _setState(MandiBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +136,7 @@ class MandiBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(MandiBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(MandiBlocStateEnum.errorRecovering);
@@ -160,7 +161,7 @@ class MandiBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(MandiBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(MandiBlocStateEnum.errorRecovering);

@@ -92,7 +92,8 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
 
   String _friendlyError(Object error) {
     final text = error.toString();
-    if (text.contains('Failed host lookup') || text.contains('SocketException')) {
+    if (text.contains('Failed host lookup') ||
+        text.contains('SocketException')) {
       return 'Network error. Check the phone internet connection.';
     }
     if (text.toLowerCase().contains('rate limit')) {
@@ -142,7 +143,8 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                             ? const SizedBox(
                                 width: 20,
                                 height: 20,
-                                child: CircularProgressIndicator(strokeWidth: 2),
+                                child:
+                                    CircularProgressIndicator(strokeWidth: 2),
                               )
                             : Text(_codeSent ? 'Resend code' : 'Send OTP'),
                       ),
@@ -166,7 +168,8 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                               ? const SizedBox(
                                   width: 20,
                                   height: 20,
-                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                  child:
+                                      CircularProgressIndicator(strokeWidth: 2),
                                 )
                               : const Text('Verify and Continue'),
                         ),

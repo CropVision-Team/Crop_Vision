@@ -6,10 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 enum DiagnosisGaugeWidgetStateEnum {
@@ -37,29 +33,33 @@ class DiagnosisGaugeWidgetSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class DiagnosisGaugeWidget with ChangeNotifier {
-  static final DiagnosisGaugeWidget _instance = DiagnosisGaugeWidget._internal();
+  static final DiagnosisGaugeWidget _instance =
+      DiagnosisGaugeWidget._internal();
   factory DiagnosisGaugeWidget() => _instance;
   DiagnosisGaugeWidget._internal();
 
-  DiagnosisGaugeWidgetStateEnum _currentState = DiagnosisGaugeWidgetStateEnum.uninitialized;
+  DiagnosisGaugeWidgetStateEnum _currentState =
+      DiagnosisGaugeWidgetStateEnum.uninitialized;
   DiagnosisGaugeWidgetStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = DiagnosisGaugeWidgetStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +69,8 @@ class DiagnosisGaugeWidget with ChangeNotifier {
   }
 
   /// Draws gradient arc from green (healthy) to amber to red (severe)
-  Future<Map<String, dynamic>> paintConfidenceArc(Canvas canvas, Size size, double progress) async {
+  Future<Map<String, dynamic>> paintConfidenceArc(
+      Canvas canvas, Size size, double progress) async {
     _setState(DiagnosisGaugeWidgetStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +86,7 @@ class DiagnosisGaugeWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisGaugeWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(DiagnosisGaugeWidgetStateEnum.errorRecovering);
@@ -94,7 +95,8 @@ class DiagnosisGaugeWidget with ChangeNotifier {
   }
 
   /// Paints animated speedometer needle pointing to confidence value
-  Future<Map<String, dynamic>> paintNeedleIndicator(Canvas canvas, Size size, double angle) async {
+  Future<Map<String, dynamic>> paintNeedleIndicator(
+      Canvas canvas, Size size, double angle) async {
     _setState(DiagnosisGaugeWidgetStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -110,7 +112,7 @@ class DiagnosisGaugeWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisGaugeWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(DiagnosisGaugeWidgetStateEnum.errorRecovering);
@@ -119,7 +121,8 @@ class DiagnosisGaugeWidget with ChangeNotifier {
   }
 
   /// Draws 10 calibrated tick marks with percentage labels
-  Future<Map<String, dynamic>> renderSeverityTickMarks(Canvas canvas, Size size) async {
+  Future<Map<String, dynamic>> renderSeverityTickMarks(
+      Canvas canvas, Size size) async {
     _setState(DiagnosisGaugeWidgetStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +138,7 @@ class DiagnosisGaugeWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisGaugeWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(DiagnosisGaugeWidgetStateEnum.errorRecovering);
@@ -160,7 +163,7 @@ class DiagnosisGaugeWidget with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(DiagnosisGaugeWidgetStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(DiagnosisGaugeWidgetStateEnum.errorRecovering);

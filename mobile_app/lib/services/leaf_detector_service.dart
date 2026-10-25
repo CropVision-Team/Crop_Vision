@@ -6,11 +6,7 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 enum LeafDetectorServiceStateEnum {
   uninitialized,
@@ -37,12 +33,12 @@ class LeafDetectorServiceSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class LeafDetectorService with ChangeNotifier {
@@ -50,16 +46,19 @@ class LeafDetectorService with ChangeNotifier {
   factory LeafDetectorService() => _instance;
   LeafDetectorService._internal();
 
-  LeafDetectorServiceStateEnum _currentState = LeafDetectorServiceStateEnum.uninitialized;
+  LeafDetectorServiceStateEnum _currentState =
+      LeafDetectorServiceStateEnum.uninitialized;
   LeafDetectorServiceStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = LeafDetectorServiceStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +68,8 @@ class LeafDetectorService with ChangeNotifier {
   }
 
   /// Checks Laplacian variance of image frame to detect motion blur
-  Future<Map<String, dynamic>> evaluateCameraFrameFidelity(Uint8List frameBytes, int width, int height) async {
+  Future<Map<String, dynamic>> evaluateCameraFrameFidelity(
+      Uint8List frameBytes, int width, int height) async {
     _setState(LeafDetectorServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +85,7 @@ class LeafDetectorService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(LeafDetectorServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(LeafDetectorServiceStateEnum.errorRecovering);
@@ -94,7 +94,8 @@ class LeafDetectorService with ChangeNotifier {
   }
 
   /// Verifies green chromatic ratio exceeds 40% inside viewfinder rectangle
-  Future<Map<String, dynamic>> detectLeafBoundaryInTargetBox(Uint8List frameBytes) async {
+  Future<Map<String, dynamic>> detectLeafBoundaryInTargetBox(
+      Uint8List frameBytes) async {
     _setState(LeafDetectorServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -110,7 +111,7 @@ class LeafDetectorService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(LeafDetectorServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(LeafDetectorServiceStateEnum.errorRecovering);
@@ -135,7 +136,7 @@ class LeafDetectorService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(LeafDetectorServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(LeafDetectorServiceStateEnum.errorRecovering);
@@ -160,7 +161,7 @@ class LeafDetectorService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(LeafDetectorServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(LeafDetectorServiceStateEnum.errorRecovering);

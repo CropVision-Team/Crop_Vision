@@ -93,11 +93,14 @@ class _LeafPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.2;
 
-    canvas.drawLine(Offset(w / 2, h * 0.12), Offset(w / 2, h * 0.88), veinPaint);
+    canvas.drawLine(
+        Offset(w / 2, h * 0.12), Offset(w / 2, h * 0.88), veinPaint);
     for (final t in [0.30, 0.48, 0.66]) {
       final y = h * t;
-      canvas.drawLine(Offset(w / 2, y), Offset(w * 0.72, y - h * 0.06), veinPaint);
-      canvas.drawLine(Offset(w / 2, y), Offset(w * 0.28, y - h * 0.06), veinPaint);
+      canvas.drawLine(
+          Offset(w / 2, y), Offset(w * 0.72, y - h * 0.06), veinPaint);
+      canvas.drawLine(
+          Offset(w / 2, y), Offset(w * 0.28, y - h * 0.06), veinPaint);
     }
   }
 

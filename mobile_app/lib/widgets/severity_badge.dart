@@ -36,16 +36,19 @@ class SeverityBadge extends StatelessWidget {
             CircleAvatar(
               backgroundColor: color,
               child: Text(stage.code,
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  style: const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
             ),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(stage.label, style: const TextStyle(fontWeight: FontWeight.bold)),
+                  Text(stage.label,
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
                   if (severityPercent != null)
-                    Text('${severityPercent!.toStringAsFixed(1)}% of leaf area affected'),
+                    Text(
+                        '${severityPercent!.toStringAsFixed(1)}% of leaf area affected'),
                 ],
               ),
             ),

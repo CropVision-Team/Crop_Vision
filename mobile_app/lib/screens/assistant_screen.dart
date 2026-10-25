@@ -33,7 +33,8 @@ class _AssistantScreenState extends State<AssistantScreen> {
     final history = await service.fetchChatHistory();
     setState(() {
       _messages.addAll(
-        history.map((m) => _ChatMessage(m['role'] as String, m['content'] as String)),
+        history.map(
+            (m) => _ChatMessage(m['role'] as String, m['content'] as String)),
       );
     });
   }
@@ -54,7 +55,8 @@ class _AssistantScreenState extends State<AssistantScreen> {
     try {
       reply = await service.askAssistant(text);
     } catch (e) {
-      reply = "I couldn't reach the assistant right now. The API is temporarily experiencing high traffic or network delay. Please try sending your message again in a few moments.";
+      reply =
+          "I couldn't reach the assistant right now. The API is temporarily experiencing high traffic or network delay. Please try sending your message again in a few moments.";
     }
 
     setState(() {
@@ -66,7 +68,8 @@ class _AssistantScreenState extends State<AssistantScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final cardBg = Theme.of(context).cardTheme.color ?? Theme.of(context).colorScheme.surface;
+    final cardBg = Theme.of(context).cardTheme.color ??
+        Theme.of(context).colorScheme.surface;
     final textColor = Theme.of(context).colorScheme.onSurface;
     final mutedTextColor = Theme.of(context).colorScheme.onSurfaceVariant;
 
@@ -88,10 +91,12 @@ class _AssistantScreenState extends State<AssistantScreen> {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(Icons.smart_toy_outlined,
-                              size: 44, color: AppColors.canopy.withValues(alpha: 0.6)),
+                              size: 44,
+                              color: AppColors.canopy.withValues(alpha: 0.6)),
                         ),
                         const SizedBox(height: 12),
-                        Text('Ask me about your crops', style: TextStyle(color: mutedTextColor)),
+                        Text('Ask me about your crops',
+                            style: TextStyle(color: mutedTextColor)),
                       ],
                     ),
                   )
@@ -104,39 +109,51 @@ class _AssistantScreenState extends State<AssistantScreen> {
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 6),
                         child: Row(
-                          mainAxisAlignment: isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
+                          mainAxisAlignment: isUser
+                              ? MainAxisAlignment.end
+                              : MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             if (!isUser) ...[
                               CircleAvatar(
                                 radius: 15,
-                                backgroundColor: AppColors.canopy.withValues(alpha: 0.15),
-                                child: const Icon(Icons.eco, size: 16, color: AppColors.canopy),
+                                backgroundColor:
+                                    AppColors.canopy.withValues(alpha: 0.15),
+                                child: const Icon(Icons.eco,
+                                    size: 16, color: AppColors.canopy),
                               ),
                               const SizedBox(width: 8),
                             ],
                             Flexible(
                               child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 12),
                                 constraints: BoxConstraints(
-                                  maxWidth: MediaQuery.of(context).size.width * 0.72,
+                                  maxWidth:
+                                      MediaQuery.of(context).size.width * 0.72,
                                 ),
                                 decoration: BoxDecoration(
                                   gradient: isUser
                                       ? const LinearGradient(
-                                          colors: [AppColors.canopy, Color(0xFF3D6B42)],
+                                          colors: [
+                                            AppColors.canopy,
+                                            Color(0xFF3D6B42)
+                                          ],
                                         )
                                       : null,
                                   color: isUser ? null : cardBg,
                                   borderRadius: BorderRadius.only(
                                     topLeft: const Radius.circular(18),
                                     topRight: const Radius.circular(18),
-                                    bottomLeft: Radius.circular(isUser ? 18 : 4),
-                                    bottomRight: Radius.circular(isUser ? 4 : 18),
+                                    bottomLeft:
+                                        Radius.circular(isUser ? 18 : 4),
+                                    bottomRight:
+                                        Radius.circular(isUser ? 4 : 18),
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withValues(alpha: 0.04),
+                                      color:
+                                          Colors.black.withValues(alpha: 0.04),
                                       blurRadius: 8,
                                       offset: const Offset(0, 3),
                                     ),
@@ -159,7 +176,8 @@ class _AssistantScreenState extends State<AssistantScreen> {
           if (_sending)
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
-              child: Text('Assistant is typing…', style: TextStyle(color: mutedTextColor)),
+              child: Text('Assistant is typing…',
+                  style: TextStyle(color: mutedTextColor)),
             ),
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
@@ -197,7 +215,8 @@ class _AssistantScreenState extends State<AssistantScreen> {
                       ),
                     ),
                     child: IconButton(
-                      icon: const Icon(Icons.send, color: Colors.white, size: 20),
+                      icon:
+                          const Icon(Icons.send, color: Colors.white, size: 20),
                       onPressed: _sending ? null : _send,
                     ),
                   ),

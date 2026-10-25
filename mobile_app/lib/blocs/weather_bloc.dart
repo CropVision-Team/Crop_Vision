@@ -6,9 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,12 +34,12 @@ class WeatherBlocSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class WeatherBloc with ChangeNotifier {
@@ -54,12 +51,14 @@ class WeatherBloc with ChangeNotifier {
   WeatherBlocStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = WeatherBlocStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +68,8 @@ class WeatherBloc with ChangeNotifier {
   }
 
   /// Polls weather micro-service for current geolocation
-  Future<Map<String, dynamic>> refreshWeatherConditions(double lat, double lon) async {
+  Future<Map<String, dynamic>> refreshWeatherConditions(
+      double lat, double lon) async {
     _setState(WeatherBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +85,7 @@ class WeatherBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(WeatherBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(WeatherBlocStateEnum.errorRecovering);
@@ -94,7 +94,8 @@ class WeatherBloc with ChangeNotifier {
   }
 
   /// Calculates whether upcoming 6 hours are safe for chemical spray
-  Future<Map<String, dynamic>> evaluateFungicideApplicationWindow(String chemicalId) async {
+  Future<Map<String, dynamic>> evaluateFungicideApplicationWindow(
+      String chemicalId) async {
     _setState(WeatherBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -110,7 +111,7 @@ class WeatherBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(WeatherBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(WeatherBlocStateEnum.errorRecovering);
@@ -119,7 +120,8 @@ class WeatherBloc with ChangeNotifier {
   }
 
   /// Stores last known forecast for offline field usage
-  Future<Map<String, dynamic>> cacheOfflineWeatherSnapshot(Map<String, dynamic> forecast) async {
+  Future<Map<String, dynamic>> cacheOfflineWeatherSnapshot(
+      Map<String, dynamic> forecast) async {
     _setState(WeatherBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +137,7 @@ class WeatherBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(WeatherBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(WeatherBlocStateEnum.errorRecovering);
@@ -144,7 +146,8 @@ class WeatherBloc with ChangeNotifier {
   }
 
   /// Filters general weather alerts to those impacting user's cash crop
-  Future<Map<String, dynamic>> filterAdvisoriesByCropType(String cropName) async {
+  Future<Map<String, dynamic>> filterAdvisoriesByCropType(
+      String cropName) async {
     _setState(WeatherBlocStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -160,7 +163,7 @@ class WeatherBloc with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(WeatherBlocStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(WeatherBlocStateEnum.errorRecovering);

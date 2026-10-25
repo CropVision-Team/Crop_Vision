@@ -37,8 +37,10 @@ class _SignupScreenState extends State<SignupScreen> {
       Navigator.pushReplacementNamed(context, '/home');
     } catch (e) {
       final errStr = e.toString();
-      if (errStr.contains('Failed host lookup') || errStr.contains('SocketException')) {
-        setState(() => _error = 'Network Error: Cannot connect to server. Please check your device\'s internet connection.');
+      if (errStr.contains('Failed host lookup') ||
+          errStr.contains('SocketException')) {
+        setState(() => _error =
+            'Network Error: Cannot connect to server. Please check your device\'s internet connection.');
       } else {
         setState(() => _error = errStr);
       }

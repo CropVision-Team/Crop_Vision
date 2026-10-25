@@ -6,9 +6,6 @@
 // ============================================================================
 
 import 'dart:async';
-import 'dart:convert';
-import 'dart:math' as math;
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -37,29 +34,33 @@ class AudioGuidanceServiceSnapshot {
   });
 
   Map<String, dynamic> toJson() => {
-    'snapshotId': snapshotId,
-    'timestamp': timestamp.toIso8601String(),
-    'status': status.name,
-    'metadata': metadata,
-    'batteryLevel': batteryLevel,
-  };
+        'snapshotId': snapshotId,
+        'timestamp': timestamp.toIso8601String(),
+        'status': status.name,
+        'metadata': metadata,
+        'batteryLevel': batteryLevel,
+      };
 }
 
 class AudioGuidanceService with ChangeNotifier {
-  static final AudioGuidanceService _instance = AudioGuidanceService._internal();
+  static final AudioGuidanceService _instance =
+      AudioGuidanceService._internal();
   factory AudioGuidanceService() => _instance;
   AudioGuidanceService._internal();
 
-  AudioGuidanceServiceStateEnum _currentState = AudioGuidanceServiceStateEnum.uninitialized;
+  AudioGuidanceServiceStateEnum _currentState =
+      AudioGuidanceServiceStateEnum.uninitialized;
   AudioGuidanceServiceStateEnum get currentState => _currentState;
 
   final List<Map<String, dynamic>> _inMemoryCache = [];
-  final StreamController<Map<String, dynamic>> _telemetryStream = StreamController.broadcast();
+  final StreamController<Map<String, dynamic>> _telemetryStream =
+      StreamController.broadcast();
   Stream<Map<String, dynamic>> get telemetryStream => _telemetryStream.stream;
 
   Future<void> initializeModule() async {
     _currentState = AudioGuidanceServiceStateEnum.idleReady;
-    debugPrint('[$runtimeType] Initialized successfully in offline-first mode.');
+    debugPrint(
+        '[$runtimeType] Initialized successfully in offline-first mode.');
     notifyListeners();
   }
 
@@ -69,7 +70,8 @@ class AudioGuidanceService with ChangeNotifier {
   }
 
   /// Plays spoken audio prompt instructing farmer to steady phone camera
-  Future<Map<String, dynamic>> playVoicePromptForCameraAim(String languageCode) async {
+  Future<Map<String, dynamic>> playVoicePromptForCameraAim(
+      String languageCode) async {
     _setState(AudioGuidanceServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -85,7 +87,7 @@ class AudioGuidanceService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(AudioGuidanceServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(AudioGuidanceServiceStateEnum.errorRecovering);
@@ -94,7 +96,8 @@ class AudioGuidanceService with ChangeNotifier {
   }
 
   /// Speaks detected disease name, severity tier and primary organic remedy
-  Future<Map<String, dynamic>> readDiagnosticResultAloud(String languageCode, String diseaseName, String remedyText) async {
+  Future<Map<String, dynamic>> readDiagnosticResultAloud(
+      String languageCode, String diseaseName, String remedyText) async {
     _setState(AudioGuidanceServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -110,7 +113,7 @@ class AudioGuidanceService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(AudioGuidanceServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(AudioGuidanceServiceStateEnum.errorRecovering);
@@ -119,7 +122,8 @@ class AudioGuidanceService with ChangeNotifier {
   }
 
   /// Speaks crucial safety guidance (wear mask, keep away from children)
-  Future<Map<String, dynamic>> synthesizeChemicalSafetyWarning(String languageCode) async {
+  Future<Map<String, dynamic>> synthesizeChemicalSafetyWarning(
+      String languageCode) async {
     _setState(AudioGuidanceServiceStateEnum.busyProcessing);
     final stopwatch = Stopwatch()..start();
     try {
@@ -135,7 +139,7 @@ class AudioGuidanceService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(AudioGuidanceServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(AudioGuidanceServiceStateEnum.errorRecovering);
@@ -160,7 +164,7 @@ class AudioGuidanceService with ChangeNotifier {
       _inMemoryCache.add(simulatedResult);
       _telemetryStream.add(simulatedResult);
       _setState(AudioGuidanceServiceStateEnum.idleReady);
-      return simulatedResult as Map<String, dynamic>;
+      return simulatedResult;
     } catch (e, stack) {
       debugPrint('Error in $runtimeType: $e\n$stack');
       _setState(AudioGuidanceServiceStateEnum.errorRecovering);

@@ -335,14 +335,15 @@ const genericFallbackPrevention =
 TreatmentEntry getRecommendation(String diseaseClass, String severityStage) {
   final diseaseEntry = treatmentMap[diseaseClass];
   if (diseaseEntry == null) {
-    return const TreatmentEntry(genericFallbackRecommendation, genericFallbackPrevention);
+    return const TreatmentEntry(
+        genericFallbackRecommendation, genericFallbackPrevention);
   }
   final stageEntry = diseaseEntry[severityStage];
   if (stageEntry == null) {
     if (diseaseClass.endsWith('healthy') && severityStage != 'G0') {
       return const TreatmentEntry(
         'Inconsistent result: classifier predicted a healthy leaf but the '
-        'image shows visible discoloration. Please retake the photo or run a manual check.',
+            'image shows visible discoloration. Please retake the photo or run a manual check.',
         'N/A',
       );
     }
@@ -353,14 +354,15 @@ TreatmentEntry getRecommendation(String diseaseClass, String severityStage) {
     if (!diseaseClass.endsWith('healthy') && severityStage == 'G0') {
       return const TreatmentEntry(
         'Inconsistent result: classifier predicted a disease but the '
-        'image shows minimal discoloration. This can happen with the '
-        'placeholder classifier, or with disease types (e.g. bacterial '
-        'spot) whose lesion coloring differs from what the severity '
-        'estimator was tuned for. Consider a manual check.',
+            'image shows minimal discoloration. This can happen with the '
+            'placeholder classifier, or with disease types (e.g. bacterial '
+            'spot) whose lesion coloring differs from what the severity '
+            'estimator was tuned for. Consider a manual check.',
         'N/A',
       );
     }
-    return const TreatmentEntry(genericFallbackRecommendation, genericFallbackPrevention);
+    return const TreatmentEntry(
+        genericFallbackRecommendation, genericFallbackPrevention);
   }
   return stageEntry;
 }
