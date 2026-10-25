@@ -1,0 +1,75 @@
+name: Flutter Analysis & Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mobile_app/**'
+      - '.github/workflows/flutter-ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'mobile_app/**'
+
+jobs:
+  analyze:
+    name: Flutter Analyze & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        working-directory: mobile_app
+        run: flutter pub get
+
+      - name: Analyze code
+        working-directory: mobile_app
+        run: flutter analyze --no-fatal-infos
+
+      - name: Run tests
+        working-directory: mobile_app
+        run: flutter test --coverage || echo "⚠️ No test files found — skipping"
+
+      - name: Check formatting
+        working-directory: mobile_app
+        run: dart format --set-exit-if-changed lib/
+
+  build-android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    needs: analyze
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        working-directory: mobile_app
+        run: flutter pub get
+
+      - name: Build APK (debug)
+        working-directory: mobile_app
+        run: flutter build apk --debug

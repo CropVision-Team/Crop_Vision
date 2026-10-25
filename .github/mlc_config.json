@@ -1,0 +1,17 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://supabase.com"
+    },
+    {
+      "pattern": "^https://YOUR_PROJECT"
+    },
+    {
+      "pattern": "^file://"
+    }
+  ],
+  "timeout": "10s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "aliveStatusCodes": [200, 206, 301, 302]
+}

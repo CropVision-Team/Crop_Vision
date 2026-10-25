@@ -1,0 +1,102 @@
+name: ML Pipeline Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'model/**'
+      - '.github/workflows/ml-tests.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'model/**'
+
+jobs:
+  test:
+    name: Run ML Pipeline Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('model/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r model/requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Run dataset audit (if datasets exist)
+        working-directory: model
+        run: |
+          if [ -d "dataset" ] && [ -d "official_test" ]; then
+            python audit_dataset.py --train_dir ./dataset --test_dir ./official_test
+          else
+            echo "⚠️ Dataset directories not found — skipping audit"
+          fi
+
+      - name: Run test suite
+        working-directory: model
+        run: |
+          python -m pytest tests/ -v --tb=short --co -q 2>/dev/null || true
+          python -m pytest tests/ -v --tb=short
+
+      - name: Check cross-file consistency
+        working-directory: model
+        run: |
+          python -c "
+          from supported_crops import all_class_names
+          from treatment_recommendations import TREATMENT_MAP
+          crop_names = set(all_class_names())
+          treat_names = set(TREATMENT_MAP.keys())
+          missing = crop_names - treat_names
+          if missing:
+              print(f'❌ Classes in supported_crops but not in treatment_recommendations: {missing}')
+              exit(1)
+          else:
+              print('✅ All supported crop class names have treatment entries')
+          "
+
+  lint:
+    name: Python Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install linters
+        run: pip install flake8 black isort
+
+      - name: Run flake8
+        working-directory: model
+        run: flake8 . --max-line-length=100 --exclude=__pycache__,.pytest_cache,dataset,checkpoints --count --show-source --statistics
+
+      - name: Check black formatting
+        working-directory: model
+        run: black --check --diff .
+
+      - name: Check import ordering
+        working-directory: model
+        run: isort --check-only --diff .
