@@ -284,6 +284,11 @@ def train(args):
     checkpoint_path = checkpoint_dir / "mobilevit_best.pt"
     best_val_accuracy = -1.0
 
+    # Per-epoch history, written so learning curves can be plotted from REAL measurements.
+    history_path = checkpoint_dir / "training_history.csv"
+    with open(history_path, "w", encoding="utf-8") as hf:
+        hf.write("epoch,train_loss,val_loss,val_accuracy\n")
+
     # Confirm that a trainable parameter changes after an optimizer step.
     sanity_name = "stem.bn.weight"
     sanity_before = model.state_dict().get(sanity_name)
@@ -343,6 +348,9 @@ def train(args):
         )
 
         elapsed = time.time() - epoch_start
+
+        with open(history_path, "a", encoding="utf-8") as hf:
+            hf.write(f"{epoch + 1},{train_loss:.6f},{val_loss:.6f},{val_accuracy:.6f}\n")
 
         print(
             f"Epoch summary | "
