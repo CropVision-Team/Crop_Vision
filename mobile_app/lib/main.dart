@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -52,6 +53,11 @@ class CropDiseaseApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             locale: localeProvider.locale,
             supportedLocales: kSupportedLocales.values.toList(),
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
             builder: (context, child) {
               final isDark = themeProvider.isDarkMode;
               return Container(
