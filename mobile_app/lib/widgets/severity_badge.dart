@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/diagnosis.dart';
+import '../l10n/locale_provider.dart';
 
 /// Single source of truth for severity -> color mapping, used by both
 /// result_screen.dart and history_screen.dart (previously duplicated
@@ -44,11 +45,11 @@ class SeverityBadge extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(stage.label,
+                  Text(stage.localizedLabel(context),
                       style: const TextStyle(fontWeight: FontWeight.bold)),
                   if (severityPercent != null)
                     Text(
-                        '${severityPercent!.toStringAsFixed(1)}% of leaf area affected'),
+                        '${severityPercent!.toStringAsFixed(1)}% ${context.tr('of_leaf_area_affected')}'),
                 ],
               ),
             ),

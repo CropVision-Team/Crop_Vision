@@ -9,7 +9,11 @@ import '../models/diagnosis.dart';
 /// Thin wrapper around the Supabase client so screens never touch
 /// `Supabase.instance` directly - makes it easy to swap/mocktest later.
 class SupabaseService {
-  final SupabaseClient _client = Supabase.instance.client;
+  final SupabaseClient? _injectedClient;
+
+  SupabaseService([this._injectedClient]);
+
+  SupabaseClient get _client => _injectedClient ?? Supabase.instance.client;
 
   User? get currentUser => _client.auth.currentUser;
   bool get isLoggedIn => currentUser != null;
@@ -167,11 +171,15 @@ class SupabaseService {
   /// even for cheap models. Same trade-offs as before: API key lives
   /// in app code (fine for a student demo), and this may fail on
   /// Chrome/web due to CORS but works fine on native Android/iOS.
-  Future<String> askAssistant(String message,
-      {String? diagnosisContext}) async {
+  Future<String> askAssistant(
+    String message, {
+    String? diagnosisContext,
+    String language = 'English',
+    String langCode = 'en',
+  }) async {
     const apiKey = String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
     if (apiKey.isEmpty) {
-      return 'API key not configured. Please set the GEMINI_API_KEY environment variable.';
+      return _getLocalizedOfflineFallback(message, language, langCode);
     }
 
     final systemPrompt =
@@ -180,7 +188,9 @@ class SupabaseService {
         'prevention, and general farming practices. Keep answers concise '
         'and practical - farmers may be reading this on a phone in the '
         'field.'
-        '${diagnosisContext != null ? '\n\nMost recent diagnosis for this farmer: $diagnosisContext' : ''}';
+        '${diagnosisContext != null ? '\n\nMost recent diagnosis for this farmer: $diagnosisContext' : ''}\n\n'
+        'CRITICAL: The user has selected their language as $language ($langCode). '
+        'You MUST write your ENTIRE reply in $language, using clear and accurate terminology in that language.';
 
     // List of models to try in sequence if a model is unavailable (503), rate-limited (429), or deprecated
     final modelsToTry = [
@@ -241,6 +251,50 @@ class SupabaseService {
 
     throw Exception(
         lastError.isNotEmpty ? lastError : 'Failed to reach Gemini API.');
+  }
+
+  /// Offline or local fallback advisory generator in the user's selected language
+  String _getLocalizedOfflineFallback(
+      String message, String language, String langCode) {
+    switch (langCode) {
+      case 'ta':
+        return 'நான் உங்கள் பயிர் உதவியாளர். தற்போது ஆஃப்லைன் முறையில் இயங்குகிறேன்.\n\n'
+            '• பயிர் நோய்களைக் கட்டுப்படுத்த பாதிக்கப்பட்ட இலைகளை உடனே அப்புறப்படுத்தவும்.\n'
+            '• இலைகளில் ஈரம் தங்காமல் இருக்க சீரான இடைவெளி மற்றும் காற்றோட்டம் பராமரிக்கவும்.\n'
+            '• பூஞ்சைத் தாக்குதலுக்குப் பரிந்துரைக்கப்பட்ட செம்பு மருந்தைப் பயன்படுத்தவும்.\n\n'
+            'உங்கள் கேள்வி: "$message"\nமுழு விவரங்களுக்கு இணைய இணைப்பைச் சரிபார்க்கவும்.';
+      case 'hi':
+        return 'मैं आपका CropVision फसल सलाहकार हूँ। वर्तमान में ऑफलाइन मोड में सक्रिय हूँ।\n\n'
+            '• बीमारी को फैलने से रोकने के लिए प्रभावित पत्तियों को तुरंत तोड़कर नष्ट कर दें।\n'
+            '• पत्तियों पर पानी के जमाव से बचें और पौधों के बीच उचित दूरी बनाए रखें।\n'
+            '• कवक जनित रोगों के लिए अनुशंसित कॉपर युक्त कवकनाशी का छिड़काव करें।\n\n'
+            'आपका सवाल: "$message"\nविस्तृत जानकारी के लिए इंटरनेट कनेक्शन जांचें।';
+      case 'te':
+        return 'నేను మీ CropVision పంట సహాయకుడిని. ప్రస్తుతం ఆఫ్‌లైన్ విధానంలో పని చేస్తున్నాను.\n\n'
+            '• వ్యాధి వ్యాప్తిని అరికట్టడానికి తెగులు సోకిన ఆకులను వెంటనే తొలగించండి.\n'
+            '• ఆకులపై నీరు నిల్వ ఉండకుండా తగినంత గాలి ప్రసరణ ఉండేలా చూసుకోండి.\n'
+            '• శిలీంధ్ర తెగుళ్ల నియంత్రణకు సిఫార్సు చేయబడిన రాగి శిలీంధ్రనాశిని పిచికారీ చేయండి.\n\n'
+            'మీ ప్రశ్న: "$message"\nపూర్తి వివరాల కోసం ఇంటర్నెట్ కనెక్షన్ తనిఖీ చేయండి.';
+      case 'mr':
+        return 'मी तुमचा CropVision पीक सल्लागार आहे. सध्या ऑफलाइन मोडमध्ये कार्यरत आहे.\n\n'
+            '• रोगाचा प्रादुर्भाव वाढू नये म्हणून बाधित पाने त्वरित काढून नष्ट करा.\n'
+            '• पानांवर पाणी साचू देऊ नका आणि झाडांमध्ये योग्य अंतर ठेवा.\n'
+            '• बुरशीजन्य रोगांसाठी शिफारस केलेल्या कॉपर बुरशीनाशकाची फवारणी करा.\n\n'
+            'तुमचा प्रश्न: "$message"\nअधिक सविस्तर माहितीसाठी इंटरनेट कनेक्शन तपासा.';
+      case 'kn':
+        return 'ನಾನು ನಿಮ್ಮ CropVision ಬೆಳೆ ಸಹಾಯಕ. ಪ್ರಸ್ತುತ ಆಫ್‌ಲೈನ್ ಮೋಡ್‌ನಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದ್ದೇನೆ.\n\n'
+            '• ರೋಗ ಹರಡುವಿಕೆಯನ್ನು ತಡೆಯಲು ಬಾಧಿತ ಎಲೆಗಳನ್ನು ಕೂಡಲೇ ಕಿತ್ತು ನಾಶಪಡಿಸಿ.\n'
+            '• ಎಲೆಗಳ ಮೇಲೆ ನೀರು ನಿಲ್ಲದಂತೆ ಸಸಿಗಳ ನಡುವೆ ಸೂಕ್ತ ಗಾಳಿ ಸಂಚಾರವಿರಲಿ.\n'
+            '• ಶಿಲೀಂಧ್ರ ರೋಗಗಳ ನಿಯಂತ್ರಣಕ್ಕಾಗಿ ಶಿಫಾರಸು ಮಾಡಿದ ತಾಮ್ರದ ಶಿಲೀಂಧ್ರನಾಶಕವನ್ನು ಸಿಂಪಡಿಸಿ.\n\n'
+            'ನಿಮ್ಮ ಪ್ರಶ್ನೆ: "$message"\nಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ.';
+      case 'en':
+      default:
+        return 'I am your CropVision assistant operating in offline mode.\n\n'
+            '• Promptly prune and dispose of infected leaves to stop disease spread.\n'
+            '• Avoid overhead irrigation and ensure good ventilation between plants.\n'
+            '• Apply recommended copper-based or systemic fungicide as appropriate.\n\n'
+            'Query: "$message"\nFor full AI assistance, ensure your internet connection and API key are configured.';
+    }
   }
 
   // ---------- Dashboard stats ----------

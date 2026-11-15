@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../services/supabase_service.dart';
+import '../l10n/locale_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -48,16 +49,16 @@ class _SplashScreenState extends State<SplashScreen> {
             const Icon(Icons.eco, size: 96, color: Colors.white),
             const SizedBox(height: 16),
             Text(
-              'Crop Disease Detector',
+              context.tr('app_title'),
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
             ),
             const SizedBox(height: 8),
-            const Text(
-              'AI-powered leaf diagnosis for farmers',
-              style: TextStyle(color: Colors.white70),
+            Text(
+              context.tr('tagline'),
+              style: const TextStyle(color: Colors.white70),
             ),
             const SizedBox(height: 32),
             const CircularProgressIndicator(color: Colors.white),

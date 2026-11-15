@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../services/supabase_service.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/gradient_app_bar.dart';
+import '../../l10n/locale_provider.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -39,8 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
       final errStr = e.toString();
       if (errStr.contains('Failed host lookup') ||
           errStr.contains('SocketException')) {
-        setState(() => _error =
-            'Network Error: Cannot connect to server. Please check your device\'s internet connection.');
+        setState(() => _error = context.tr('network_error_msg', listen: false));
       } else {
         setState(() => _error = errStr);
       }
@@ -52,7 +52,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GradientAppBar(title: 'Create Account'),
+      appBar: GradientAppBar(title: context.tr('create_account')),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -69,25 +69,25 @@ class _SignupScreenState extends State<SignupScreen> {
                       children: [
                         TextFormField(
                           controller: _nameController,
-                          decoration: const InputDecoration(
-                            labelText: 'Full Name',
-                            prefixIcon: Icon(Icons.person_outline),
-                            border: OutlineInputBorder(),
+                          decoration: InputDecoration(
+                            labelText: context.tr('full_name'),
+                            prefixIcon: const Icon(Icons.person_outline),
+                            border: const OutlineInputBorder(),
                           ),
                           validator: (v) =>
-                              (v == null || v.isEmpty) ? 'Required' : null,
+                              (v == null || v.isEmpty) ? context.tr('required') : null,
                         ),
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _emailController,
                           keyboardType: TextInputType.emailAddress,
-                          decoration: const InputDecoration(
-                            labelText: 'Email',
-                            prefixIcon: Icon(Icons.email_outlined),
-                            border: OutlineInputBorder(),
+                          decoration: InputDecoration(
+                            labelText: context.tr('email'),
+                            prefixIcon: const Icon(Icons.email_outlined),
+                            border: const OutlineInputBorder(),
                           ),
                           validator: (v) => (v == null || !v.contains('@'))
-                              ? 'Enter a valid email'
+                              ? context.tr('enter_valid_email')
                               : null,
                         ),
                         const SizedBox(height: 16),
@@ -95,7 +95,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           controller: _passwordController,
                           obscureText: _obscurePassword,
                           decoration: InputDecoration(
-                            labelText: 'Password',
+                            labelText: context.tr('password'),
                             prefixIcon: const Icon(Icons.lock_outline),
                             suffixIcon: IconButton(
                               icon: Icon(_obscurePassword
@@ -107,7 +107,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             border: const OutlineInputBorder(),
                           ),
                           validator: (v) => (v == null || v.length < 6)
-                              ? 'Minimum 6 characters'
+                              ? context.tr('minimum_6_chars')
                               : null,
                         ),
                         if (_error != null) ...[
@@ -135,7 +135,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   width: 20,
                                   child: CircularProgressIndicator(
                                       strokeWidth: 2, color: Colors.white))
-                              : const Text('Sign Up'),
+                              : Text(context.tr('sign_up')),
                         ),
                       ],
                     ),

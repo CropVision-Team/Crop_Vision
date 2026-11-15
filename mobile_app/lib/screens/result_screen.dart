@@ -4,6 +4,7 @@ import '../widgets/leaf_severity_indicator.dart';
 import '../widgets/gradient_app_bar.dart';
 import '../data/crop_growth_calendar.dart';
 import '../services/supabase_service.dart';
+import '../l10n/locale_provider.dart';
 import 'package:provider/provider.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -62,9 +63,8 @@ class _ResultScreenState extends State<ResultScreen> {
       return Card(
         child: ListTile(
           leading: const Icon(Icons.calendar_month),
-          title: const Text('Track this crop in your calendar'),
-          subtitle: const Text(
-              'Add its planting date to see growth stages and harvest timing.'),
+          title: Text(context.tr('track_this_crop')),
+          subtitle: Text(context.tr('track_crop_subtitle')),
           trailing: const Icon(Icons.arrow_forward_ios, size: 16),
           onTap: () =>
               Navigator.pushNamed(context, '/calendar', arguments: cropName),
@@ -85,7 +85,7 @@ class _ResultScreenState extends State<ResultScreen> {
             const Icon(Icons.eco_outlined),
             const SizedBox(width: 8),
             Expanded(
-                child: Text('Crop calendar • $cropName',
+                child: Text('${context.tr('crop_calendar_bullet')} $cropName',
                     style: const TextStyle(fontWeight: FontWeight.w700))),
           ]),
           const SizedBox(height: 12),
@@ -93,9 +93,9 @@ class _ResultScreenState extends State<ResultScreen> {
               style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 4),
           Text(
-              'Day ${current.daysSincePlanting} since planting • planted ${_formatDate(plantingDate)}'),
+              '${context.tr('day_prefix')} ${current.daysSincePlanting} ${context.tr('day_since_planting')} ${_formatDate(plantingDate)}'),
           if (harvest != null)
-            Text('Expected first harvest: ${_formatDate(harvest)}'),
+            Text('${context.tr('expected_harvest')} ${_formatDate(harvest)}'),
           const SizedBox(height: 8),
           Text(stageDescription(current.stageName!)),
           const SizedBox(height: 8),
@@ -103,7 +103,7 @@ class _ResultScreenState extends State<ResultScreen> {
             onPressed: () =>
                 Navigator.pushNamed(context, '/calendar', arguments: cropName),
             icon: const Icon(Icons.open_in_new, size: 17),
-            label: const Text('Open full crop calendar'),
+            label: Text(context.tr('open_full_calendar')),
           ),
         ]),
       ),
@@ -116,7 +116,7 @@ class _ResultScreenState extends State<ResultScreen> {
 
     if (!diagnosis.isValidLeaf) {
       return Scaffold(
-        appBar: const GradientAppBar(title: 'Verification Failed'),
+        appBar: GradientAppBar(title: context.tr('verification_failed')),
         body: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -125,13 +125,15 @@ class _ResultScreenState extends State<ResultScreen> {
               const Icon(Icons.error_outline, size: 64, color: Colors.red),
               const SizedBox(height: 16),
               Text(
-                diagnosis.rejectionReason ?? 'Image could not be verified.',
+                diagnosis.rejectionReason != null
+                    ? context.tr(diagnosis.rejectionReason!)
+                    : context.tr('err_file_not_image'),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
               FilledButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text('Retake Photo'),
+                child: Text(context.tr('retake_photo')),
               ),
             ],
           ),
@@ -141,7 +143,7 @@ class _ResultScreenState extends State<ResultScreen> {
 
     if (diagnosis.isUnknownCrop) {
       return Scaffold(
-        appBar: const GradientAppBar(title: 'Crop Not Recognized'),
+        appBar: GradientAppBar(title: context.tr('crop_not_recognized')),
         body: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -149,22 +151,21 @@ class _ResultScreenState extends State<ResultScreen> {
             children: [
               const Icon(Icons.help_outline, size: 64, color: Colors.orange),
               const SizedBox(height: 16),
-              const Text(
-                'This crop or disease could not be confidently identified. '
-                'It may not be one of the crops this model was trained on.',
+              Text(
+                context.tr('crop_not_recognized_desc'),
                 textAlign: TextAlign.center,
               ),
               if (diagnosis.confidence != null) ...[
                 const SizedBox(height: 8),
                 Text(
-                  'Confidence: ${(diagnosis.confidence! * 100).toStringAsFixed(1)}%',
+                  '${context.tr('confidence')}: ${(diagnosis.confidence! * 100).toStringAsFixed(1)}%',
                   style: const TextStyle(color: Colors.grey),
                 ),
               ],
               const SizedBox(height: 24),
               FilledButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text('Try Another Photo'),
+                child: Text(context.tr('try_another_photo')),
               ),
             ],
           ),
@@ -176,7 +177,7 @@ class _ResultScreenState extends State<ResultScreen> {
     final cropName = _cropName(diagnosis.predictedDisease);
 
     return Scaffold(
-      appBar: const GradientAppBar(title: 'Diagnosis Result'),
+      appBar: GradientAppBar(title: context.tr('diagnosis_result')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -192,29 +193,29 @@ class _ResultScreenState extends State<ResultScreen> {
                 style: Theme.of(context).textTheme.titleLarge),
             if (diagnosis.confidence != null)
               Text(
-                  'Confidence: ${(diagnosis.confidence! * 100).toStringAsFixed(1)}%',
+                  '${context.tr('confidence')}: ${(diagnosis.confidence! * 100).toStringAsFixed(1)}%',
                   style: const TextStyle(color: Colors.grey)),
             const SizedBox(height: 20),
             Center(
               child: LeafSeverityIndicator(
                 severityPercent: diagnosis.severityPercent ?? 0,
                 stageCode: stage.code,
-                stageLabel: stage.label,
+                stageLabel: stage.localizedLabel(context),
                 size: 120,
               ),
             ),
             const SizedBox(height: 24),
-            Text('Recommended Treatment',
+            Text(context.tr('recommended_treatment'),
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             Text(diagnosis.treatmentRecommendation ??
-                'No recommendation available.'),
+                context.tr('no_recommendation')),
             const SizedBox(height: 20),
-            Text('Prevention Guidance',
+            Text(context.tr('prevention_guidance'),
                 style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 8),
             Text(diagnosis.preventionTips ??
-                'No prevention guidance available.'),
+                context.tr('no_prevention')),
             if (cropName != null) ...[
               const SizedBox(height: 20),
               _calendarCard(context, cropName),
@@ -222,7 +223,7 @@ class _ResultScreenState extends State<ResultScreen> {
             const SizedBox(height: 24),
             OutlinedButton.icon(
               icon: const Icon(Icons.smart_toy),
-              label: const Text('Ask AI Assistant about this'),
+              label: Text(context.tr('ask_ai_about_this')),
               onPressed: () => Navigator.pushNamed(context, '/assistant'),
             ),
           ],

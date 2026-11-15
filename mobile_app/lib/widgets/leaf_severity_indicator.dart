@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
+import '../l10n/locale_provider.dart';
 
 /// The app's signature visual element. Instead of a generic circular
 /// badge or progress ring, severity is shown as an actual leaf shape
@@ -41,7 +42,7 @@ class LeafSeverityIndicator extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Text(
-          '${severityPercent.toStringAsFixed(1)}% leaf area affected',
+          '${severityPercent.toStringAsFixed(1)}% ${context.tr('leaf_area_affected')}',
           style: Theme.of(context)
               .textTheme
               .bodySmall

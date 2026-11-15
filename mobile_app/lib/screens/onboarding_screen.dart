@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../theme/app_theme.dart';
+import '../l10n/locale_provider.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -11,9 +12,9 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingSlide {
   final IconData icon;
-  final String title;
-  final String description;
-  const _OnboardingSlide(this.icon, this.title, this.description);
+  final String titleKey;
+  final String descriptionKey;
+  const _OnboardingSlide(this.icon, this.titleKey, this.descriptionKey);
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
@@ -23,21 +24,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   static const _slides = [
     _OnboardingSlide(
       Icons.camera_alt,
-      'Capture a Leaf',
-      'Take a photo of any crop leaf, or upload one from your gallery - '
-          'right from the field.',
+      'onboarding_title_1',
+      'onboarding_desc_1',
     ),
     _OnboardingSlide(
       Icons.eco,
-      'Instant Diagnosis',
-      'Get the disease name and severity stage (G0-G3) in seconds, '
-          'grounded in real plant pathology.',
+      'onboarding_title_2',
+      'onboarding_desc_2',
     ),
     _OnboardingSlide(
       Icons.medical_services_outlined,
-      'Treatment Guidance',
-      'Receive specific treatment and prevention steps, plus an AI '
-          'assistant for follow-up questions.',
+      'onboarding_title_3',
+      'onboarding_desc_3',
     ),
   ];
 
@@ -60,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               alignment: Alignment.topRight,
               child: TextButton(
                 onPressed: _finishOnboarding,
-                child: const Text('Skip'),
+                child: Text(context.tr('skip')),
               ),
             ),
             Expanded(
@@ -86,13 +84,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                         const SizedBox(height: 32),
                         Text(
-                          slide.title,
+                          context.tr(slide.titleKey),
                           style: Theme.of(context).textTheme.headlineSmall,
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          slide.description,
+                          context.tr(slide.descriptionKey),
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium
@@ -136,7 +134,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut,
                           ),
-                  child: Text(isLastPage ? 'Get Started' : 'Next'),
+                  child: Text(isLastPage
+                      ? context.tr('get_started')
+                      : context.tr('next')),
                 ),
               ),
             ),

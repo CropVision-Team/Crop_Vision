@@ -4,6 +4,7 @@ import '../services/supabase_service.dart';
 import '../models/diagnosis.dart';
 import '../widgets/severity_badge.dart';
 import '../widgets/gradient_app_bar.dart';
+import '../l10n/locale_provider.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -18,7 +19,7 @@ class HistoryScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'Diagnosis History'),
+      appBar: GradientAppBar(title: context.tr('diagnosis_history')),
       body: FutureBuilder<List<Diagnosis>>(
         future: service.fetchDiagnosisHistory(),
         builder: (context, snapshot) {
@@ -26,7 +27,7 @@ class HistoryScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('${context.tr('error')}: ${snapshot.error}'));
           }
           final items = snapshot.data ?? [];
           if (items.isEmpty) {
@@ -37,7 +38,7 @@ class HistoryScreen extends StatelessWidget {
                   Icon(Icons.history,
                       size: 56, color: mutedTextColor.withValues(alpha: 0.4)),
                   const SizedBox(height: 12),
-                  Text('No diagnoses yet',
+                  Text(context.tr('no_diagnoses_yet'),
                       style: TextStyle(color: mutedTextColor)),
                 ],
               ),
@@ -77,8 +78,8 @@ class HistoryScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: color,
                             borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(16),
-                              bottomLeft: Radius.circular(16),
+                                topLeft: Radius.circular(16),
+                                bottomLeft: Radius.circular(16),
                             ),
                           ),
                         ),
@@ -116,7 +117,7 @@ class HistoryScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  d.predictedDisease ?? 'Unverified image',
+                                  d.predictedDisease ?? context.tr('unverified_image'),
                                   style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       color: textColor),

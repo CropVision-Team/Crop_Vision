@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../services/supabase_service.dart';
 import '../../theme/app_theme.dart';
+import '../../l10n/locale_provider.dart';
 import 'email_otp_screen.dart';
 import 'signup_screen.dart';
 
@@ -41,8 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final errStr = e.toString();
       if (errStr.contains('Failed host lookup') ||
           errStr.contains('SocketException')) {
-        setState(() => _error =
-            'Network Error: Cannot connect to server. Please check your device\'s internet connection.');
+        setState(() => _error = context.tr('network_error_msg', listen: false));
       } else {
         setState(() => _error = errStr);
       }
@@ -146,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 20),
                       Text(
-                        'Welcome Back',
+                        context.tr('login_title'),
                         textAlign: TextAlign.center,
                         style:
                             Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -160,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Log in to check on your crops',
+                        context.tr('login_subtitle'),
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: Colors.white.withValues(alpha: 0.85)),
@@ -186,18 +186,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                 children: [
                                   _GlassTextField(
                                     controller: _emailController,
-                                    label: 'Email',
+                                    label: context.tr('email'),
                                     icon: Icons.email_outlined,
                                     keyboardType: TextInputType.emailAddress,
                                     validator: (v) =>
                                         (v == null || !v.contains('@'))
-                                            ? 'Enter a valid email'
+                                            ? context.tr('enter_valid_email')
                                             : null,
                                   ),
                                   const SizedBox(height: 14),
                                   _GlassTextField(
                                     controller: _passwordController,
-                                    label: 'Password',
+                                    label: context.tr('password'),
                                     icon: Icons.lock_outline,
                                     obscureText: _obscurePassword,
                                     suffixIcon: IconButton(
@@ -212,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     validator: (v) =>
                                         (v == null || v.length < 6)
-                                            ? 'Minimum 6 characters'
+                                            ? context.tr('minimum_6_chars')
                                             : null,
                                     onFieldSubmitted: (_) => _login(),
                                   ),
@@ -247,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 strokeWidth: 2,
                                                 color: AppColors.darkBg),
                                           )
-                                        : const Text('Log In'),
+                                        : Text(context.tr('log_in')),
                                   ),
                                   const SizedBox(height: 8),
                                   TextButton(
@@ -260,7 +260,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                     ),
-                                    child: const Text('Use email OTP instead'),
+                                    child: Text(context.tr('use_email_otp')),
                                   ),
                                   const SizedBox(height: 14),
                                   Row(
@@ -272,7 +272,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 10),
-                                        child: Text('or',
+                                        child: Text(context.tr('or'),
                                             style: TextStyle(
                                                 color: Colors.white
                                                     .withValues(alpha: 0.8))),
@@ -305,7 +305,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             child: CircularProgressIndicator(
                                                 strokeWidth: 2))
                                         : const _GoogleGlyph(),
-                                    label: const Text('Continue with Google'),
+                                    label: Text(context.tr('continue_with_google')),
                                   ),
                                   const SizedBox(height: 10),
                                   OutlinedButton.icon(
@@ -328,7 +328,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 strokeWidth: 2,
                                                 color: Colors.white))
                                         : const Icon(Icons.apple, size: 20),
-                                    label: const Text('Continue with Apple'),
+                                    label: Text(context.tr('continue_with_apple')),
                                   ),
                                 ],
                               ),
@@ -344,7 +344,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               builder: (_) => const SignupScreen()),
                         ),
                         child: Text(
-                          "Don't have an account? Sign Up",
+                          context.tr('dont_have_account'),
                           style: TextStyle(
                               color: Colors.white.withValues(alpha: 0.95)),
                         ),

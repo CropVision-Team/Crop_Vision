@@ -4,6 +4,7 @@ import '../services/supabase_service.dart';
 import '../theme/app_theme.dart';
 import '../theme/theme_provider.dart';
 import '../widgets/crystal_panel.dart';
+import '../l10n/locale_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,9 +33,13 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Field Dashboard',
-                        style: Theme.of(context).textTheme.headlineSmall,
+                      Flexible(
+                        child: Text(
+                          context.tr('field_dashboard'),
+                          style: Theme.of(context).textTheme.headlineSmall,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                        ),
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.min,
@@ -47,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8),
                             constraints: const BoxConstraints(
                                 minWidth: 40, minHeight: 40),
-                            tooltip: 'Settings',
+                            tooltip: context.tr('settings'),
                             onPressed: () =>
                                 Navigator.pushNamed(context, '/settings'),
                           ),
@@ -64,8 +69,8 @@ class HomeScreen extends StatelessWidget {
                             constraints: const BoxConstraints(
                                 minWidth: 40, minHeight: 40),
                             tooltip: isDark
-                                ? 'Switch to Light Mode'
-                                : 'Switch to Dark Mode',
+                                ? context.tr('switch_to_light')
+                                : context.tr('switch_to_dark'),
                             onPressed: () => themeProvider.toggleTheme(),
                           ),
                           // 3. Logout icon
@@ -76,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8),
                             constraints: const BoxConstraints(
                                 minWidth: 40, minHeight: 40),
-                            tooltip: 'Log out',
+                            tooltip: context.tr('log_out'),
                             onPressed: () async {
                               await service.signOut();
                               if (context.mounted) {
@@ -106,13 +111,13 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Quick actions',
+                    Text(context.tr('quick_actions'),
                         style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 14),
                     _HeroActionCard(
                       icon: Icons.camera_alt,
-                      label: 'Diagnose Leaf',
-                      subtitle: 'Take or upload a photo for instant analysis',
+                      label: context.tr('diagnose_leaf'),
+                      subtitle: context.tr('diagnose_leaf_subtitle'),
                       color: AppColors.canopy,
                       onTap: () => Navigator.pushNamed(context, '/capture'),
                     ),
@@ -122,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                         Expanded(
                           child: _SmallActionCard(
                             icon: Icons.history,
-                            label: 'History',
+                            label: context.tr('history'),
                             color: AppColors.rust,
                             onTap: () =>
                                 Navigator.pushNamed(context, '/history'),
@@ -132,7 +137,7 @@ class HomeScreen extends StatelessWidget {
                         Expanded(
                           child: _SmallActionCard(
                             icon: Icons.calendar_month,
-                            label: 'Calendar',
+                            label: context.tr('calendar'),
                             color: AppColors.chlorotic,
                             onTap: () =>
                                 Navigator.pushNamed(context, '/calendar'),
@@ -142,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                         Expanded(
                           child: _SmallActionCard(
                             icon: Icons.smart_toy,
-                            label: 'Assistant',
+                            label: context.tr('assistant'),
                             color: isDark ? AppColors.neon : AppColors.canopy,
                             onTap: () =>
                                 Navigator.pushNamed(context, '/assistant'),
@@ -194,7 +199,7 @@ class _HealthOverviewCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 6),
                 child: Text(
-                  'scans this season',
+                  context.tr('scans_this_season'),
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                     fontSize: 14,
@@ -243,11 +248,13 @@ class _HealthOverviewCard extends StatelessWidget {
           const SizedBox(height: 14),
           Row(
             children: [
-              _LegendDot(color: AppColors.canopy, label: '$healthy healthy'),
+              _LegendDot(
+                  color: AppColors.canopy,
+                  label: '$healthy ${context.tr('healthy')}'),
               const SizedBox(width: 20),
               _LegendDot(
                   color: AppColors.rust,
-                  label: '$needsAttention needs attention'),
+                  label: '$needsAttention ${context.tr('needs_attention')}'),
             ],
           ),
         ],

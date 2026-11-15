@@ -4,6 +4,7 @@ import '../services/supabase_service.dart';
 import '../widgets/gradient_app_bar.dart';
 import '../theme/app_theme.dart';
 import '../theme/theme_provider.dart';
+import '../l10n/locale_provider.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -17,16 +18,58 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   static const String _appVersion = '0.1.0';
 
+  void _showLanguageDialog(BuildContext context) {
+    final localeProvider = context.read<LocaleProvider>();
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(context.tr('select_language')),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: kSupportedLocales.keys.map((code) {
+              final isSelected =
+                  localeProvider.locale.languageCode == code;
+              return ListTile(
+                title: Text(
+                  kLanguageNativeNames[code] ?? code,
+                  style: TextStyle(
+                    fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                    color: isSelected ? AppColors.canopy : null,
+                  ),
+                ),
+                trailing: isSelected
+                    ? const Icon(Icons.check_circle, color: AppColors.canopy)
+                    : const Icon(Icons.radio_button_unchecked, color: Colors.grey),
+                onTap: () {
+                  localeProvider.setLocaleCode(code);
+                  Navigator.of(ctx).pop();
+                },
+              );
+            }).toList(),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: Text(context.tr('cancel')),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final service = context.read<SupabaseService>();
     final themeProvider = context.watch<ThemeProvider>();
-    final email = service.currentUser?.email ?? 'Not signed in';
+    final localeProvider = context.watch<LocaleProvider>();
+    final email = service.currentUser?.email ?? context.tr('not_signed_in');
     final isDark = themeProvider.isDarkMode;
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'Settings'),
+      appBar: GradientAppBar(title: context.tr('settings')),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
         children: [
@@ -51,7 +94,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Account',
+                        context.tr('account'),
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
@@ -73,15 +116,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ),
           const _SettingsDivider(),
-          const _SettingsSectionLabel('Preferences'),
+          _SettingsSectionLabel(context.tr('preferences')),
           SwitchListTile(
             secondary: Icon(
               isDark ? Icons.dark_mode_outlined : Icons.wb_sunny_outlined,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            title: const Text('Dark Mode'),
+            title: Text(context.tr('dark_mode')),
             subtitle: Text(
-              isDark ? 'Using dark theme' : 'Using light theme',
+              isDark
+                  ? context.tr('using_dark_theme')
+                  : context.tr('using_light_theme'),
               style: const TextStyle(fontSize: 12.5),
             ),
             value: isDark,
@@ -94,22 +139,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Icons.notifications_outlined,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            title: const Text('Reminder notifications'),
-            subtitle: const Text(
-              'Get notified about crop calendar reminders',
-              style: TextStyle(fontSize: 12.5),
+            title: Text(context.tr('reminder_notifications')),
+            subtitle: Text(
+              context.tr('reminder_notifications_subtitle'),
+              style: const TextStyle(fontSize: 12.5),
             ),
             value: _notificationsEnabled,
             onChanged: (v) => setState(() => _notificationsEnabled = v),
           ),
+          ListTile(
+            leading: Icon(
+              Icons.language,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+            title: Text(context.tr('language')),
+            subtitle: Text(
+              localeProvider.currentLanguageName,
+              style: const TextStyle(fontSize: 12.5),
+            ),
+            trailing: const Icon(Icons.chevron_right, size: 20),
+            onTap: () => _showLanguageDialog(context),
+          ),
           const _SettingsDivider(),
-          const _SettingsSectionLabel('Data'),
+          _SettingsSectionLabel(context.tr('data')),
           ListTile(
             leading: Icon(
               Icons.history,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            title: const Text('Diagnosis history'),
+            title: Text(context.tr('diagnosis_history')),
             trailing: const Icon(Icons.chevron_right, size: 20),
             onTap: () => Navigator.pushNamed(context, '/history'),
           ),
@@ -118,18 +176,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Icons.calendar_month_outlined,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            title: const Text('Crop calendar'),
+            title: Text(context.tr('crop_calendar')),
             trailing: const Icon(Icons.chevron_right, size: 20),
             onTap: () => Navigator.pushNamed(context, '/calendar'),
           ),
           const _SettingsDivider(),
-          const _SettingsSectionLabel('About'),
+          _SettingsSectionLabel(context.tr('about')),
           ListTile(
             leading: Icon(
               Icons.info_outline,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            title: const Text('App version'),
+            title: Text(context.tr('app_version')),
             trailing: Text(
               _appVersion,
               style: TextStyle(
@@ -142,10 +200,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Icons.eco_outlined,
               color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
-            title: const Text('About CropVision'),
-            subtitle: const Text(
-              'AI-powered crop disease detection with real-time severity staging.',
-              style: TextStyle(fontSize: 12.5),
+            title: Text(context.tr('about_cropvision')),
+            subtitle: Text(
+              context.tr('about_cropvision_desc'),
+              style: const TextStyle(fontSize: 12.5),
             ),
           ),
           const _SettingsDivider(),
@@ -165,7 +223,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 14),
               ),
               icon: const Icon(Icons.logout),
-              label: const Text('Log Out'),
+              label: Text(context.tr('log_out')),
             ),
           ),
         ],

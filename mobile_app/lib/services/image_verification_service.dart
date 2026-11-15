@@ -153,7 +153,7 @@ class ImageVerificationService {
     if (decoded == null) {
       return VerificationResult(
         isValid: false,
-        rejectionReason: 'File could not be read as an image.',
+        rejectionReason: 'err_file_not_image',
       );
     }
 
@@ -163,9 +163,7 @@ class ImageVerificationService {
     if (min(originalWidth, originalHeight) < minResolution) {
       return VerificationResult(
         isValid: false,
-        rejectionReason:
-            'Image resolution too low (${originalWidth}x$originalHeight). '
-            'Please retake closer to the leaf.',
+        rejectionReason: 'err_resolution_too_low',
       );
     }
 
@@ -189,15 +187,14 @@ class ImageVerificationService {
     if (brightness < minBrightness) {
       return VerificationResult(
         isValid: false,
-        rejectionReason: 'Image is too dark. Please retake in better lighting.',
+        rejectionReason: 'err_too_dark',
         brightness: brightness,
       );
     }
     if (brightness > maxBrightness) {
       return VerificationResult(
         isValid: false,
-        rejectionReason:
-            'Image is overexposed. Please avoid direct glare/flash.',
+        rejectionReason: 'err_overexposed',
         brightness: brightness,
       );
     }
@@ -206,8 +203,7 @@ class ImageVerificationService {
     if (blur < blurThreshold) {
       return VerificationResult(
         isValid: false,
-        rejectionReason:
-            'Image is too blurry. Please hold the camera steady and refocus.',
+        rejectionReason: 'err_too_blurry',
         blurScore: blur,
         brightness: brightness,
       );
@@ -230,8 +226,7 @@ class ImageVerificationService {
     if (ratio < minPlantPixelRatio) {
       return VerificationResult(
         isValid: false,
-        rejectionReason:
-            'No crop leaf detected in this image. Please photograph a leaf directly.',
+        rejectionReason: 'err_no_leaf_detected',
         blurScore: blur,
         brightness: brightness,
         plantPixelRatio: ratio,

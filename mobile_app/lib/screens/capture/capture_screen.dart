@@ -13,6 +13,7 @@ import '../../models/diagnosis.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/gradient_app_bar.dart';
 import '../../widgets/crystal_panel.dart';
+import '../../l10n/locale_provider.dart';
 
 // Below this confidence, treat the image as "not one of the crops
 // this model was trained on" rather than force-accepting a low-
@@ -110,7 +111,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
     if (_selectedImageBytes == null) return;
     setState(() {
       _processing = true;
-      _statusMessage = 'Verifying image...';
+      _statusMessage = context.tr('verifying_image', listen: false);
     });
 
     try {
@@ -133,11 +134,13 @@ class _CaptureScreenState extends State<CaptureScreen> {
         return;
       }
 
-      setState(() => _statusMessage = 'Uploading image...');
+      setState(() =>
+          _statusMessage = context.tr('uploading_image', listen: false));
       final imageUrl = await service.uploadLeafImage(bytes);
 
       // ---- Stage 2: Disease Classification (real trained model) ----
-      setState(() => _statusMessage = 'Classifying disease...');
+      setState(() =>
+          _statusMessage = context.tr('classifying_disease', listen: false));
       final (predictedDisease, confidence) = await _classifyDisease(bytes);
 
       // ---- Stage 2a: Unknown-crop check ----
@@ -160,7 +163,8 @@ class _CaptureScreenState extends State<CaptureScreen> {
       }
 
       // ---- Stage 3: Severity Estimation (on-device) ----
-      setState(() => _statusMessage = 'Estimating severity...');
+      setState(() =>
+          _statusMessage = context.tr('estimating_severity', listen: false));
       final severity = await _severityService.estimate(
         bytes,
         cropName: predictedDisease.split('___')[0],
@@ -202,7 +206,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.darkBg,
-      appBar: const GradientAppBar(title: 'Diagnose Leaf'),
+      appBar: GradientAppBar(title: context.tr('diagnose_leaf')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -233,14 +237,14 @@ class _CaptureScreenState extends State<CaptureScreen> {
                               ),
                               const SizedBox(height: 16),
                               Text(
-                                'No leaf photo yet',
+                                context.tr('no_leaf_photo'),
                                 style: TextStyle(
                                     color: AppColors.ink.withValues(alpha: 0.5),
                                     fontWeight: FontWeight.w500),
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                'Take a photo or choose one below',
+                                context.tr('take_or_choose_photo'),
                                 style: TextStyle(
                                     color:
                                         AppColors.ink.withValues(alpha: 0.35),
@@ -263,7 +267,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                 Expanded(
                   child: _CaptureActionButton(
                     icon: Icons.camera_alt,
-                    label: 'Camera',
+                    label: context.tr('camera'),
                     color: AppColors.canopy,
                     onTap: _processing
                         ? null
@@ -274,7 +278,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                 Expanded(
                   child: _CaptureActionButton(
                     icon: Icons.photo_library,
-                    label: 'Upload',
+                    label: context.tr('upload'),
                     color: AppColors.rust,
                     onTap: _processing
                         ? null
@@ -328,7 +332,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                           width: 20,
                           child: CircularProgressIndicator(
                               strokeWidth: 2, color: Colors.white))
-                      : const Text('Analyze Leaf'),
+                      : Text(context.tr('analyze_leaf')),
                 ),
               ),
             ),

@@ -1,3 +1,6 @@
+import 'package:flutter/widgets.dart';
+import '../l10n/locale_provider.dart';
+
 enum SeverityStage { g0, g1, g2, g3 }
 
 extension SeverityStageX on SeverityStage {
@@ -9,6 +12,19 @@ extension SeverityStageX on SeverityStage {
         'Moderate Infection',
         'Critical Infection',
       ][index];
+
+  String localizedLabel(BuildContext context) {
+    switch (this) {
+      case SeverityStage.g0:
+        return context.tr('severity_g0');
+      case SeverityStage.g1:
+        return context.tr('severity_g1');
+      case SeverityStage.g2:
+        return context.tr('severity_g2');
+      case SeverityStage.g3:
+        return context.tr('severity_g3');
+    }
+  }
 
   static SeverityStage fromCode(String code) {
     switch (code) {

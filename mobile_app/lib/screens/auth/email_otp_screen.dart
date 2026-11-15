@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../services/supabase_service.dart';
 import '../../theme/app_theme.dart';
+import '../../l10n/locale_provider.dart';
 
 class EmailOtpScreen extends StatefulWidget {
   final String? initialEmail;
@@ -39,7 +40,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
     final email = _emailController.text.trim();
     if (!email.contains('@')) {
       setState(() {
-        _error = 'Enter a valid email address.';
+        _error = context.tr('enter_valid_email_dot', listen: false);
         _message = null;
       });
       return;
@@ -55,7 +56,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
       if (!mounted) return;
       setState(() {
         _codeSent = true;
-        _message = 'A verification code was sent to $email.';
+        _message = '${context.tr('code_sent_message', listen: false)} ($email)';
       });
     } catch (e) {
       if (mounted) setState(() => _error = _friendlyError(e));
@@ -68,7 +69,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
     final email = _emailController.text.trim();
     final code = _codeController.text.trim();
     if (code.length < 6) {
-      setState(() => _error = 'Enter the 6-digit code from your email.');
+      setState(() => _error = context.tr('enter_6_digit_code', listen: false));
       return;
     }
 
@@ -94,10 +95,10 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
     final text = error.toString();
     if (text.contains('Failed host lookup') ||
         text.contains('SocketException')) {
-      return 'Network error. Check the phone internet connection.';
+      return context.tr('network_error_msg', listen: false);
     }
     if (text.toLowerCase().contains('rate limit')) {
-      return 'Too many requests. Wait a moment and try again.';
+      return context.tr('too_many_requests', listen: false);
     }
     return text;
   }
@@ -105,7 +106,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Email OTP Login')),
+      appBar: AppBar(title: Text(context.tr('email_otp_login'))),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -122,7 +123,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                           size: 52, color: AppColors.canopy),
                       const SizedBox(height: 12),
                       Text(
-                        'Sign in without a password',
+                        context.tr('signin_without_password'),
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
@@ -130,10 +131,10 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                       TextField(
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
-                        decoration: const InputDecoration(
-                          labelText: 'Email',
-                          prefixIcon: Icon(Icons.email_outlined),
-                          border: OutlineInputBorder(),
+                        decoration: InputDecoration(
+                          labelText: context.tr('email'),
+                          prefixIcon: const Icon(Icons.email_outlined),
+                          border: const OutlineInputBorder(),
                         ),
                       ),
                       const SizedBox(height: 14),
@@ -146,7 +147,9 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                                 child:
                                     CircularProgressIndicator(strokeWidth: 2),
                               )
-                            : Text(_codeSent ? 'Resend code' : 'Send OTP'),
+                            : Text(_codeSent
+                                ? context.tr('resend_code')
+                                : context.tr('send_otp')),
                       ),
                       if (_codeSent) ...[
                         const SizedBox(height: 18),
@@ -154,10 +157,10 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                           controller: _codeController,
                           keyboardType: TextInputType.number,
                           maxLength: 6,
-                          decoration: const InputDecoration(
-                            labelText: '6-digit OTP',
-                            prefixIcon: Icon(Icons.pin_outlined),
-                            border: OutlineInputBorder(),
+                          decoration: InputDecoration(
+                            labelText: context.tr('otp_label'),
+                            prefixIcon: const Icon(Icons.pin_outlined),
+                            border: const OutlineInputBorder(),
                             counterText: '',
                           ),
                         ),
@@ -171,7 +174,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
                                   child:
                                       CircularProgressIndicator(strokeWidth: 2),
                                 )
-                              : const Text('Verify and Continue'),
+                              : Text(context.tr('verify_and_continue')),
                         ),
                       ],
                       if (_message != null) ...[

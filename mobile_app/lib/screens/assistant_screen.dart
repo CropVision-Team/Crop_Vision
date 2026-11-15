@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../services/supabase_service.dart';
 import '../widgets/gradient_app_bar.dart';
 import '../theme/app_theme.dart';
+import '../l10n/locale_provider.dart';
 
 class AssistantScreen extends StatefulWidget {
   const AssistantScreen({super.key});
@@ -43,6 +44,10 @@ class _AssistantScreenState extends State<AssistantScreen> {
     final text = _controller.text.trim();
     if (text.isEmpty) return;
     final service = context.read<SupabaseService>();
+    final localeProvider = context.read<LocaleProvider>();
+    final langName = localeProvider.currentLanguageEnglishName;
+    final langCode = localeProvider.locale.languageCode;
+    final fallbackMsg = context.tr('assistant_error_fallback', listen: false);
 
     setState(() {
       _messages.add(_ChatMessage('user', text));
@@ -53,12 +58,16 @@ class _AssistantScreenState extends State<AssistantScreen> {
 
     String reply;
     try {
-      reply = await service.askAssistant(text);
+      reply = await service.askAssistant(
+        text,
+        language: langName,
+        langCode: langCode,
+      );
     } catch (e) {
-      reply =
-          "I couldn't reach the assistant right now. The API is temporarily experiencing high traffic or network delay. Please try sending your message again in a few moments.";
+      reply = fallbackMsg;
     }
 
+    if (!mounted) return;
     setState(() {
       _messages.add(_ChatMessage('assistant', reply));
       _sending = false;
@@ -75,7 +84,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'AI Assistant'),
+      appBar: GradientAppBar(title: context.tr('ai_assistant')),
       body: Column(
         children: [
           Expanded(
@@ -95,7 +104,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
                               color: AppColors.canopy.withValues(alpha: 0.6)),
                         ),
                         const SizedBox(height: 12),
-                        Text('Ask me about your crops',
+                        Text(context.tr('ask_about_crops'),
                             style: TextStyle(color: mutedTextColor)),
                       ],
                     ),
@@ -176,7 +185,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
           if (_sending)
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
-              child: Text('Assistant is typing…',
+              child: Text(context.tr('assistant_typing'),
                   style: TextStyle(color: mutedTextColor)),
             ),
           Padding(
@@ -199,10 +208,11 @@ class _AssistantScreenState extends State<AssistantScreen> {
                   Expanded(
                     child: TextField(
                       controller: _controller,
-                      decoration: const InputDecoration(
-                        hintText: 'Ask about your crop...',
+                      decoration: InputDecoration(
+                        hintText: context.tr('ask_hint'),
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(horizontal: 14),
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 14),
                       ),
                       onSubmitted: (_) => _send(),
                     ),
