@@ -11,6 +11,7 @@ import '../../services/severity_estimation_service.dart';
 import '../../data/treatment_recommendations.dart';
 import '../../models/diagnosis.dart';
 import '../../theme/app_theme.dart';
+import '../../theme/locale_provider.dart';
 import '../../widgets/gradient_app_bar.dart';
 
 // Below this confidence, treat the image as "not one of the crops
@@ -111,7 +112,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
     if (_selectedImageBytes == null) return;
     setState(() {
       _processing = true;
-      _statusMessage = 'Verifying image...';
+      _statusMessage = context.tr('verifying_image');
     });
 
     try {
@@ -132,11 +133,11 @@ class _CaptureScreenState extends State<CaptureScreen> {
         return;
       }
 
-      setState(() => _statusMessage = 'Uploading image...');
+      setState(() => _statusMessage = context.tr('uploading_image'));
       final imageUrl = await service.uploadLeafImage(bytes);
 
       // ---- Stage 2: Disease Classification (real trained model) ----
-      setState(() => _statusMessage = 'Classifying disease...');
+      setState(() => _statusMessage = context.tr('classifying_disease'));
       final (predictedDisease, confidence) = await _classifyDisease(bytes);
 
       // ---- Stage 2a: Unknown-crop check ----
@@ -158,7 +159,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
       }
 
       // ---- Stage 3: Severity Estimation (on-device) ----
-      setState(() => _statusMessage = 'Estimating severity...');
+      setState(() => _statusMessage = context.tr('estimating_severity'));
       final severity = await _severityService.estimate(
         bytes,
         cropName: predictedDisease.split('___')[0],
@@ -207,7 +208,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'Scan Crop Leaf'),
+      appBar: GradientAppBar(title: context.tr('scan_crop_leaf')),
       body: Padding(
         padding: const EdgeInsets.all(18),
         child: Column(
@@ -246,7 +247,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                             ),
                             const SizedBox(height: 18),
                             Text(
-                              'No Leaf Photo Selected',
+                              context.tr('no_photo_selected'),
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w800,
@@ -255,7 +256,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                             ),
                             const SizedBox(height: 6),
                             Text(
-                              'Hold the leaf flat in daylight and tap Camera below',
+                              context.tr('no_photo_hint'),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 14,
@@ -277,7 +278,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                 Expanded(
                   child: _CaptureActionButton(
                     icon: Icons.camera_alt_rounded,
-                    label: 'Take Photo',
+                    label: context.tr('take_photo'),
                     color: AppColors.primary,
                     onTap: _processing ? null : () => _pickImage(ImageSource.camera),
                   ),
@@ -286,7 +287,7 @@ class _CaptureScreenState extends State<CaptureScreen> {
                 Expanded(
                   child: _CaptureActionButton(
                     icon: Icons.photo_library_rounded,
-                    label: 'From Gallery',
+                    label: context.tr('from_gallery'),
                     color: AppColors.terracotta,
                     onTap: _processing ? null : () => _pickImage(ImageSource.gallery),
                   ),
@@ -342,9 +343,9 @@ class _CaptureScreenState extends State<CaptureScreen> {
                           color: Colors.white,
                         ),
                       )
-                    : const Text(
-                        'Check Leaf for Diseases',
-                        style: TextStyle(
+                    : Text(
+                        context.tr('check_leaf'),
+                        style: const TextStyle(
                           fontSize: 16.5,
                           fontWeight: FontWeight.w800,
                         ),

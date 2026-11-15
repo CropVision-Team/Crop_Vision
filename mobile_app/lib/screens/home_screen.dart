@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../services/supabase_service.dart';
 import '../theme/app_design_system.dart';
 import '../theme/theme_provider.dart';
+import '../theme/locale_provider.dart';
 import '../models/diagnosis.dart';
 import '../data/crop_growth_calendar.dart';
 
@@ -18,14 +19,14 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedNavIndex = 0;
   int _cropRefreshKey = 0; // increment to force _CropsGrid to re-fetch
 
-  String _getTimeBasedGreeting() {
+  String _getTimeBasedGreeting(BuildContext context) {
     final hour = DateTime.now().hour;
     if (hour < 12) {
-      return 'Good Morning, Farmer 👋';
+      return context.tr('greeting_morning');
     } else if (hour < 17) {
-      return 'Good Afternoon, Farmer 👋';
+      return context.tr('greeting_afternoon');
     } else {
-      return 'Good Evening, Farmer 👋';
+      return context.tr('greeting_evening');
     }
   }
 
@@ -83,9 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ),
                                   const SizedBox(width: 6),
-                                  const Text(
-                                    '🌾 Rabi Season • Field 4 Active',
-                                    style: TextStyle(
+                                  Text(
+                                    context.tr('season_badge'),
+                                    style: const TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w700,
                                       color: FarmerColors.primaryDeep,
@@ -96,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              _getTimeBasedGreeting(),
+                              _getTimeBasedGreeting(context),
                               style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.w800,
@@ -108,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              'Check your crops and view today\'s field care',
+                              context.tr('home_subtitle'),
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -189,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'My Monitored Crops',
+                        context.tr('my_crops'),
                         style: TextStyle(
                           fontSize: 19,
                           fontWeight: FontWeight.w800,
@@ -202,9 +203,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           if (mounted) setState(() { _cropRefreshKey++; });
                         },
                         icon: const Icon(Icons.add_circle_outline_rounded, size: 16, color: FarmerColors.primary),
-                        label: const Text(
-                          'Track Crop',
-                          style: TextStyle(
+                        label: Text(
+                          context.tr('track_crop'),
+                          style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                             color: FarmerColors.primary,
@@ -240,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Recent Leaf Scans',
+                              context.tr('recent_scans'),
                               style: TextStyle(
                                 fontSize: 19,
                                 fontWeight: FontWeight.w800,
@@ -251,7 +252,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              'Field diagnoses & doctor treatment advice',
+                              context.tr('recent_scans_subtitle'),
                               style: TextStyle(
                                 fontSize: 13.5,
                                 color: mutedTextColor,
@@ -266,7 +267,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       IconButton(
                         icon: const Icon(Icons.arrow_forward_rounded),
                         color: FarmerColors.primary,
-                        tooltip: 'View Scan History',
+                        tooltip: context.tr('view_history_tooltip'),
                         onPressed: () => Navigator.pushNamed(context, '/history'),
                       ),
                     ],
@@ -347,9 +348,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         icon: const Icon(Icons.smart_toy_rounded, size: 22, color: FarmerColors.primary),
-        label: const Text(
-          'Ask AI Doctor',
-          style: TextStyle(
+        label: Text(
+          context.tr('ask_ai_doctor'),
+          style: const TextStyle(
             fontSize: 14.5,
             fontWeight: FontWeight.w700,
             color: FarmerColors.primary,
@@ -439,9 +440,9 @@ class _HeroScanCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'SCAN CROP LEAF',
-                        style: TextStyle(
+                      Text(
+                        context.tr('scan_title'),
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 0.5,
@@ -452,7 +453,7 @@ class _HeroScanCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'Take a photo to check for diseases & get instant medicine',
+                        context.tr('scan_subtitle'),
                         style: TextStyle(
                           fontSize: 13.5,
                           height: 1.3,
@@ -469,19 +470,19 @@ class _HeroScanCard extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(FarmerRadius.pill),
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Open Camera',
-                              style: TextStyle(
+                              context.tr('open_camera'),
+                              style: const TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w800,
                                 color: Color(0xFF1B5E20),
                               ),
                             ),
-                            SizedBox(width: 4),
-                            Icon(Icons.arrow_forward_rounded, size: 14, color: Color(0xFF1B5E20)),
+                            const SizedBox(width: 4),
+                            const Icon(Icons.arrow_forward_rounded, size: 14, color: Color(0xFF1B5E20)),
                           ],
                         ),
                       ),
@@ -546,7 +547,7 @@ class _TodayTasksCard extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    'Today\'s Farm Tasks',
+                    context.tr('today_tasks'),
                     style: TextStyle(
                       fontSize: 16.5,
                       fontWeight: FontWeight.w800,
@@ -562,9 +563,9 @@ class _TodayTasksCard extends StatelessWidget {
                   minimumSize: Size.zero,
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
-                child: const Text(
-                  'Calendar ➔',
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: FarmerColors.primary),
+                child: Text(
+                  '${context.tr('nav_calendar')} ➔',
+                  style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: FarmerColors.primary),
                 ),
               ),
             ],
@@ -586,7 +587,7 @@ class _TodayTasksCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Tomato Foliar Spray (4:00 PM)',
+                        context.tr('today_task_sample_title'),
                         style: TextStyle(
                           fontSize: 14.5,
                           fontWeight: FontWeight.w700,
@@ -597,7 +598,7 @@ class _TodayTasksCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        'Apply Copper Hydroxide (2g/L) for G2 Early Blight control',
+                        context.tr('today_task_sample_desc'),
                         style: TextStyle(fontSize: 12.5, color: mutedTextColor),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -782,16 +783,22 @@ class _CropsGridState extends State<_CropsGrid> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            c['name'] as String,
-                            style: TextStyle(
-                              fontSize: 16.5,
-                              fontWeight: FontWeight.w800,
-                              color: textColor,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                          Builder(builder: (ctx) {
+                            final rawName = c['name'] as String;
+                            final cropKey = 'crop_${rawName.toLowerCase()}';
+                            final localized = ctx.tr(cropKey);
+                            final displayCropName = localized != cropKey ? localized : rawName;
+                            return Text(
+                              displayCropName,
+                              style: TextStyle(
+                                fontSize: 16.5,
+                                fontWeight: FontWeight.w800,
+                                color: textColor,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            );
+                          }),
                           const SizedBox(height: 2),
                           Text(
                             c['variety'] as String,
@@ -807,21 +814,23 @@ class _CropsGridState extends State<_CropsGrid> {
                           color: isHealthy
                               ? FarmerColors.healthyBg
                               : FarmerColors.warningBg,
-                          borderRadius: BorderRadius.circular(FarmerRadius.sm),
-                        ),
-                        child: Text(
-                          c['status'] as String,
-                          style: TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w700,
-                            color: isHealthy
-                                ? FarmerColors.healthyGreen
-                                : FarmerColors.warningAmber,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                        borderRadius: BorderRadius.circular(FarmerRadius.sm),
                       ),
+                      child: Text(
+                        isHealthy
+                            ? '${context.tr('healthy')} (G0)'
+                            : '${context.tr('attention')} (G2)',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                          color: isHealthy
+                              ? FarmerColors.healthyGreen
+                              : FarmerColors.warningAmber,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     ],
                   ),
                 ),
@@ -871,7 +880,7 @@ class _EmptyScansCard extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            'No Leaf Scans Yet',
+            context.tr('no_scans'),
             style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w800,
@@ -880,7 +889,7 @@ class _EmptyScansCard extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(
-            'Notice any yellow spots or curled leaves? Scan a leaf now to get instant disease detection and remedies.',
+            context.tr('no_scans_desc'),
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 13.5, color: mutedTextColor, height: 1.4),
           ),
@@ -888,7 +897,7 @@ class _EmptyScansCard extends StatelessWidget {
           FilledButton.icon(
             onPressed: onScanTap,
             icon: const Icon(Icons.camera_alt_rounded, size: 18),
-            label: const Text('Scan Your First Leaf'),
+            label: Text(context.tr('scan_first')),
             style: FilledButton.styleFrom(
               backgroundColor: FarmerColors.primary,
               foregroundColor: Colors.white,
@@ -1259,9 +1268,9 @@ class _FarmerDiagnosedCard extends StatelessWidget {
                 TextButton.icon(
                   onPressed: onAskAI,
                   icon: const Icon(Icons.chat_bubble_outline_rounded, size: 16, color: FarmerColors.primary),
-                  label: const Text(
-                    'Ask AI Doctor about this ➔',
-                    style: TextStyle(
+                  label: Text(
+                    context.tr('ask_ai_about_this'),
+                    style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w700,
                       color: FarmerColors.primary,
@@ -1370,7 +1379,7 @@ class _FarmerBottomDock extends StatelessWidget {
               _DockTab(
                 icon: Icons.home_outlined,
                 activeIcon: Icons.home_rounded,
-                label: 'Home',
+                label: context.tr('nav_home'),
                 isSelected: currentIndex == 0,
                 onTap: () => onTap(0),
               ),
@@ -1378,7 +1387,7 @@ class _FarmerBottomDock extends StatelessWidget {
               _DockTab(
                 icon: Icons.calendar_month_outlined,
                 activeIcon: Icons.calendar_month_rounded,
-                label: 'Calendar',
+                label: context.tr('nav_calendar'),
                 isSelected: currentIndex == 1,
                 onTap: () => onTap(1),
               ),
@@ -1401,14 +1410,14 @@ class _FarmerBottomDock extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.camera_alt_rounded, size: 20, color: Colors.white),
-                      SizedBox(width: 6),
+                      const Icon(Icons.camera_alt_rounded, size: 20, color: Colors.white),
+                      const SizedBox(width: 6),
                       Text(
-                        'Scan',
-                        style: TextStyle(
+                        context.tr('nav_capture'),
+                        style: const TextStyle(
                           fontSize: 13.5,
                           fontWeight: FontWeight.w800,
                           color: Colors.white,
@@ -1422,7 +1431,7 @@ class _FarmerBottomDock extends StatelessWidget {
               _DockTab(
                 icon: Icons.history_outlined,
                 activeIcon: Icons.history_rounded,
-                label: 'History',
+                label: context.tr('nav_history'),
                 isSelected: currentIndex == 3,
                 onTap: () => onTap(3),
               ),

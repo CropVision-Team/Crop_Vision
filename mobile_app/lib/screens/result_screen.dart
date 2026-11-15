@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/diagnosis.dart';
 import '../theme/app_design_system.dart';
+import '../theme/locale_provider.dart';
 import '../widgets/leaf_severity_indicator.dart';
 import '../widgets/gradient_app_bar.dart';
 
@@ -48,10 +49,10 @@ class ResultScreen extends StatelessWidget {
     final borderColor = isDark ? FarmerColors.borderDark : FarmerColors.borderLight;
 
     if (diagnosis == null) {
-      return const Scaffold(
-        appBar: GradientAppBar(title: 'Diagnosis Result'),
+      return Scaffold(
+        appBar: GradientAppBar(title: context.tr('diagnosis_result')),
         body: Center(
-          child: Text('No diagnosis data found.', style: TextStyle(fontSize: 16)),
+          child: Text(context.tr('no_diagnosis_data'), style: const TextStyle(fontSize: 16)),
         ),
       );
     }
@@ -59,7 +60,7 @@ class ResultScreen extends StatelessWidget {
     // ── Rejected / Not a leaf ──────────────────────────────────────────
     if (!diagnosis.isValidLeaf) {
       return Scaffold(
-        appBar: const GradientAppBar(title: 'Photo Verification Failed'),
+        appBar: GradientAppBar(title: context.tr('photo_verification_failed')),
         body: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -75,20 +76,20 @@ class ResultScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'Please Take a Clear Photo of a Leaf',
+                context.tr('take_clear_photo'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: textColor),
               ),
               const SizedBox(height: 8),
               Text(
-                diagnosis.rejectionReason ?? 'Image could not be clearly verified as a crop leaf.',
+                diagnosis.rejectionReason ?? context.tr('image_not_verified'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15, color: mutedTextColor, height: 1.4),
               ),
               const SizedBox(height: 28),
               FilledButton.icon(
                 icon: const Icon(Icons.camera_alt_rounded),
-                label: const Text('Retake Photo'),
+                label: Text(context.tr('retake_photo')),
                 style: FilledButton.styleFrom(
                   backgroundColor: FarmerColors.primary,
                   minimumSize: const Size(200, 52),
@@ -105,7 +106,7 @@ class ResultScreen extends StatelessWidget {
     // ── Unknown / unsupported crop ──────────────────────────────────────
     if (diagnosis.isUnknownCrop) {
       return Scaffold(
-        appBar: const GradientAppBar(title: 'Crop Not Recognized'),
+        appBar: GradientAppBar(title: context.tr('crop_not_recognized')),
         body: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -121,20 +122,20 @@ class ResultScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'Crop Pattern Not Confirmed',
+                context.tr('crop_pattern_not_confirmed'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: textColor),
               ),
               const SizedBox(height: 8),
               Text(
-                'This leaf does not match supported crops (Tomato, Potato, Corn, Apple, Grape). Please try taking a brighter photo under natural sunlight.',
+                context.tr('unknown_crop_desc'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15, color: mutedTextColor, height: 1.4),
               ),
               const SizedBox(height: 28),
               FilledButton.icon(
                 icon: const Icon(Icons.camera_alt_rounded),
-                label: const Text('Try Another Leaf'),
+                label: Text(context.tr('try_another_leaf')),
                 style: FilledButton.styleFrom(
                   backgroundColor: FarmerColors.primary,
                   minimumSize: const Size(200, 52),
@@ -154,7 +155,7 @@ class ResultScreen extends StatelessWidget {
     final diagnosisContext = _buildDiagnosisContext(diagnosis);
 
     return Scaffold(
-      appBar: const GradientAppBar(title: 'Diagnosis & Remedy'),
+      appBar: GradientAppBar(title: context.tr('diagnosis_remedy')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(18),
         child: Column(
@@ -181,7 +182,7 @@ class ResultScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.image_not_supported_outlined, size: 48, color: mutedTextColor),
                               const SizedBox(height: 8),
-                              Text('Leaf photo preview saved', style: TextStyle(color: mutedTextColor)),
+                              Text(context.tr('leaf_photo_saved'), style: TextStyle(color: mutedTextColor)),
                             ],
                           ),
                         );
@@ -237,7 +238,7 @@ class ResultScreen extends StatelessWidget {
                       ),
                       if (diagnosis.confidence != null)
                         Text(
-                          '${(diagnosis.confidence! * 100).toInt()}% Confidence',
+                          '${(diagnosis.confidence! * 100).toInt()}% ${context.tr('confidence')}',
                           style: const TextStyle(
                             color: FarmerColors.primaryDeep,
                             fontWeight: FontWeight.w700,
@@ -287,9 +288,8 @@ class ResultScreen extends StatelessWidget {
               icon: Icons.medical_services_rounded,
               iconColor: FarmerColors.warningAmber,
               iconBg: FarmerColors.warningBg,
-              title: 'Recommended Medicine & Spray',
-              body: diagnosis.treatmentRecommendation ??
-                  'Leaf canopy is healthy. Continue standard organic bio-fertilizer schedule.',
+              title: context.tr('recommended_medicine'),
+              body: diagnosis.treatmentRecommendation ?? context.tr('default_treatment'),
               textColor: textColor,
               mutedColor: mutedTextColor,
               cardBg: cardBg,
@@ -303,9 +303,8 @@ class ResultScreen extends StatelessWidget {
               icon: Icons.shield_rounded,
               iconColor: FarmerColors.primary,
               iconBg: FarmerColors.primaryLight,
-              title: 'Farm Prevention Tips',
-              body: diagnosis.preventionTips ??
-                  'Maintain furrow spacing, avoid overhead wetting, and scout crops every 3 days.',
+              title: context.tr('prevention_tips'),
+              body: diagnosis.preventionTips ?? context.tr('default_prevention'),
               textColor: textColor,
               mutedColor: mutedTextColor,
               cardBg: cardBg,
@@ -323,9 +322,9 @@ class ResultScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(FarmerRadius.pill)),
               ),
               icon: const Icon(Icons.chat_bubble_outline_rounded),
-              label: const Text(
-                'Ask AI Doctor About This Diagnosis',
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+              label: Text(
+                context.tr('ask_ai_about_diagnosis'),
+                style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
               ),
               onPressed: () {
                 Navigator.pushNamed(
@@ -346,9 +345,9 @@ class ResultScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(FarmerRadius.pill)),
               ),
               icon: const Icon(Icons.camera_alt_outlined),
-              label: const Text(
-                'Scan Another Leaf',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+              label: Text(
+                context.tr('scan_another_leaf'),
+                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
               ),
               onPressed: () => Navigator.pop(context),
             ),

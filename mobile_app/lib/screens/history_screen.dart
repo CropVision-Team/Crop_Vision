@@ -5,6 +5,7 @@ import '../models/diagnosis.dart';
 import '../widgets/severity_badge.dart';
 import '../widgets/gradient_app_bar.dart';
 import '../theme/app_design_system.dart';
+import '../theme/locale_provider.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -28,7 +29,7 @@ class HistoryScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'Farm Diagnosis History'),
+      appBar: GradientAppBar(title: context.tr('history_title')),
       body: FutureBuilder<List<Diagnosis>>(
         future: service.fetchDiagnosisHistory(),
         builder: (context, snapshot) {
@@ -36,7 +37,7 @@ class HistoryScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator(color: FarmerColors.primary));
           }
           if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}', style: TextStyle(color: textColor)));
+            return Center(child: Text('${context.tr('error')}: ${snapshot.error}', style: TextStyle(color: textColor)));
           }
           final items = snapshot.data ?? [];
           if (items.isEmpty) {
@@ -56,12 +57,12 @@ class HistoryScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'No Leaf Diagnoses Saved Yet',
+                      context.tr('no_diagnoses_title'),
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: textColor),
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      'Whenever you scan a crop leaf, the diagnosis, damage analysis, and medicine guidance will appear here.',
+                      context.tr('no_diagnoses_desc'),
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 14, color: mutedTextColor, height: 1.4),
                     ),
@@ -69,7 +70,7 @@ class HistoryScreen extends StatelessWidget {
                     FilledButton.icon(
                       onPressed: () => Navigator.pushNamed(context, '/capture'),
                       icon: const Icon(Icons.camera_alt_rounded),
-                      label: const Text('Scan Leaf Now'),
+                      label: Text(context.tr('scan_leaf_now')),
                       style: FilledButton.styleFrom(
                         backgroundColor: FarmerColors.primary,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(FarmerRadius.pill)),

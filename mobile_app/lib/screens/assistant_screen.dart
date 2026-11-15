@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../services/supabase_service.dart';
 import '../widgets/gradient_app_bar.dart';
 import '../theme/app_theme.dart';
+import '../theme/locale_provider.dart';
 
 class AssistantScreen extends StatefulWidget {
   const AssistantScreen({super.key});
@@ -68,16 +69,10 @@ class _AssistantScreenState extends State<AssistantScreen> {
     if (_diagnosisContext != null && mounted) {
       await _sendAutoContext();
     } else if (_messages.isEmpty && mounted) {
-      // Fresh open with no history — show welcome message
+      // Fresh open with no history — show welcome message in user's language
       _addLocalMessage(
         'assistant',
-        '👋 Hello! I\'m your CropVision AI Agronomy Assistant.\n\n'
-        'Ask me anything about:\n'
-        '• Crop diseases (Tomato, Potato, Corn, Apple, Grape)\n'
-        '• Treatment & fungicide schedules\n'
-        '• Watering, soil & fertilizer tips\n'
-        '• G0/G1/G2/G3 severity stages\n\n'
-        'What would you like to know? 🌱',
+        context.tr('assistant_welcome'),
       );
     }
   }
@@ -87,6 +82,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
   Future<void> _sendAutoContext() async {
     if (_diagnosisContext == null) return;
     final service = context.read<SupabaseService>();
+    final loc = context.read<LocaleProvider>();
 
     final autoQuestion =
         'I just scanned my crop leaf and got this diagnosis result:\n\n'
@@ -100,8 +96,12 @@ class _AssistantScreenState extends State<AssistantScreen> {
 
     String reply;
     try {
-      reply = await service.askAssistant(autoQuestion,
-          diagnosisContext: _diagnosisContext);
+      reply = await service.askAssistant(
+        autoQuestion,
+        diagnosisContext: _diagnosisContext,
+        language: loc.languageName,
+        langCode: loc.langCode,
+      );
     } catch (e) {
       reply = service.buildOfflineContextReply(_diagnosisContext!);
     }
@@ -152,10 +152,15 @@ class _AssistantScreenState extends State<AssistantScreen> {
     // Save user message (non-blocking, failure is non-fatal)
     service.saveChatMessage('user', text).catchError((_) {});
 
+    final loc = context.read<LocaleProvider>();
     String reply;
     try {
-      reply = await service.askAssistant(text,
-          diagnosisContext: _diagnosisContext);
+      reply = await service.askAssistant(
+        text,
+        diagnosisContext: _diagnosisContext,
+        language: loc.languageName,
+        langCode: loc.langCode,
+      );
     } catch (e) {
       // askAssistant already falls back to local knowledge — this
       // catch is just a last-resort safety net
@@ -190,7 +195,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'AI Assistant'),
+      appBar: GradientAppBar(title: context.tr('assistant')),
       body: Column(
         children: [
           // Context banner — shown when the user arrived from a scan result
@@ -235,7 +240,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
                               color: AppColors.teal.withValues(alpha: 0.6)),
                         ),
                         const SizedBox(height: 12),
-                        Text('Ask me about your crops',
+                        Text(context.tr('ask_assistant_hint'),
                             style: TextStyle(color: mutedTextColor)),
                       ],
                     ),

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../services/supabase_service.dart';
 import '../widgets/gradient_app_bar.dart';
 import '../theme/app_theme.dart';
+import '../theme/locale_provider.dart';
 import '../data/crop_growth_calendar.dart';
 
 class CalendarScreen extends StatefulWidget {
@@ -228,29 +229,29 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Add Reminder'),
+      builder: (dialogCtx) => AlertDialog(
+        title: Text(dialogCtx.tr('add_reminder_title')),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               controller: titleController,
-              decoration: const InputDecoration(labelText: 'Title'),
+              decoration: InputDecoration(labelText: dialogCtx.tr('title_label')),
             ),
             TextField(
               controller: descController,
-              decoration: const InputDecoration(labelText: 'Description (optional)'),
+              decoration: InputDecoration(labelText: dialogCtx.tr('description_label')),
             ),
           ],
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
+            onPressed: () => Navigator.pop(dialogCtx, false),
+            child: Text(dialogCtx.tr('cancel')),
           ),
           FilledButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text('Save'),
+            onPressed: () => Navigator.pop(dialogCtx, true),
+            child: Text(dialogCtx.tr('save')),
           ),
         ],
       ),
@@ -274,16 +275,16 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     final confirmed = await showDialog<bool>(
       context: context,
-      builder: (context) => StatefulBuilder(
+      builder: (dialogCtx) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          title: const Text('Track a Crop'),
+          title: Text(dialogCtx.tr('track_a_crop_dialog')),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DropdownButtonFormField<String>(
                 initialValue: selectedCrop,
-                decoration: const InputDecoration(labelText: 'Crop'),
+                decoration: InputDecoration(labelText: dialogCtx.tr('crop_label')),
                 items: cropGrowthCalendar.keys
                     .map((c) => DropdownMenuItem(value: c, child: Text(c)))
                     .toList(),
@@ -294,7 +295,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Planted: ${plantingDate.day}/${plantingDate.month}/${plantingDate.year}',
+                    '${dialogCtx.tr('planted_label')}: ${plantingDate.day}/${plantingDate.month}/${plantingDate.year}',
                   ),
                   TextButton(
                     onPressed: () async {
@@ -308,7 +309,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                         setDialogState(() => plantingDate = picked);
                       }
                     },
-                    child: const Text('Change'),
+                    child: Text(dialogCtx.tr('change')),
                   ),
                 ],
               ),
@@ -317,11 +318,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
-              child: const Text('Cancel'),
+              child: Text(dialogCtx.tr('cancel')),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
-              child: const Text('Track'),
+              child: Text(dialogCtx.tr('track')),
             ),
           ],
         ),
@@ -365,7 +366,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: const GradientAppBar(title: 'Crop Calendar & Stages'),
+      appBar: GradientAppBar(title: context.tr('calendar')),
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary,
         elevation: 4,
@@ -430,7 +431,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   const SizedBox(height: 20),
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('Reminders',
+                    child: Text(context.tr('reminders'),
                         style: Theme.of(context).textTheme.titleMedium),
                   ),
                   const SizedBox(height: 12),
@@ -442,7 +443,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           Icon(Icons.event_available,
                               size: 40, color: AppColors.ink.withValues(alpha: 0.25)),
                           const SizedBox(height: 8),
-                          Text('No reminders for this day',
+                          Text(context.tr('no_reminders'),
                               style: TextStyle(
                                   color: AppColors.ink.withValues(alpha: 0.5))),
                         ],
@@ -484,11 +485,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Tracked Crops', style: Theme.of(context).textTheme.titleMedium),
+                      Text(context.tr('tracked_crops'), style: Theme.of(context).textTheme.titleMedium),
                       TextButton.icon(
                         onPressed: _showAddCropDialog,
                         icon: const Icon(Icons.add, size: 18),
-                        label: const Text('Track a crop'),
+                        label: Text(context.tr('track_a_crop')),
                       ),
                     ],
                   ),
@@ -501,7 +502,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           Icon(Icons.eco_outlined,
                               size: 40, color: isDark ? Colors.white24 : Colors.black26),
                           const SizedBox(height: 8),
-                          Text('No crops tracked yet',
+                          Text(context.tr('no_crops'),
                               style: TextStyle(color: isDark ? Colors.white60 : Colors.black54)),
                         ],
                       ),
@@ -509,6 +510,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
                   else
                     ..._trackedCrops.map((crop) {
                       final cropName = crop['crop_name'] as String;
+                      final cropKey = 'crop_${cropName.toLowerCase()}';
+                      final localized = context.tr(cropKey);
+                      final displayCropName = localized != cropKey ? localized : cropName;
                       final plantingDate = DateTime.parse(crop['planting_date'] as String);
                       final stage = getCurrentGrowthStage(cropName, plantingDate);
                       final stageIndex = stage == null
@@ -541,7 +545,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                             Row(
                               children: [
                                 Expanded(
-                                  child: Text(cropName,
+                                  child: Text(displayCropName,
                                       style: const TextStyle(
                                           fontWeight: FontWeight.w700, fontSize: 16)),
                                 ),
@@ -555,7 +559,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                             const SizedBox(height: 4),
                             Text(
                               stage == null
-                                  ? 'No growth data for this crop yet'
+                                  ? context.tr('no_growth_data')
                                   : stage.stageName!,
                               style: const TextStyle(
                                   color: AppColors.neon, fontWeight: FontWeight.w600, fontSize: 14.5),

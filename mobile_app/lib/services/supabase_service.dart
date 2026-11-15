@@ -186,16 +186,26 @@ class SupabaseService {
   /// even for cheap models. Same trade-offs as before: API key lives
   /// in app code (fine for a student demo), and this may fail on
   /// Chrome/web due to CORS but works fine on native Android/iOS.
-  Future<String> askAssistant(String message, {String? diagnosisContext}) async {
-    const apiKey = String.fromEnvironment('GEMINI_API_KEY',
-        defaultValue: '');
+  /// Direct client-side call to Google's Gemini API with multi-language
+  /// awareness (Tamil, Hindi, Telugu, Marathi, Kannada, English)
+  Future<String> askAssistant(String message,
+      {String? diagnosisContext, String? language, String? langCode}) async {
+    const apiKey = String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
+    final currentLang = language ?? 'English';
+    final currentCode = langCode ?? 'en';
+
     if (apiKey.isEmpty) {
-      return _generateLocalAgronomyReply(message, diagnosisContext);
+      return _generateLocalAgronomyReply(message, diagnosisContext,
+          language: currentLang, langCode: currentCode);
     }
 
     final farmerName = currentUser?.userMetadata?['full_name'] as String? ??
         currentUser?.email?.split('@')[0] ??
         'Farmer';
+
+    final langInstruction = currentLang != 'English'
+        ? '\n\nCRITICAL LANGUAGE REQUIREMENT: The farmer has chosen their app language as $currentLang ($currentCode). You MUST write your ENTIRE reply in $currentLang. Use accurate and warm agricultural terminology in $currentLang.'
+        : '';
 
     final systemPrompt =
         'You are an intelligent, friendly AI assistant for CropVision, a crop disease detection app. '
@@ -203,7 +213,8 @@ class SupabaseService {
         'Answer any questions helpfully, warmly, and accurately. You specialize in crops (Tomato, Potato, Corn, Apple, Grape), '
         'disease identification, prevention, fungicides, organic remedies, and general farming practices. '
         'You can also answer questions about the user ($farmerName) and general inquiries politely and concisely.'
-        '${diagnosisContext != null ? '\n\nMost recent diagnosis for this farmer: $diagnosisContext' : ''}';
+        '${diagnosisContext != null ? '\n\nMost recent diagnosis for this farmer: $diagnosisContext' : ''}'
+        '$langInstruction';
 
     // Valid Gemini REST API model IDs — fastest first
     final modelsToTry = [
@@ -245,12 +256,14 @@ class SupabaseService {
           final data = jsonDecode(response.body) as Map<String, dynamic>;
           final candidates = data['candidates'] as List?;
           if (candidates == null || candidates.isEmpty) {
-            return _generateLocalAgronomyReply(message, diagnosisContext);
+            return _generateLocalAgronomyReply(message, diagnosisContext,
+                language: currentLang, langCode: currentCode);
           }
           final parts = candidates[0]['content']['parts'] as List;
           return parts.isNotEmpty
               ? parts[0]['text'] as String
-              : _generateLocalAgronomyReply(message, diagnosisContext);
+              : _generateLocalAgronomyReply(message, diagnosisContext,
+                  language: currentLang, langCode: currentCode);
         } else if (response.statusCode == 429 || response.statusCode == 503) {
           // Overloaded — try next model immediately
           continue;
@@ -263,8 +276,9 @@ class SupabaseService {
       }
     }
 
-    // All models failed → rich local fallback (fast, no network)
-    return _generateLocalAgronomyReply(message, diagnosisContext);
+    // All models failed → rich local fallback in farmer's language
+    return _generateLocalAgronomyReply(message, diagnosisContext,
+        language: currentLang, langCode: currentCode);
   }
 
   // ---------- Dashboard stats ----------
@@ -423,11 +437,131 @@ class SupabaseService {
         '💬 Feel free to ask me more specific questions about treatment, spraying, or prevention!';
   }
 
-  String _generateLocalAgronomyReply(String message, String? context) {
+  String _generateLocalAgronomyReply(String message, String? context,
+      {String language = 'English', String langCode = 'en'}) {
     final q = message.toLowerCase().trim();
     final name = currentUser?.userMetadata?['full_name'] as String? ??
         currentUser?.email?.split('@')[0] ??
         'Farmer';
+
+    final code = langCode.toLowerCase();
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // TAMIL (தமிழ்)
+    // ──────────────────────────────────────────────────────────────────────────
+    if (code == 'ta' || language.toLowerCase().contains('tamil')) {
+      if (q.contains('my name') || q.contains('who am i') || q.contains('என் பெயர்') || q.contains('யார்')) {
+        return 'நீங்கள் **$name** (${currentUser?.email ?? ''}) ஆக உள்நுழைந்துள்ளீர்கள்! 👨‍🌾\n\nநான் உங்கள் பயிர் பார்வை AI விவசாய உதவியாளர். இன்று உங்களுக்கு எவ்வாறு உதவ முடியும்?';
+      }
+      if (q.contains('hello') || q.contains('hi') || q.contains('hey') || q.contains('வணக்கம்') || q.length < 4) {
+        return 'வணக்கம் $name! 👋 பயிர் பார்வைக்கு உங்களை வரவேற்கிறோம்.\n\nநான் உங்கள் AI விவசாய உதவியாளர். என்னிடம் எதையும் கேளுங்கள்:\n• பயிர் நோய்கள் (தக்காளி, உருளைக்கிழங்கு, சோளம், ஆப்பிள், திராட்சை)\n• சிகிச்சை & தெளித்தல் அட்டவணைகள்\n• நீர்ப்பாசனம் & மண் பராமரிப்பு\n• தீவிர நிலைகள் (G0-G3)\n\nஉங்களுக்கு என்ன தகவல் தேவை? 🌱';
+      }
+      if (q.contains('thank') || q.contains('நன்றி')) {
+        return 'மிக்க நன்றி, $name! 😊 மகிழ்ச்சியான விவசாயம்! 🌿\n\nஉங்கள் பயிர்கள் பற்றி எப்போது வேண்டுமானாலும் என்னிடம் கேட்கலாம்.';
+      }
+      if (q.contains('தக்காளி') || q.contains('tomato')) {
+        return '🍅 **தக்காளி பயிர் பராமரிப்பு மற்றும் நோய் வழிகாட்டி**:\n\n'
+            '• **ஆரம்ப கருகல் (Early Blight)**: கீழ் இலைகளில் அடர் பழுப்பு வளையப் புள்ளிகள். காப்பர் ஆக்ஸிகுளோரைடு (3g/L) அல்லது மேன்கோசெப் தெளிக்கவும்.\n'
+            '• **பிற்கால கருகல் (Late Blight)**: நீர் கோர்த்த கரும் புள்ளிகள் & வெண் பூஞ்சை. மெட்டலாக்சில் + மேன்கோசெப் 7 நாட்களுக்கு ஒருமுறை தெளிக்கவும்.\n'
+            '• **இலை சுருள் வைரஸ்**: வெள்ளை ஈக்களைக் கட்டுப்படுத்த வேப்பெண்ணெய் அல்லது இமிடாக்ளோப்ரிட் தெளிக்கவும்.\n\n'
+            '**பராமரிப்பு**: காலையில் வேர் பகுதியில் நீர் பாய்ச்சவும். நல்ல காற்றோட்டத்தை பராமரிக்கவும்.';
+      }
+      if (q.contains('உருளை') || q.contains('potato')) {
+        return '🥔 **உருளைக்கிழங்கு பயிர் பராமரிப்பு வழிகாட்டி**:\n\n'
+            '• **பிற்கால கருகல் (Late Blight)**: மிகவும் தீவிரமான நோய். இலைகளில் கரும் புள்ளிகள் தென்பட்டால் உடனே மேன்கோசெப் தெளிக்கவும்.\n'
+            '• சான்றளிக்கப்பட்ட விதை கிழங்குகளை மட்டுமே பயன்படுத்தவும்.\n'
+            '• சரியான முறையில் மண் அணைத்து வடிகால் வசதியை உறுதி செய்யவும்.';
+      }
+      if (q.contains('சோளம்') || q.contains('corn') || q.contains('maize')) {
+        return '🌽 **மக்காச்சோளம் பயிர் பராமரிப்பு வழிகாட்டி**:\n\n'
+            '• **துரு நோய் & இலைக்கருகல்**: மேன்கோசெப் அல்லது அஸோக்ஸிஸ்ட்ரோபின் பூஞ்சாணக்கொல்லி தெளிக்கவும்.\n'
+            '• படைப்புழு தாக்குதலைக் கண்காணிக்க இனக்கவர்ச்சி பொறிகளை அமைக்கவும்.\n'
+            '• தழைச்சத்து உரங்களை சரியான பயிர் நிலைகளில் இடவும்.';
+      }
+      if (q.contains('திராட்சை') || q.contains('grape')) {
+        return '🍇 **திராட்சை பயிர் பராமரிப்பு வழிகாட்டி**:\n\n'
+            '• **சாம்பல் நோய் (Powdery Mildew)**: நனையும் கந்தகம் (Wettable Sulphur 2g/L) தெளிக்கவும்.\n'
+            '• **கரும் அழுகல் (Black Rot)**: மேன்கோசெப் அல்லது போர்டோ கலவை தெளிக்கவும்.\n'
+            '• கொடிகளுக்கு இடையே நல்ல காற்றோட்டம் மற்றும் சூரிய ஒளி கிடைப்பதை உறுதி செய்யவும்.';
+      }
+      if (q.contains('ஆப்பிள்') || q.contains('apple')) {
+        return '🍎 **ஆப்பிள் பயிர் பராமரிப்பு வழிகாட்டி**:\n\n'
+            '• **சொறி நோய் (Apple Scab)**: தளிர்ப்பு பருவத்தில் காப்பர் பூஞ்சாணக்கொல்லி தெளிக்கவும்.\n'
+            '• உதிர்ந்த இலைகளை அகற்றி சுத்தமாக வைத்திருக்கவும்.';
+      }
+      return '🌱 வணக்கம் $name! நான் உங்கள் பயிர் பார்வை AI விவசாய உதவியாளர்.\n\n'
+          'உங்கள் தக்காளி, உருளைக்கிழங்கு, சோளம், ஆப்பிள் மற்றும் திராட்சை பயிர்களின் நோய்கள், பூச்சி மேலாண்மை, தெளிப்பு அட்டவணை மற்றும் உரம் பற்றி என்னிடம் கேளுங்கள்!';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // HINDI (हिंदी)
+    // ──────────────────────────────────────────────────────────────────────────
+    if (code == 'hi' || language.toLowerCase().contains('hindi')) {
+      if (q.contains('my name') || q.contains('who am i') || q.contains('मेरा नाम') || q.contains('कौन')) {
+        return 'आप **$name** (${currentUser?.email ?? ''}) के रूप में लॉग इन हैं! 👨‍🌾\n\nमैं आपका क्रॉपविज़न AI कृषि सहायक हूँ। आज मैं आपकी कैसे मदद कर सकता हूँ?';
+      }
+      if (q.contains('hello') || q.contains('hi') || q.contains('hey') || q.contains('नमस्ते') || q.length < 4) {
+        return 'नमस्ते $name! 👋 क्रॉपविज़न में आपका स्वागत है।\n\nमैं आपका AI कृषि सहायक हूँ। मुझसे पूछें:\n• फसल रोग (टमाटर, आलू, मक्का, सेब, अंगूर)\n• उपचार और छिड़काव कार्यक्रम\n• सिंचाई और मिट्टी की देखभाल\n• गंभीरता चरण (G0-G3)\n\nआप क्या जानना चाहते हैं? 🌱';
+      }
+      if (q.contains('thank') || q.contains('धन्यवाद') || q.contains('शुक्रिया')) {
+        return 'आपका बहुत-बहुत धन्यवाद, $name! 😊 खुशहाल खेती! 🌿\n\nअपनी फसलों के बारे में कभी भी मुझसे पूछ सकते हैं।';
+      }
+      if (q.contains('टमाटर') || q.contains('tomato')) {
+        return '🍅 **टमाटर फसल देखभाल एवं रोग नियंत्रण**:\n\n'
+            '• **अगेती झुलसा (Early Blight)**: पत्तियों पर गोल छल्लेदार धब्बे। कॉपर ऑक्सीक्लोराइड या मैंकोज़ेब (2g/L) का छिड़काव करें।\n'
+            '• **पछेती झुलसा (Late Blight)**: पत्तियों पर काले धब्बे और सफेद फफूंद। मेटालेक्सिल + मैंकोज़ेब का छिड़काव करें।\n'
+            '• **पत्ती मरोड़ (Leaf Curl)**: सफेद मक्खी नियंत्रण के लिए इमिडाक्लोप्रिड या नीम तेल का छिड़काव करें।\n\n'
+            '**सुझाव**: सुबह के समय केवल जड़ में पानी दें, पत्तियों को गीला न रखें।';
+      }
+      if (q.contains('आलू') || q.contains('potato')) {
+        return '🥔 **आलू फसल देखभाल एवं रोग नियंत्रण**:\n\n'
+            '• **पछेती झुलसा (Late Blight)**: तुरंत मैंकोज़ेब या मेटालेक्सिल का छिड़काव करें।\n'
+            '• प्रमाणित एवं रोगमुक्त कंद ही बोएं।\n'
+            '• उचित जल निकासी सुनिश्चित करें।';
+      }
+      return '🌱 नमस्ते $name! मैं आपका क्रॉपविज़न AI कृषि सहायक हूँ।\n\n'
+          'टमाटर, आलू, मक्का, सेब और अंगूर की फसलों के रोगों, उपचार और खाद के बारे में मुझसे पूछें। मैं आपकी सहायता के लिए तैयार हूँ!';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // TELUGU (తెలుగు)
+    // ──────────────────────────────────────────────────────────────────────────
+    if (code == 'te' || language.toLowerCase().contains('telugu')) {
+      if (q.contains('hello') || q.contains('hi') || q.contains('నమస్కారం') || q.length < 4) {
+        return 'నమస్కారం $name! 👋 క్రాప్‌విజన్‌కు స్వాగతం.\n\nనేను మీ AI వ్యవసాయ సహాయకుడిని. నన్ను అడగండి:\n• పంట తెగుళ్ళు (టమోటా, బంగాళాదుంప, మొక్కజొన్న, ఆపిల్, ద్రాక్ష)\n• పిచికారీ ప్రణాళికలు మరియు నివారణ\n• తీవ్రత దశలు (G0-G3)\n\nమీకు ఏ సమాచారం కావాలి? 🌱';
+      }
+      if (q.contains('టమోటా') || q.contains('tomato')) {
+        return '🍅 **టమోటా పంట సంరక్షణ మరియు తెగులు నివారణ**:\n\n'
+            '• **తొలి మచ్చల తెగులు (Early Blight)**: కాపర్ ఆక్సిక్లోరైడ్ లేదా మాంకోజెబ్ (2g/L) పిచికారీ చేయండి.\n'
+            '• **చివరి మచ్చల తెగులు (Late Blight)**: మెటలాక్సిల్ + మాంకోజెబ్ 7 రోజులకు ఒకసారి పిచికారీ చేయండి.\n'
+            '• **ఆకు ముడుత తెగులు**: తెల్లదోమ నివారణకు వేపనూనె లేదా ఇమిడాక్లోప్రిడ్ వాడండి.';
+      }
+      return '🌱 నమస్కారం $name! నేను మీ క్రాప్‌విజన్ AI వ్యవసాయ సహాయకుడిని. టమోటా, బంగాళాదుంప, మొక్కజొన్న, ఆపిల్ మరియు ద్రాక్ష పంటల సంరక్షణ గురించి నన్ను అడగండి!';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // MARATHI (मराठी)
+    // ──────────────────────────────────────────────────────────────────────────
+    if (code == 'mr' || language.toLowerCase().contains('marathi')) {
+      if (q.contains('hello') || q.contains('hi') || q.contains('नमस्कार') || q.length < 4) {
+        return 'नमस्कार $name! 👋 क्रॉपव्हिजनमध्ये आपले स्वागत आहे.\n\nमी आपला AI शेती सहाय्यक आहे. मला विचारा:\n• पिकांचे रोग (टोमॅटो, बटाटा, मका, सफरचंद, द्राक्षे)\n• फवारणी वेळापत्रक आणि खत व्यवस्थापन\n• तीव्रता टप्पे (G0-G3)\n\nमी आपल्याला कशी मदत करू शकतो? 🌱';
+      }
+      return '🌱 नमस्कार $name! मी आपला क्रॉपव्हिजन AI शेती सहाय्यक आहे. टोमॅटो, बटाटा, मका, सफरचंद आणि द्राक्ष पिकांच्या रोगांबद्दल आणि उपायांबद्दल मला विचारा!';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // KANNADA (ಕನ್ನಡ)
+    // ──────────────────────────────────────────────────────────────────────────
+    if (code == 'kn' || language.toLowerCase().contains('kannada')) {
+      if (q.contains('hello') || q.contains('hi') || q.contains('ನಮಸ್ಕಾರ') || q.length < 4) {
+        return 'ನಮಸ್ಕಾರ $name! 👋 ಕ್ರಾಪ್‌ವಿಷನ್‌ಗೆ ಸ್ವಾಗತ.\n\nನಾನು ನಿಮ್ಮ AI ಕೃಷಿ ಸಹಾಯಕ. ನನ್ನನ್ನು ಕೇಳಿ:\n• ಬೆಳೆ ರೋಗಗಳು (ಟೊಮೆಟೊ, ಆಲೂಗಡ್ಡೆ, ಜೋಳ, ಸೇಬು, ದ್ರಾಕ್ಷಿ)\n• ಸಿಂಪಡಣೆ ವೇಳಾಪಟ್ಟಿ ಮತ್ತು ಔಷಧಗಳು\n• ತೀವ್ರತೆಯ ಹಂತಗಳು (G0-G3)\n\nನಿಮಗೆ ಏನು ಮಾಹಿತಿ ಬೇಕು? 🌱';
+      }
+      return '🌱 ನಮಸ್ಕಾರ $name! ನಾನು ನಿಮ್ಮ ಕ್ರಾಪ್‌ವಿಷನ್ AI ಕೃಷಿ ಸಹಾಯಕ. ಬೆಳೆ ರೋಗಗಳು, ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಗೊಬ್ಬರದ ಬಗ್ಗೆ ನನ್ನನ್ನು ಕೇಳಿ!';
+    }
+
+    // ──────────────────────────────────────────────────────────────────────────
+    // DEFAULT ENGLISH
+    // ──────────────────────────────────────────────────────────────────────────
 
     // ── Identity / profile ───────────────────────────────────────────────
     if (q.contains('my name') || q.contains('who am i') || q.contains('my profile') || q.contains('who i am')) {
