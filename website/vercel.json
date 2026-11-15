@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "name": "cropvision-ai",
+  "builds": [
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/videos/(.*)",
+      "headers": {
+        "Content-Type": "video/mp4",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=86400"
+      },
+      "dest": "/assets/videos/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

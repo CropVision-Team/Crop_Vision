@@ -1,0 +1,65 @@
+# Environment & IDE
+.env
+.env.*
+!.env.example
+.venv/
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Build artifacts & packages
+*.apk
+website.zip
+website - Copy/
+website_index_temp.html
+
+# Flutter / Dart
+mobile_app/.dart_tool/
+mobile_app/.flutter-plugins
+mobile_app/.flutter-plugins-dependencies
+mobile_app/build/
+mobile_app/.idea/
+mobile_app/android/local.properties
+mobile_app/android/.gradle/
+mobile_app/android/app/build/
+mobile_app/ios/Flutter/Flutter.framework
+mobile_app/ios/Pods/
+mobile_app/ios/.symlinks/
+
+# Python / ML Datasets, Weights & Virtual Environments
+model/venv/
+model/checkpoints/
+model/dataset/
+model/plantvillage_extracted/
+model/plantvillage_files/
+model/test_images/
+model/*.pt
+model/*.onnx
+model/*.pth
+model/*.tflite
+model/*.h5
+
+ml/venv/
+ml/checkpoints/
+ml/dataset/
+ml/plantvillage_extracted/
+ml/plantvillage_files/
+ml/test_images/
+ml/*.pt
+ml/*.onnx
+ml/*.pth
+ml/*.tflite
+ml/*.h5
+
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.code-workspace

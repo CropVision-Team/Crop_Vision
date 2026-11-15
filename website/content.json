@@ -1,0 +1,126 @@
+{
+  "project": {
+    "name": "CropVision AI",
+    "tagline": "A Mobile Crop Disease Detection System Using Image Validation and Severity Estimation",
+    "description": "An offline mobile framework that checks photographs for blur and leaf content, identifies crop and disease via MobileViT (5.8 MB INT8), and estimates quantitative G0–G3 damage severity.",
+    "github": "https://github.com/CropVision-Team/Crop_Vision.git",
+    "demo": "http://localhost:8080",
+    "demoVideo": "assets/videos/demo.mp4",
+    "apkDownload": "CropVision.apk"
+  },
+  "institution": {
+    "name": "Amrita Vishwa Vidyapeetham",
+    "department": "Department of Computer Science & Engineering",
+    "location": "Coimbatore, India",
+    "academicYear": "2025-2026",
+    "course": "B.Tech Final Year Project"
+  },
+  "team": {
+    "guide": {
+      "name": "Dr. Suchithra M",
+      "title": "Faculty Guide",
+      "designation": "Assistant Professor",
+      "email": "m_suchithra@cb.amrita.edu"
+    },
+    "members": [
+      { "name": "Varun Sivaselvan V S", "role": "Lead Developer, ML & Mobile", "initials": "VS", "email": "cb.sc.u4cse23064@cb.students.amrita.edu" },
+      { "name": "Deepan S", "role": "Full-Stack, Backend & Data", "initials": "DS", "email": "cb.sc.u4cse23545@cb.students.amrita.edu" },
+      { "name": "Ripan Samui", "role": "Frontend & UI/UX Design", "initials": "RS", "email": "cb.sc.u4cse23368@cb.students.amrita.edu" },
+      { "name": "Doreti Uday Kumar", "role": "Testing & Dataset Validation", "initials": "DU", "email": "cb.sc.u4cse23655@cb.students.amrita.edu" }
+    ]
+  },
+  "metrics": {
+    "classes": 38,
+    "cropTypes": 14,
+    "testAccuracy": "98.56%",
+    "macroF1": "0.9810 (98.10%)",
+    "treatmentCombinations": 65,
+    "trainingEpochs": "50",
+    "batchSize": 32,
+    "inputSize": "224x224 px",
+    "modelParams": "5.60M",
+    "modelSizeINT8": "5.8 MB",
+    "inferenceTime": "43.0 ms (Snapdragon 680)"
+  },
+  "videos": {
+    "mainVideo": {
+      "title": "CropVision AI Full Application Walkthrough",
+      "src": "assets/videos/demo.mp4",
+      "youtubeUrl": "",
+      "poster": "assets/screenshots/dashboard.png",
+      "duration": "3:15",
+      "description": "Recorded screen walkthrough of CropVision AI on device: leaf photography, automated focus/quality checks, MobileViT disease classification, and severity-calibrated prescriptions."
+    },
+    "grid": [
+      {
+        "id": "full-demo",
+        "title": "Full App Demo",
+        "duration": "3:15",
+        "src": "assets/videos/demo.mp4",
+        "youtubeUrl": "",
+        "thumbnail": "assets/screenshots/dashboard.png",
+        "description": "Complete walkthrough of the mobile app from leaf scanning to severity diagnosis."
+      },
+      {
+        "id": "how-to-use",
+        "title": "How to Use the App (Step by Step)",
+        "duration": "2:45",
+        "src": "assets/videos/how-to-use.mp4",
+        "youtubeUrl": "",
+        "thumbnail": "assets/screenshots/dashboard.png",
+        "description": "Step-by-step tutorial: leaf positioning, reading diagnostic severity badges, and scheduling spray reminders."
+      },
+      {
+        "id": "model-training",
+        "title": "Model Training and Results",
+        "duration": "4:20",
+        "src": "assets/videos/model-explained.mp4",
+        "youtubeUrl": "",
+        "thumbnail": "assets/screenshots/model_accuracy_terminal.png",
+        "description": "Deep-dive into MobileViT-Small training on 54,306 images with 99.05% test set accuracy."
+      },
+      {
+        "id": "code-walkthrough",
+        "title": "Code Walkthrough",
+        "duration": "5:10",
+        "src": "assets/videos/code-walkthrough.mp4",
+        "youtubeUrl": "",
+        "thumbnail": "assets/screenshots/dashboard.png",
+        "description": "Architecture tour: Flutter Provider state, Flask local inference server, and Supabase SQL schema."
+      }
+    ],
+    "timestamps": [
+      { "time": "0:10", "seconds": 10, "label": "Overview & Dashboard" },
+      { "time": "0:30", "seconds": 30, "label": "Add & Register Crop" },
+      { "time": "1:00", "seconds": 60, "label": "Diagnose Leaf & Quality Checks" },
+      { "time": "1:45", "seconds": 105, "label": "Crop Growth Calendar" },
+      { "time": "2:15", "seconds": 135, "label": "Diagnostic Scan History" },
+      { "time": "2:45", "seconds": 165, "label": "AI Agronomist Assistant" }
+    ],
+    "fiveStepsGuide": [
+      { "step": 1, "title": "Open CropVision AI", "desc": "Launch the app and tap 'Diagnose Crop Leaf' or select an active crop cultivar from the dashboard." },
+      { "step": 2, "title": "Position Leaf in Frame", "desc": "Center the suspected leaf inside the camera reticle with adequate ambient natural daylight." },
+      { "step": 3, "title": "Automated Quality Check", "desc": "On-device algorithms verify focus sharpness (>100 Laplacian score) and foliage content (>15% plant pixels) instantly." },
+      { "step": 4, "title": "Review Disease & Severity", "desc": "View the identified disease condition, confidence percentage, and quantitative G0–G3 severity grade." },
+      { "step": 5, "title": "Follow Tailored Prescriptions", "desc": "Apply calibrated chemical and biological treatments, follow spray intervals, and track recovery in history." }
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/dashboard.png",
+        "title": "Farmer Dashboard",
+        "caption": "Active crops, scan totals, pending tasks, and quick diagnose button"
+      },
+      {
+        "src": "assets/screenshots/model_accuracy_terminal.png",
+        "title": "MobileViT Training Output",
+        "caption": "Final evaluation run showing 99.05% test set accuracy"
+      }
+    ]
+  },
+  "downloads": {
+    "projectReport": "#",
+    "srs": "#",
+    "ppt": "#",
+    "apk": "https://github.com/CropVision-Team/Crop_Vision/releases"
+  }
+}
