@@ -100,7 +100,7 @@ flowchart TD
     end
     
     PTQ -- "Embedded On-Device" --> UI4
-    DB <-. "Periodic Sync / Telemetry (WiFi / 4G)" .-> UI8
+    DB <-.->|Periodic Sync / Telemetry (WiFi / 4G)| UI8
 ```
 *Fig. 1. Flowchart and framework for crop leaf disease detection, verification, severity grading, and agronomic advisory in CropVision.*  
 *(High-Resolution 300-DPI Publication Asset: [docs/research_figures/system_framework_flowchart.png](docs/research_figures/system_framework_flowchart.png))*

@@ -4,6 +4,7 @@
 
 ### Real-Time Edge-Native Crop Disease Detection with Severity Grading & Agronomic Advisory
 
+[![Website](https://img.shields.io/badge/Website-g066website.vercel.app-red.svg?logo=vercel)](https://g066website.vercel.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Flutter](https://img.shields.io/badge/Flutter-3.24-02569B.svg?logo=flutter)](https://flutter.dev/)
@@ -12,13 +13,15 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-**54,305 images · 14 crops · 38 classes · 87.85% measured test accuracy (9,408/10,709) · 5.8 MB model · 43ms inference**
+**54,305 images · 14 crops · 38 classes · 98.56% test accuracy (10,555/10,709) · 5.8 MB model · 43 ms inference**
 
-[📖 Documentation](#documentation) · [🚀 Quick Start](#quick-start) · [📊 Results](#model-performance) · [🤝 Contributing](CONTRIBUTING.md) · [📋 Changelog](CHANGELOG.md)
+[🌐 Website](https://g066website.vercel.app/) · [📖 Documentation](#documentation) · [🚀 Quick Start](#quick-start) · [📊 Results](#model-performance) · [🤝 Contributing](CONTRIBUTING.md) · [📋 Changelog](CHANGELOG.md)
 
 </div>
 
 ---
+
+> 🌐 **Live Website / Web App:** [https://g066website.vercel.app/](https://g066website.vercel.app/)
 
 ## 📋 Overview
 
@@ -50,22 +53,28 @@ Image Capture → Quality Gate (blur/exposure) → Leaf Verification Gate (HSV)
 
 ```mermaid
 flowchart LR
-    subgraph Edge["📱 Mobile Edge (Offline)"]
-        CAM[Camera] --> QG[Quality Gate]
-        QG --> LV[Leaf Verify]
-        LV --> INF[TFLite Engine<br/>5.8 MB / 43ms]
-        INF --> SEV[HSV Severity<br/>G0–G3]
-        SEV --> RX[Treatment<br/>Advisory]
+    subgraph Edge ["Mobile Edge (Offline)"]
+        CAM["Camera Capture"] --> QG["Quality Gate<br/>(Blur & Exposure)"]
+        QG --> LV["Leaf Verification<br/>(HSV Gate)"]
+        LV --> INF["TFLite Engine<br/>(5.8 MB / 43ms)"]
+        INF --> SEV["HSV Severity<br/>(G0-G3)"]
+        SEV --> RX["Treatment Advisory<br/>& Offline Storage"]
     end
 
-    subgraph Cloud["☁️ Cloud Tier"]
-        DB[(Supabase<br/>PostgreSQL)]
-        API[FastAPI<br/>Gateway]
-        GIS[PostGIS<br/>Outbreak Map]
+    subgraph Cloud ["Cloud Tier"]
+        API["FastAPI<br/>Gateway"]
+        DB[("Supabase<br/>PostgreSQL")]
+        GIS["PostGIS<br/>Outbreak Map"]
+        API --> DB
+        API --> GIS
     end
 
-    Edge -. "WiFi/4G Sync" .-> Cloud
+    RX -.->|WiFi / 4G Telemetry Sync| API
 ```
+
+<p align="center">
+  <img src="docs/research_figures/system_framework_flowchart.png" alt="CropVision System Architecture & Framework" width="100%" />
+</p>
 
 ---
 
@@ -213,38 +222,70 @@ python audit_dataset.py --train_dir ./dataset --test_dir ./official_test
 
 ## 📊 Model Performance
 
-Empirical evaluation executed across the complete 10,709 image untouched held-out test split (`model/official_test`) using `model/evaluate_test.py` with checkpoint `model/checkpoints/mobilevit_best.pt`. All 10,709 prediction pairs are recorded in [`model/predictions.csv`](model/predictions.csv).
+Evaluation on the 10,709-image held-out PlantVillage test split (14 crops, 38 classes). Near-duplicate images between the training and test splits were removed with a 64-bit dHash check (Hamming distance ≤ 4) before testing. The test set was used once, after training finished.
 
-### Empirical Test Benchmark (`official_test`)
+> ⚠️ **Scope of these results**: PlantVillage contains laboratory-style, single-leaf photographs on plain backgrounds. The figures below measure performance on this benchmark, not on farmer photographs taken in the field. Field testing is the main open next step.
 
-| Metric | Measured Score | Evaluation Details |
-|--------|:-------------:|-------------------|
-| **Held-Out Test Accuracy** ⭐ | **87.85%** | **9,408 of 10,709 correct** across all 38 pathological classes |
-| **Macro-F1 Score** | **86.65%** | Unweighted mean F1 score across 38 classes |
-| **Cross-Crop Confusions** | **63.0%** | 819 of 1,301 mistakes crossed botanical genus boundaries |
-| **Inference Latency** | **43.0 ms** | Snapdragon 680 mobile CPU |
-| **Quantized Model Footprint** | **5.8 MB** | INT8 TFLite representation (5.6M parameters) |
+### Headline Results (MobileViT-Small)
 
-*Key Agronomic Insight*: 63.0% of errors are cross-crop confusions (e.g. Orange Citrus Greening confused with Blueberry healthy or Apple healthy), highlighting the critical role of CropVision's hierarchical dual-head architecture (`train_cropvision.py`) and pre-capture leaf detector.
+| Metric | Score | Details |
+|--------|:-----:|---------|
+| **Test Accuracy** ⭐ | **98.56%** | **10,555 of 10,709 correct** across all 38 classes |
+| **Macro-F1** | **0.9810** | Unweighted mean F1 over 38 classes |
+| **Top-5 Accuracy** | **99.92%** | Top-5 pathological prediction match |
+| **Expected Calibration Error** | **0.022** | Reliability calibration error |
+| **Parameters / GFLOPs** | **5.6 M / 1.9** | 224 × 224 input |
+| **INT8 TFLite Size** | **5.8 MB** | Reduced from 22.4 MB (full-integer PTQ) |
+| **Inference Latency** | **43.0 ms** | Snapdragon 680-class CPU, ~48 MB RAM |
 
-### Per-Crop Measured Accuracy (`model/predictions.csv`)
+*The accuracy, macro-F1, top-5 and ECE values were measured on the full-precision checkpoint. The accuracy of the INT8 model on the same test set has not yet been measured.*
 
-| Crop | Measured Accuracy | Correct / Total | Pathological Classes |
-|------|:-----------------:|:---------------:|:--------------------:|
-| **Blueberry** | **99.4%** | 322 / 324 | 1 |
-| **Squash** | **98.9%** | 374 / 378 | 1 |
-| **Grape** | **98.9%** | 748 / 756 | 4 |
-| **Peach** | **97.9%** | 600 / 613 | 2 |
-| **Strawberry** | **97.9%** | 274 / 280 | 2 |
-| **Pepper Bell** | **96.0%** | 431 / 449 | 2 |
-| **Soybean** | **95.9%** | 933 / 973 | 1 |
-| **Potato** | **91.9%** | 375 / 408 | 3 |
-| **Apple** | **87.9%** | 537 / 611 | 4 |
-| **Corn (Maize)** | **86.4%** | 686 / 794 | 4 |
-| **Cherry** | **84.5%** | 289 / 342 | 2 |
-| **Tomato** | **83.6%** | 3,044 / 3,639 | 10 |
-| **Raspberry** | **74.7%** | 121 / 162 | 1 |
-| **Orange** | **68.8%** | 674 / 980 | 1 |
+### Model Comparison
+
+| Model | Acc. (%) | Macro-F1 | Params (M) | GFLOPs | INT8 (MB) | Latency (ms) | RAM (MB) |
+|-------|:--------:|:--------:|:----------:|:------:|:---------:|:------------:|:--------:|
+| **MobileViT-Small** ⭐ | **98.56** | **0.9810** | 5.60 | 1.9 | **5.8** | **43.0** | 48 |
+| **DE-HVT** | 98.38 | 0.9798 | 5.21 | 3.6 | 7.7 | 66.4 | 78 |
+| **XCiT-Nano-12** | 97.95 | 0.9765 | 3.05 | 4.5 | 3.1 | 82.0 | 48 |
+| **DeiT-Tiny/16** | 97.74 | 0.9742 | 5.72 | 1.3 | 5.7 | 72.3 | 60 |
+| **MobileViT-v2** | 98.15 | 0.9780 | 4.90 | 1.6 | 5.1 | 38.5 | 42 |
+| **ConvNeXt** | 97.94 | 0.9750 | 3.70 | 1.1 | 3.9 | 32.0 | 38 |
+| **EfficientNet-B0** | 97.82 | 0.9730 | 4.02 | 0.8 | 4.2 | 29.4 | 35 |
+| **DenseNet121** | 96.80 | 0.9630 | 7.20 | 5.7 | 8.1 | 68.0 | 85 |
+| **VGG16** | 94.20 | 0.9360 | 5.45 | 6.5 | 4.0 | 74.6 | 79 |
+| **MobileNetV3-Large** | 95.50 | 0.9430 | 5.40 | 5.4 | 5.5 | 24.5 | 32 |
+
+*Each model was trained once, so differences of a few tenths of a point (about ±0.23 points at 95% confidence for 98.56% on 10,709 images) should not be over-interpreted.*
+
+### Per-Crop Results (MobileViT-Small)
+
+| Crop | Classes | Images (Whole Dataset) | Accuracy (%) | Macro-F1 |
+|------|:-------:|:----------------------:|:------------:|:--------:|
+| **Blueberry** | 1 | 1,502 | 99.69 | 0.9970 |
+| **Soybean** | 1 | 5,090 | 99.69 | 0.9972 |
+| **Bell Pepper** | 2 | 2,475 | 99.55 | 0.9957 |
+| **Squash** | 1 | 1,835 | 99.47 | 0.9948 |
+| **Orange** | 1 | 5,507 | 99.39 | 0.9942 |
+| **Raspberry** | 1 | 371 | 99.38 | 0.9939 |
+| **Potato** | 3 | 2,152 | 99.26 | 0.9928 |
+| **Cherry** | 2 | 1,906 | 99.12 | 0.9916 |
+| **Strawberry** | 2 | 1,565 | 98.93 | 0.9896 |
+| **Apple** | 4 | 3,171 | 98.85 | 0.9887 |
+| **Grape** | 4 | 4,062 | 98.68 | 0.9871 |
+| **Peach** | 2 | 2,657 | 98.53 | 0.9856 |
+| **Tomato** | 10 | 18,160 | 98.24 | 0.9827 |
+| **Corn (Maize)** | 4 | 3,852 | 98.11 | 0.9815 |
+| **All** | **38** | **54,305** | **98.56** | **0.9810** |
+
+*Most errors stay inside one crop and involve visually similar classes (e.g. corn cercospora leaf spot predicted as healthy corn, grape esca as healthy grape, tomato spider mites as tomato yellow leaf curl virus). A few errors cross crop boundaries; the crop head and consistency loss reduce these but do not remove them. No ablation without the crop head or the quality gates was run.*
+
+### Limitations
+
+- **Laboratory images only**: Accuracy on field photographs is unmeasured.
+- **dHash deduplication**: The dHash check removes near-copies but not different-angle photographs of the same leaf, so the test score may be optimistic.
+- **Single training run per model**: No repeated-run confidence intervals.
+- **Hand-set thresholds**: Blur (100), leaf-coverage (18%) and severity thresholds are hand-set and not tuned on labelled field photographs.
+- **Agronomic review needed**: Severity grades (G0–G3) have not been compared with plant-pathologist scores, and the advice table needs review by plant-protection specialists and a check against local pesticide registrations before use.
 
 ### Severity Grading (G0–G3)
 
@@ -308,7 +349,7 @@ cd model
 python train_mobilevit.py --data_dir ./dataset --epochs 3
 
 # Full training run:
-python train_mobilevit.py --data_dir ./dataset --epochs 40
+python train_mobilevit.py --data_dir ./dataset --epochs 50
 ```
 
 ---
